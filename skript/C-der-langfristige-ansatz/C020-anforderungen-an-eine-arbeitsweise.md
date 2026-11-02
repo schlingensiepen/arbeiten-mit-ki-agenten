@@ -32,7 +32,7 @@ Auch das löst Teil D. Beide Forderungen zusammen heißen: Wissen auslagern, und
 
 Im Fall mit dem Storno wurde entschieden, nichts zu löschen. Diese Entscheidung stand nirgends, sie steckte im Datenmodell. Eine Sitzung später weiß niemand mehr, ob das Absicht war. Die Forderung hat zwei Hälften. Erstens: Jede Entscheidung wird aufgeschrieben, mit dem, was gewählt wurde, und warum. Zweitens: Entscheidungen trifft der Mensch. Der Agent schlägt vor, legt vor, führt aus, aber ob gelöscht oder deaktiviert wird, sagen Sie.
 
-Wie das Gespräch dabei aussieht, zeigt Teil E, wo die Entscheidungen stehen, zeigt das Kapitel [Register und Elemente](../D-wissen-im-wiki/D040-register-und-elemente.md).
+Wie das Gespräch dabei aussieht, zeigt Teil E. Wo die Entscheidungen stehen, zeigt das Kapitel [Register und Elemente](../D-wissen-im-wiki/D040-register-und-elemente.md).
 
 ## 4. Änderungen laufen nicht durch alles
 
