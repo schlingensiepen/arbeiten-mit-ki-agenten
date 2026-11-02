@@ -82,7 +82,7 @@ Dasselbe Muster trägt die Arbeit an Software. Sagen Sie dem Agenten „Lies die
 
 Der Systemprompt muss dazu definieren, dass das LLM statt einer Antwort auch die Toolaufrufe zurückgeben kann, von denen es sich Informationen für das Abarbeiten der Aufgabe verspricht. Der Harness führt das aus und steckt das Ergebnis des Aufrufes in den nächsten Prompt. Das Tool kann dabei auch eine Web-Recherche sein.
 
-Was jetzt klar sein sollte:
+## Was jetzt klar sein sollte
 
 - Ein Sprachmodell schreibt Text weiter. Text hinein, Text heraus, nichts wird ausgeführt.
 - Das Wissen im Modell veraltet. Aktuelles kommt über Tools in den Kontext.

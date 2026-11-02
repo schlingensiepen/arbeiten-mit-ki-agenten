@@ -27,13 +27,13 @@ Das Fenster ist nicht leer, wenn Sie Ihre erste Frage stellen. Beim Start liegen
 
 Erst danach kommt das Gespräch: Ihre Aufträge, die Antworten des Modells und die Ergebnisse der Tools. Besonders die Tool-Ergebnisse fallen ins Gewicht. Liest der Agent eine Datei, landet ihr Inhalt vollständig im Kontext, denn anders kann das Modell ihn nicht sehen. Durchlesen heißt für einen Agenten immer: Das Ganze kommt ins Fenster. Eine lange Dokumentation einzulesen, „um sie zu kennen“, ist deshalb keine harmlose Bitte.
 
-## Skills und Planmodus sind auch nur Prompt
+## Skills und Planmodus
 
 Zwei Dinge, die in den Werkzeugen wie besondere Fähigkeiten aussehen, lassen sich mit dem Kontext erklären.
 
 Ein [Skill](../Z-anhang/Z010-glossar.md#skill) ist eine Anleitung für eine bestimmte Art von Aufgabe, die als Datei bereitliegt. Im Kontext steht beim Start nur ein kurzer Hinweis der Art: Wenn du das tun willst, lies diese Datei. Die Anleitung selbst lädt der Agent erst, wenn er sie braucht. Das spart Kontext. Wer in einer Sitzung keine E-Mail verschickt, liest den Skill dafür nicht. Würde man dem Agenten alles vorab beibringen, wäre das Fenster voll, bevor die Arbeit beginnt.
 
-Der [Planmodus](../Z-anhang/Z010-glossar.md#planmodus) ist eine Betriebsart, in der der Agent erst einen Plan vorlegt, statt zu handeln. Technisch ist auch das ein weiteres Stück Prompt: Der Harness sagt dem Modell, dass es jetzt planen und nicht ausführen soll. Den fertigen Plan legt er in einer Datei ab, und das Modell hakt die erledigten Schritte ab. Dass der Plan in einer Datei liegt und nicht nur im Gespräch, ist kein Zufall. Der Grund folgt im nächsten Abschnitt.
+Der [Planmodus](../Z-anhang/Z010-glossar.md#planmodus) ist eine Betriebsart, in der der Agent erst einen Plan vorlegt, statt zu handeln. Technisch steckt darin wieder ein Stück Prompt, aber nicht nur: Der Harness sagt dem Modell, dass es jetzt planen und nicht ausführen soll, und in Claude Code sperrt er zusätzlich das Ändern (Stand Oktober 2026). Den fertigen Plan legt er in einer Datei ab, und das Modell hakt die erledigten Schritte ab. Dass der Plan in einer Datei liegt und nicht nur im Gespräch, ist kein Zufall. Der Grund folgt im nächsten Abschnitt.
 
 ## Wenn das Fenster voll ist
 
@@ -66,13 +66,13 @@ Jetzt lässt sich die Regel begründen, mit der das Kapitel begonnen hat. Das Ge
 
 **Unterhaltung vergeht, Dateien bleiben.** Das Kontextfenster wird je Runde neu gefüllt und beim Zusammenfassen gekürzt. Was der Agent in eine Datei schreibt, bleibt im Projektordner und kommt bei Bedarf wieder in den Kontext.
 
-Daraus folgt eine Arbeitsweise. Haben Sie mit dem Agenten etwas erarbeitet, etwa die Anforderungen an eine Lagerverwaltung, dann lassen Sie es ihn in eine Datei schreiben. Schlägt er das nicht selbst vor, verlangen Sie es: „Schreib die Anforderungen in die Datei `anforderungen.md`.“ Das Schreiben ist ein gewöhnlicher Tool-Aufruf, Sie sehen ihn im Verlauf. Danach ist das Ergebnis gesichert, für morgen und für den Fall, dass der Agent abstürzt. Wie aus solchen Dateien ein Gedächtnis wird, in dem der Agent nur liest, was er braucht, zeigt der Teil [Wissen im Wiki](../D-wissen-im-wiki/D010-das-wiki.md).
+Daraus folgt eine Arbeitsweise. Haben Sie mit dem Agenten etwas erarbeitet, etwa die Anforderungen an eine Lagerverwaltung, dann lassen Sie es ihn in eine Datei schreiben. Schlägt er das nicht selbst vor, verlangen Sie es: „Schreib die Anforderungen in die Datei `anforderungen.md`.“ Das Schreiben ist ein gewöhnlicher Tool-Aufruf, Sie sehen ihn im Verlauf. Danach ist das Ergebnis gesichert, für morgen und für den Fall, dass der Agent abstürzt. Wie aus solchen Dateien ein Gedächtnis wird, in dem der Agent nur liest, was er braucht, zeigt der Teil [Wissen im Wiki](../D-wissen-im-wiki/README.md).
 
 ## Was jetzt klar sein sollte
 
 - Das Modell erinnert sich nicht. Der Harness legt ihm bei jeder Runde das ganze Gespräch neu vor, deshalb wächst der Prompt.
 - Das Kontextfenster ist begrenzt und wird in Tokens gemessen. Beim Start liegen schon Systemprompt, Tool-Beschreibungen, Skills und Instruktionsdatei darin; jede gelesene Datei kommt vollständig dazu.
-- Skills und Planmodus sind weitere Stücke Prompt. Skills sparen Kontext, weil sie erst bei Bedarf geladen werden.
+- Skills und Planmodus bringen weitere Stücke Prompt mit, der Planmodus sperrt in Claude Code zusätzlich das Ändern. Skills sparen Kontext, weil sie erst bei Bedarf geladen werden.
 - Ist das Fenster voll, wird abgeschnitten oder zusammengefasst. In beiden Fällen fehlt danach etwas.
 - Beobachten Sie das Fenster mit dem Befehl des Harness. Was Sie ausarbeiten, gehört in eine Datei.
 

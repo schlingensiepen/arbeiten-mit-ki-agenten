@@ -2,7 +2,7 @@
 
 > **Stand der Quellen:** [referenzprozess-softwareentwicklung](https://github.com/schlingensiepen/referenzprozess-softwareentwicklung) `release-2.0`, `docs/Begriffe.md`, `docs/Mehrere-Repos.md`, `MasterPrompt.md`; [peeragent](https://github.com/schlingensiepen/peeragent) `v0.2.0`, `docs/glossary.md`; [simple-a2a](https://github.com/schlingensiepen/simple-a2a) `v0.1.1`, `README.md`; [skill-a2a](https://github.com/schlingensiepen/skill-a2a) `v1.0.1`, `skills/a2a/SKILL.md`; [clawbook-lehre](https://github.com/schlingensiepen/clawbook-lehre) `main`, `docs/setup/kurs-dienste.md`; [proposals](https://github.com/schlingensiepen/proposals) `release/2026-11-02`, `README.md`.
 
-Die Wörter dieses Skripts in je ein bis drei Sätzen, alphabetisch. Jedes Kapitel verlinkt einen Fachbegriff beim ersten Auftreten hierher. Wer von hier kommt, findet die Definition; der Zusammenhang steht im Kapitel, das den Begriff einführt. Englische Fachwörter, die im Deutschen üblich sind, bleiben stehen und werden erklärt. Wo das Regelwerk ein anderes Wort benutzt als das Skript, steht es dabei.
+Die Wörter dieses Skripts in je ein bis drei Sätzen, alphabetisch. Die Kapitel verlinken wichtige Fachbegriffe bei ihrer Einführung hierher. Wer von hier kommt, findet die Definition; der Zusammenhang steht im Kapitel, das den Begriff einführt. Englische Fachwörter, die im Deutschen üblich sind, bleiben stehen und werden erklärt. Wo das Regelwerk ein anderes Wort benutzt als das Skript, steht es dabei.
 
 ## Ablösung
 
@@ -108,6 +108,10 @@ Die Festlegung darüber, welche Arten von Dingen es gibt und welche Attribute un
 
 Der naive Ansatz: je Schritt der Softwareentwicklung ein Dokument, jedes baut auf dem vorigen auf.
 
+## Einarbeiten
+
+Die Befunde einer Prüfung in das geprüfte Dokument übernehmen. Das tut der Agent, danach folgt der Re-Check.
+
 ## Einfrieren
 
 Der Inhalt eines Elements oder Dokuments wird ab einem Zeitpunkt nicht mehr geändert. Jede Änderung ergibt etwas Neues.
@@ -127,6 +131,14 @@ Weg einer Prüfung, die ein zweites Modell verlangt, wenn kein Werkzeug ein zwei
 ## Fassade
 
 Übersichtsdatei im Wiki, am Stück lesbar, je Thema genau eine.
+
+## Festlegung
+
+Etwas, das in einem Projekt gilt und nicht mehr offen ist. Inhaltliche Festlegungen trifft der Mensch; sie kommen als Entscheidung mit Nummer und Begründung ins Register.
+
+## Freezer
+
+Etwas, das einfriert. Das Freigabedokument ist Sammler und Freezer: Es stellt die Elemente einer Marke zusammen und friert sie als Ganzes ein.
 
 ## Freigabe
 
@@ -290,7 +302,7 @@ Wort des Regelwerks für einen Schritt des Gesamtprozesses, etwa Anforderungen s
 
 ## Planmodus
 
-Betriebsart, in der der Agent erst einen Plan vorlegt, statt zu handeln. Technisch ist das ein weiteres Stück Prompt.
+Betriebsart, in der der Agent erst einen Plan vorlegt, statt zu handeln. Der Harness sagt dem Modell, dass es planen soll, und sperrt in Claude Code das Ändern (Stand Oktober 2026).
 
 ## Postfach
 
@@ -319,6 +331,10 @@ Die Folge der Freigabedokumente einer Marke, in der jedes vor seiner Freigabe ge
 ## PWA
 
 Programm, das im Browser läuft und sich wie eine App auf dem Telefon installieren lässt.
+
+## Raster
+
+Marken als Zeilen, Phasen als Spalten, je Feld ein Freigabedokument. Aus der Dokumentenkette des naiven Ansatzes wird so ein Raster. Nicht gemeint ist das Antwort-Raster.
 
 ## Realm
 
@@ -363,6 +379,10 @@ Die Stellung eines Projekts in einem System: Standalone, Koordinator oder Kompon
 ## Rücklauf
 
 Nachricht des Koordinators an die betroffenen Komponenten, wenn eine Änderung seine Grundlagen betrifft, also Funktionsbeschreibung, Zuschnitt der Komponenten oder Übergabe. Die Freigabedokumente einer Komponente, die auf das alte Übergabe-Dokument verweisen, sind damit überholt.
+
+## Sammler
+
+Das Freigabedokument in seiner ersten Aufgabe: Es stellt die angenommenen Elemente einer Marke zusammen und verweist auf sie, ohne sie zu kopieren. Siehe Freezer.
 
 ## Schleuse
 

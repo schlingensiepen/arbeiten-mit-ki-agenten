@@ -36,7 +36,7 @@ Die Schritte aus der Dokumentenkette heißen im Regelwerk [Phasen](../Z-anhang/Z
 
 Die Kette für die Lagerverwaltung aus Teil B finden Sie darin wieder: Die Anforderungen sind P3, die Spezifikation ist P8, die Implementierung P9, der Test P10; Datenmodell und Abläufe verteilen sich auf das Beschreiben der Funktion und das Zerlegen in Bausteine. Phasen heißen nach der Tätigkeit, „Zerlegen in Bausteine“ statt „Zerlegung“, weil die Tätigkeit sagt, was getan wird, während ein Substantiv offen lässt, ob Ergebnis oder Handlung gemeint ist.
 
-Die Phasen sind ein Angebot, kein Zwang. Sie dürfen in beliebiger Reihenfolge arbeiten, eine Technologie ausprobieren, bevor die Bausteine feststehen, oder den Betrieb planen, bevor die Ausarbeitung fertig ist. Das Modell ist eine Checkliste: Der Agent fragt „Hast du das schon bedacht?“, und Sie antworten „ja, dort“, „nein, überspringen“ oder „machen wir jetzt“. Ein kleines Projekt lässt Phasen, die es nicht braucht, je Marke bewusst aus. Der Agent bucht das als [Verzicht](../Z-anhang/Z010-glossar.md#verzicht), damit das fehlende Dokument später nicht als Lücke gemeldet wird.
+Die Phasen sind ein Angebot, kein Zwang. Sie dürfen in beliebiger Reihenfolge arbeiten, eine Technologie ausprobieren, bevor die Bausteine feststehen, oder den Betrieb planen, bevor die Ausarbeitung fertig ist. Das Modell ist eine Checkliste: Der Agent fragt „Haben Sie das schon bedacht?“, und Sie antworten „ja, dort“, „nein, überspringen“ oder „machen wir jetzt“. Ein kleines Projekt lässt Phasen, die es nicht braucht, je Marke bewusst aus. Der Agent bucht das als [Verzicht](../Z-anhang/Z010-glossar.md#verzicht), damit das fehlende Dokument später nicht als Lücke gemeldet wird.
 
 ## Marken schneiden quer durch die Phasen
 

@@ -20,7 +20,7 @@ Zwei Wörter brauchen Sie dafür schon jetzt, ausführlich kommen sie später. E
 
 Der Kontext ist Arbeitsspeicher. Endet die Sitzung, ist er weg, und mit ihm alles, was nur im Gespräch stand. Die Dokumentenkette hatte dafür schon eine halbe Antwort: Die Dokumente lagen auf der Platte. Gefehlt hat alles andere, die Regeln, die Entscheidungen, wie weit die Arbeit ist. Die Forderung: Alles, was eine Sitzung überdauern soll, liegt als Datei im Projekt, und die nächste Sitzung findet es dort.
 
-Die Antwort darauf ist ein [Wiki](../Z-anhang/Z010-glossar.md#wiki) im Projektordner, Teil D. Die Vorlage sagt dazu, lebendes Wissen ändere sich dort fortlaufend, und genau das ist gewollt: Das Wiki ist der Ort, an dem das Wissen lebt, nicht der Chat.
+Die Antwort darauf gibt Teil D.
 
 ## 2. Der Agent liest nur, was er braucht
 
@@ -32,31 +32,31 @@ Auch das löst Teil D. Beide Forderungen zusammen heißen: Wissen auslagern, und
 
 Im Fall mit dem Storno wurde entschieden, nichts zu löschen. Diese Entscheidung stand nirgends, sie steckte im Datenmodell. Eine Sitzung später weiß niemand mehr, ob das Absicht war. Die Forderung hat zwei Hälften. Erstens: Jede Entscheidung wird aufgeschrieben, mit dem, was gewählt wurde, und warum. Zweitens: Entscheidungen trifft der Mensch. Der Agent schlägt vor, legt vor, führt aus, aber ob gelöscht oder deaktiviert wird, sagen Sie.
 
-Die Vorlage hält das durchgängig so. Wo eine Prüfung ein Urteil verlangt, bleibt es Prüfern oder Personen vorbehalten; der Agent fragt, und Sie entscheiden. Jede [Entscheidung](../Z-anhang/Z010-glossar.md#entscheidung) kommt mit Nummer, Wahl und Begründung in ein Register und wird nur noch durch eine neue Entscheidung abgelöst. Wie das Gespräch dabei aussieht, zeigt Teil E, das Register zeigt das Kapitel [Register und Elemente](../D-wissen-im-wiki/D040-register-und-elemente.md).
+Wie das Gespräch dabei aussieht, zeigt Teil E, wo die Entscheidungen stehen, zeigt das Kapitel [Register und Elemente](../D-wissen-im-wiki/D040-register-und-elemente.md).
 
 ## 4. Änderungen laufen nicht durch alles
 
 Das war der Bruch in Teil B: Eine Änderung berührte jedes Dokument hinter ihr, und bei zwei Versionen jedes Dokument zweimal. Die Forderung: Eine Änderung erzeugt etwas Neues, statt Bestehendes umzuschreiben, und sie betrifft nur das, wofür sie gilt.
 
-Die Vorlage tut dafür zweierlei. Sie schneidet die Arbeit nicht nach Schritten, sondern nach Marken: benannten Ergebnissen, die nach außen gehen, etwa Version 1.0 und Version 1.1. Und sie friert ein, worauf sich jemand verlassen soll: Aus dem lebenden Wissen wird ein eingefrorenes [Freigabedokument](../Z-anhang/Z010-glossar.md#freigabedokument) zu genau einer Marke. Ändert sich danach etwas, entsteht ein neues Dokument, das alte bleibt unverändert liegen. Ein Element, das ein älteres ablöst, gilt ab seiner Marke; für die Marken davor gilt das alte weiter. So gibt es keine Kopien, die auseinanderlaufen, sondern Fassungen, von denen jede sagt, wofür sie gilt. Das ist Teil F.
+Der Ansatz dafür heißt: nach Marken schneiden. Eine Änderung wird ein neues Element ab einer Marke, das alte gilt für die Marken davor weiter. Das nächste Kapitel führt das aus, Teil F setzt es um.
 
 ## 5. Arbeit läuft nebeneinander
 
 Die starre Reihenfolge der Kette verbot, an Version 2 zu arbeiten, während Version 1 noch lief, und sie verbot, beim Testen eine Anforderung nachzutragen. Die Forderung: Die Arbeitsweise erlaubt, in beliebiger Reihenfolge und an mehreren Stellen zugleich zu arbeiten, ohne dass die Verlässlichkeit verloren geht.
 
-Die Vorlage formuliert es so: Die Schritte ordnen Freigaben, nicht Arbeit. Ein Eintrag darf jederzeit entstehen und angenommen werden, sobald man ihn weiß; geordnet ist allein, in welcher Reihenfolge die Freigabedokumente freigegeben werden. Gearbeitet wird fließend und parallel. Das macht die Arbeit in Teil F parallelisierbar, und Teil H nimmt dann weitere Agenten hinzu, die nebeneinander arbeiten.
+Das macht die Arbeit in Teil F parallelisierbar, und Teil H nimmt dann weitere Agenten hinzu, die nebeneinander arbeiten.
 
 ## 6. Jemand prüft unabhängig
 
 Grün heißt nicht richtig, das war das Ende von Teil B. Die Forderung: Bevor sich jemand auf ein Ergebnis verlässt, prüft es jemand, der nicht mitgeschrieben hat, mit eigenem Kontext und möglichst mit einem anderen Modell. Und die Prüfung sperrt die Arbeit nicht, sie ist Voraussetzung dafür, dass man sich verlassen darf.
 
-Genau so hält es die Vorlage: Vor der Freigabe wird ein Dokument gegen seine Vorgänger geprüft, auf Widerspruch, auf Abdeckung und auf Unbegründetes, durch einen Prüfer mit einem anderen Modell als dem, das gebaut hat. Die Arbeit wird dabei nie gesperrt; nur die Freigabe setzt die Prüfung voraus. Das Kapitel [Prüfen](../G-der-gesamtprozess/G020-pruefen.md) zeigt, wie das mit Agenten geht.
+Das Kapitel [Prüfen](../G-der-gesamtprozess/G020-pruefen.md) zeigt, wie das mit Agenten geht.
 
 ## 7. Arbeitsmaterial und Ergebnis sind getrennt
 
 Am Ende von Teil B lag im Projektordner alles durcheinander. Die Forderung: Was man weitergibt, ist von dem getrennt, womit man arbeitet, und es entsteht aus dem Arbeitsmaterial nach einer festen Regel, nicht von Hand.
 
-Die Vorlage nennt den Ort der Arbeit [Werkstatt](../Z-anhang/Z010-glossar.md#werkstatt) und das Weitergegebene Produkt. Für Empfänger ohne Zugang zur Werkstatt entstehen aus den Freigabedokumenten Ableitungen, die für sich allein lesbar sind: vollständig neu erzeugt, nicht nachgepflegt, mit einem Kopf, der sagt, woraus sie stammen. Dieses Skript ist selbst so entstanden. Wie der Übergang von der Werkstatt ins Produkt geregelt ist, zeigt das Kapitel [Werkstatt, Produkt, Schleuse](../G-der-gesamtprozess/G030-werkstatt-produkt-schleuse.md).
+Das Skript nennt den Ort der Arbeit [Werkstatt](../Z-anhang/Z010-glossar.md#werkstatt) und das Weitergegebene Produkt. Es ist selbst so entstanden. Wie der Übergang von der Werkstatt ins Produkt geregelt ist, zeigt das Kapitel [Werkstatt, Produkt, Schleuse](../G-der-gesamtprozess/G030-werkstatt-produkt-schleuse.md).
 
 ## Was jetzt klar sein sollte
 

@@ -68,13 +68,13 @@ Das Kapitel [Werkstatt, Produkt, Schleuse](../G-der-gesamtprozess/G030-werkstatt
 
 Die sechs Ansätze sind zugleich der Fahrplan für den Rest des Skripts. Ab Teil D begleitet Sie dafür das zweite Beispiel, die Aufgabenverwaltung DONE.
 
-| Ansatz | Teil | Erstes Kapitel |
+| Ansatz | Teil | Kapitel |
 |---|---|---|
 | Wissen auslagern | D Wissen im Wiki | [Das Wiki](../D-wissen-im-wiki/D010-das-wiki.md) |
 | Entscheidungen beim Menschen | E Mensch und Agent | [Wer entscheidet was](../E-mensch-und-agent/E010-wer-entscheidet-was.md) |
 | Nach Marken schneiden | F Marken und Freigaben | [Marken](../F-marken-und-freigaben/F010-marken.md) |
 | Parallelisierbar machen | F, dazu H Mehrere Agenten | [Subagenten](../H-mehrere-agenten/H010-subagenten.md) |
-| Prüfen lassen | G Der Gesamtprozess | [Softwareentwicklung als Prozess](../G-der-gesamtprozess/G010-softwareentwicklung-als-prozess.md) |
+| Prüfen lassen | G Der Gesamtprozess | [Prüfen](../G-der-gesamtprozess/G020-pruefen.md) |
 | Das Produkt trennen | G Der Gesamtprozess | [Werkstatt, Produkt, Schleuse](../G-der-gesamtprozess/G030-werkstatt-produkt-schleuse.md) |
 
 ## Was jetzt klar sein sollte

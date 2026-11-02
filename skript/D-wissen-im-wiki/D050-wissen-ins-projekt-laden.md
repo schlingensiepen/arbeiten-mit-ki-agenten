@@ -17,11 +17,11 @@ Das Beispiel in diesem Kapitel ist die Sammlung [`proposals`](https://github.com
 Das Laden läuft beim [Einrichten](../Z-anhang/Z010-glossar.md#init) von selbst, wie im Kapitel [Ein Projekt aufsetzen](D035-ein-projekt-aufsetzen.md) beschrieben. Das Regelwerk nennt diesen Abschnitt Konzept-Angebot. Für DONE sieht er so aus:
 
 1. **Der Referenzprozess bringt die Sammlung mit.** Zum [Referenzprozess](../Z-anhang/Z010-glossar.md#referenzprozess) gehört ein [Register](../Z-anhang/Z010-glossar.md#register) der Sammlungen, darin steht `proposals`. Der Startprompt für DONE nennt die Sammlung deshalb nicht.
-2. **Der Agent sichtet und markiert.** Beim Einrichten sichtet er nur die Übersicht der Sammlung. Je Vorschlag markiert er, ob er für Ihr Projekt empfohlen, neutral oder nicht relevant ist. „Keine Empfehlung“ ist dabei ein gültiges Ergebnis.
+2. **Der Agent sichtet und markiert.** Beim Einrichten sichtet er nur die Übersicht der Sammlung, in der Regel durch einen [Subagenten](../Z-anhang/Z010-glossar.md#subagent), einen Hilfs-Agenten mit eigenem, frischem Kontext. Je Vorschlag markiert er, ob er für Ihr Projekt empfohlen, neutral oder nicht relevant ist. „Keine Empfehlung“ ist dabei ein gültiges Ergebnis.
 3. **Sie wählen aus.** Nichts ist Pflicht. Sie nehmen einzelne Vorschläge, sagen „später“, dann kommt das Angebot nach dem [Mission Statement](../Z-anhang/Z010-glossar.md#mission-statement) noch einmal, oder Sie übernehmen nichts.
 4. **Der Agent übernimmt das Gewählte.** Für jeden gewählten Vorschlag bucht er eine [Entscheidung](../Z-anhang/Z010-glossar.md#entscheidung) und legt eine Kopie ins Wiki, mit Herkunft und Datum. Dann schlägt er Einträge in den Registern vor. Sie entstehen erst, wenn Sie sie bestätigt haben.
 
-![Links stehen untereinander die Blöcke Startprompt und Konzept-Sammlung, zwischen ihnen gibt es keinen Pfeil. Von beiden führt je ein Pfeil zum Block Agent. Vom Agenten führt ein Pfeil Vorschlag zum Block Sie, von dort ein Pfeil Auswahl zurück. Vom Agenten führt ein Pfeil Übernahme in einen grauen Container Projekt mit den Blöcken Entscheidung, Kopie im Wiki und Einträge in Registern. Eine Legende ordnet die Farben zu: Eingang, Baustein, Ergebnis, neu in diesem Kapitel.](bilder/D050-wissen-laden.svg)
+![Links stehen untereinander die Blöcke Startprompt und Konzept-Sammlung, zwischen ihnen gibt es keinen Pfeil. Von beiden führt je ein Pfeil zum Block Agent. Vom Agenten führt ein Pfeil Vorschlag zum Block Sie, von dort ein Pfeil Auswahl zurück. Vom Agenten führt ein Pfeil Übernahme in einen grauen Container Projekt mit den Blöcken Entscheidung, Kopie im Wiki und Einträge in Registern.](bilder/D050-wissen-laden.svg)
 
 **Zwei Wege ins Projekt.** Der Startprompt beschreibt das Projekt, die Sammlung bringt der Referenzprozess mit. Ins Projekt kommt nur, was Sie aus dem Vorschlag des Agenten auswählen.
 
@@ -29,11 +29,11 @@ Im Projekt liegt danach mehr als ein Text: eine Entscheidung, wie Sie sie im Kap
 
 ## Ein Vorschlag als Beispiel
 
-Ein Vorschlag aus `proposals` heißt `one-operation-many-surfaces`. Seine Kernaussage: Jede Handlung gibt es genau einmal, alle Zugänge reichen nur durch. Das passt zu den fünf Zugängen von DONE, also Mobile-App, Desktop-App, Kommandozeilen-Werkzeug, MCP-Server und Messenger-Bot. Ein TODO anzulegen gäbe es dann an genau einer Stelle, und kein Zugang baut diese Handlung für sich noch einmal nach. Das ist nur ein Beispiel, die Empfehlung Ihres Agenten kann anders ausfallen.
+Ein Vorschlag aus `proposals` heißt `one-operation-many-surfaces`. Seine Kernaussage: Jede Handlung gibt es genau einmal, alle Zugänge reichen nur durch. Das passt zum Backend von DONE, auf dem alle Zugänge aufsetzen: Mobile-App, Desktop-App, Kommandozeilen-Werkzeug, MCP-Server und Messenger-Bot. Ein TODO anzulegen gäbe es dann an genau einer Stelle, und kein Zugang baut diese Handlung für sich noch einmal nach. Das ist nur ein Beispiel, die Empfehlung Ihres Agenten kann anders ausfallen.
 
 ## Einordnung
 
-- Die Vorschläge in `proposals` haben den Status Entwurf (Stand November 2026), und der Agent sagt Ihnen das dazu. Die Sammlung stellt sie zur Diskussion, als bewährt gelten sie damit noch nicht.
+- Die Vorschläge in `proposals` haben den Status Entwurf, und der Agent sagt Ihnen das dazu. Die Sammlung stellt sie zur Diskussion, als bewährt gelten sie damit noch nicht.
 - Wo mehrere Antworten richtig sind, entscheiden Sie. Der Agent legt Ihnen die Möglichkeiten vor, statt still eine zu wählen.
 - Eine Sammlung ist austauschbar. Das Register der Sammlungen gehört dem Projekt, und eine weitere Sammlung lässt sich beim Einrichten oder später nennen.
 

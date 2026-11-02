@@ -1,6 +1,6 @@
 # Die erste Sitzung
 
-> **Stand der Quellen:** keine gebundene Quelle; Angaben zu Werkzeugen gelten mit Stand Oktober 2026.
+> **Stand der Quellen:** [peeragent](https://github.com/schlingensiepen/peeragent) `v0.2.0`, `docs/harnesses.md`; weitere Angaben zu Werkzeugen gelten mit Stand Oktober 2026.
 
 > **Eine lokale Software führt aus, was ihr jemand aus dem Internet einflüstert. Da erkennt man, dass das nicht ohne Gefahr sein kann.**
 
@@ -37,7 +37,7 @@ Die [Vertrauensabfrage](../Z-anhang/Z010-glossar.md#vertrauensabfrage) ist die F
 
 **Richtung 2: Was im Ordner liegt.** Der Agent liest beim Start Dateien aus dem Ordner, allen voran die Instruktionsdatei aus dem Kapitel [Kontext](A020-kontext.md). Was dort steht, landet im Kontext und lenkt das Modell. Ein fremder Ordner kann also Anweisungen mitbringen, die Sie nicht geschrieben haben, dazu Skripte, die der Agent ausführen könnte. Gegen diese Richtung ist die Vertrauensabfrage gemacht. Vertrauen Sie dem Ordner, sagen Sie dem Agenten: Hier liegt nichts, was mich angreift.
 
-Die voreingestellte Antwort ist Nein. Für Ihren eigenen, gerade angelegten Ordner antworten Sie mit Ja. Für einen Ordner, den Sie aus dem Netz geladen haben und noch nicht kennen, sehen Sie sich erst an, was darin liegt. VS Code stellt beim Öffnen eines Ordners dieselbe Frage, aus demselben Grund.
+In Claude Code ist die Ablehnung vorgewählt (Stand Oktober 2026), andere Harnesses wählen anders. Für Ihren eigenen, gerade angelegten Ordner antworten Sie mit Ja. Für einen Ordner, den Sie aus dem Netz geladen haben und noch nicht kennen, sehen Sie sich erst an, was darin liegt. VS Code stellt beim Öffnen eines Ordners dieselbe Frage, aus demselben Grund.
 
 ## Die erste eigene Datei
 

@@ -39,7 +39,7 @@ Legen Sie einen leeren Ordner an und starten Sie darin Ihren Agenten. Wie das ge
 
 Der Agent wird keinen Code schreiben, sondern fragen. Antworten Sie, als wäre es Ihr Lager. Es gibt keine falschen Antworten, nur unbeantwortete Fragen. Wenn der Agent etwas vorschlägt, das Ihnen nicht passt, sagen Sie es. Wenn er etwas annimmt, statt zu fragen, weisen Sie ihn darauf hin. Wie dieses Gespräch läuft und worauf Sie dabei achten, zeigt [Anforderungen im Gespräch](../B-der-naive-ansatz/B010-anforderungen-im-gespraech.md).
 
-Statt des Satzes „Schreib noch keinen Code“ können Sie auch den [Planmodus](../Z-anhang/Z010-glossar.md#planmodus) Ihres Agenten einschalten. Er bewirkt dasselbe: Der Agent legt erst vor, statt zu handeln. Was das technisch ist, steht in [Kontext](../A-verstehen-und-loslegen/A020-kontext.md).
+Statt des Satzes „Schreib noch keinen Code“ können Sie auch den [Planmodus](../Z-anhang/Z010-glossar.md#planmodus) Ihres Agenten einschalten. Auch dann legt der Agent erst vor, statt zu handeln, und in Claude Code sperrt der Harness zusätzlich das Ändern (Stand Oktober 2026). Was das technisch ist, steht in [Kontext](../A-verstehen-und-loslegen/A020-kontext.md).
 
 ## Was danach kommt
 

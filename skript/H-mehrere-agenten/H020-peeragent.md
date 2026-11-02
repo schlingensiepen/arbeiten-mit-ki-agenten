@@ -1,6 +1,6 @@
 # peeragent
 
-> **Stand der Quellen:** [peeragent](https://github.com/schlingensiepen/peeragent) `v0.2.0`, `README.md`, `AGENTS.md`, `docs/cli.md`, `examples/quick-start.md`, `examples/task-file-template.md`, `skills/launch-peer-agent/SKILL.md`.
+> **Stand der Quellen:** [peeragent](https://github.com/schlingensiepen/peeragent) `v0.2.0`, `README.md`, `AGENTS.md`, `docs/cli.md`, `docs/install.md`, `examples/quick-start.md`, `examples/task-file-template.md`, `skills/launch-peer-agent/SKILL.md`.
 
 Der Subagent aus dem vorigen Kapitel endet mit seinem Auftrag und berichtet nur dem Agenten, der ihn gestartet hat. Manchmal wollen Sie etwas anderes: einen zweiten Agenten, der stundenlang neben Ihrem arbeitet, in einem eigenen Fenster, in das Sie hineinsehen und in dem Sie mit ihm reden können, während Ihre Sitzung weiterläuft. Im Beispiel DONE arbeitet Ihre Sitzung am Backend und am Wiki; die Kommandozeile könnte parallel entstehen. [peeragent](../Z-anhang/Z010-glossar.md#peeragent) ist ein kleines Kommandozeilen-Werkzeug, das genau das tut: Es startet einen zweiten Agenten als eigenen Prozess in einer eigenen [tmux](../Z-anhang/Z010-glossar.md#tmux)-Sitzung. Dieses Kapitel zeigt, wann ein zweiter Agent der richtige Weg ist, wie der Start abläuft und was der zweite Agent von Ihnen braucht, um arbeiten zu können.
 
@@ -28,11 +28,25 @@ Es braucht Linux oder WSL2 unter Windows, tmux ab Version 3.2 und Python ab 3.11
 
 Wer peeragent aufruft, ist offen: Sie selbst im Terminal, oder Ihr Agent, wenn Sie ihn darum bitten. Das Werkzeug ist für den zweiten Fall gebaut. Seine Ausgabe gibt es als Zeilen für Menschen und mit `--json` in einer Form, die ein Agent sicher lesen kann, und ein [Skill](../Z-anhang/Z010-glossar.md#skill) namens `launch-peer-agent` liegt bei, der dem Agenten die Pflichten beibringt, die weiter unten stehen.
 
-Installation und erste Probe:
+Die Installation:
 
 ```bash
 git clone https://github.com/schlingensiepen/peeragent.git
+mkdir -p ~/.claude/skills ~/.local/bin
 install -m 0755 peeragent/tools/peeragent.py ~/.local/bin/peeragent
+command -v peeragent
+```
+
+Die Zeile mit `mkdir -p` legt zwei Ordner an, die auf einem frischen Rechner fehlen können; ohne sie gehen die Installation hier und das Kopieren des Skills weiter unten schief. Die letzte Zeile zeigt, wo die Shell das Programm findet. Bleibt die Antwort leer, steht `~/.local/bin` noch nicht im Suchpfad der Shell; das ist je nach Linux-Distribution verschieden. Dann tragen Sie den Ordner in die Startdatei Ihrer Shell ein, in der bash so, in der zsh ebenso mit `~/.zshrc`:
+
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Dann die erste Probe:
+
+```bash
 peeragent version
 peeragent list harness
 ```

@@ -2,7 +2,7 @@
 
 Ein Skript für Studierende des ersten Semesters ohne Vorkenntnisse: wie man mit KI-Agenten arbeitet, warum ein Gespräch allein nicht trägt, und wie eine Arbeitsweise aussieht, die über Wochen, viele Sitzungen und mehrere Versionen hält. Es erklärt die Werkzeuge, die dazu gehören, und begründet, warum sie so gebaut sind, wie sie gebaut sind.
 
-Das Skript steht unter `skript/`, je Teil ein Ordner mit einem README und den Kapiteln. Es ist aus einer Werkstatt abgeleitet; jedes Kapitel nennt oben, aus welchen öffentlichen Quellen und welcher Version es stammt. Was nur für heute gilt, trägt ein Datum, etwa „Stand Oktober 2026“.
+Das Skript steht unter `skript/`, je Teil ein Ordner mit einem README und den Kapiteln. Es wird in einem getrennten Arbeitsprojekt erarbeitet und von dort hierher übertragen; jedes Kapitel nennt oben, aus welchen öffentlichen Quellen und welcher Version es stammt. Was nur für heute gilt, trägt ein Datum, etwa „Stand Oktober 2026“.
 
 ## Für wen
 
@@ -25,7 +25,7 @@ Drei Teile stehen außerhalb der Lesekette. Die Kapitel verweisen an der passend
 
 - [Teil X: Hintergrund](skript/X-hintergrund/README.md) erklärt, was hinter einem Begriff oder einer Regel steckt: wie Maschinen lernen, was Modellieren heißt, was Aufpasser-Modelle sind. Die Lesekette bleibt ohne ihn vollständig lesbar.
 - [Teil Y: Beispiele](skript/Y-beispiele/README.md) enthält die Startprompts der beiden Beispiele, die das Skript tragen, zum Nachmachen und zum Lesen.
-- [Teil Z: Anhang](skript/Z-anhang/README.md) enthält das Glossar. Jedes Kapitel verlinkt einen Fachbegriff beim ersten Auftreten dorthin.
+- [Teil Z: Anhang](skript/Z-anhang/README.md) enthält das Glossar. Die Kapitel verlinken wichtige Fachbegriffe bei ihrer Einführung dorthin.
 
 Die Kapitel der Lesekette setzen die vorherigen voraus; lesen Sie sie der Reihe nach. Jedes Kapitel beginnt mit der Zeile „Stand der Quellen“ und endet mit dem, was danach klar sein sollte, und dem Link zum nächsten Kapitel. Befehle stehen als kopierbare Codeblöcke.
 
@@ -38,7 +38,7 @@ Das Skript erklärt die folgenden Werkzeuge und zeigt sie am Beispiel. Es empfie
 - [clawbook-lehre](https://github.com/schlingensiepen/clawbook-lehre): ein fertig eingerichteter Arbeitsrechner für die Arbeit mit Agenten als Container-Image (Teil A).
 - [tmux-helper](https://github.com/schlingensiepen/tmux-helper): ein Windows-Programm, das tmux-Sitzungen entfernter Rechner auflistet und als Tabs öffnet (Teil A).
 - [peeragent](https://github.com/schlingensiepen/peeragent): startet einen zweiten Agenten als eigenen Prozess in einer tmux-Sitzung (Teil H).
-- [simple-a2a](https://github.com/schlingensiepen/simple-a2a): ein kleines Protokoll und ein Dienst, mit dem Agenten einander Nachrichten schicken (Teil H).
+- [simple-a2a](https://github.com/schlingensiepen/simple-a2a): ein kleiner Dienst, über den Agenten einander Nachrichten schicken (Teil H).
 - [skill-a2a](https://github.com/schlingensiepen/skill-a2a): der einfache Weg dazu, Nachrichten als Dateien auf demselben Rechner, als Skill für den Agenten (Teil H).
 
 ## Lizenz

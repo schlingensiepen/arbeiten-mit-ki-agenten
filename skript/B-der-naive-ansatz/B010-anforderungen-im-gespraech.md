@@ -18,7 +18,7 @@ Der Agent treibt vorwärts. Steht im [Prompt](../Z-anhang/Z010-glossar.md#prompt
 Ich möchte ein Lagerverwaltungsprogramm schreiben und dazu erst einmal die Anforderungen entwickeln. Schreib noch keinen Code, kläre erst mit mir, was das Programm können soll.
 ```
 
-Es gibt zwei Wege, dem Agenten das Bauen vorerst zu verbieten. Der erste steht im Satz oben: Sie sagen es ihm. Der zweite ist der [Planmodus](../Z-anhang/Z010-glossar.md#planmodus) aus dem Kapitel [Kontext](../A-verstehen-und-loslegen/A020-kontext.md): Darin legt der Agent erst einen Plan vor, statt zu handeln. Beides wirkt gleich, der Planmodus ist nur ein weiteres Stück Prompt, das der Harness für Sie schreibt. Ein vollständiger Startprompt für die Lagerverwaltung zum Nachmachen steht im Beispiel [Lagerverwaltung](../Y-beispiele/Y010-lagerverwaltung.md).
+Es gibt zwei Wege, dem Agenten das Bauen vorerst zu verbieten. Der erste steht im Satz oben: Sie sagen es ihm. Der zweite ist der [Planmodus](../Z-anhang/Z010-glossar.md#planmodus) aus dem Kapitel [Kontext](../A-verstehen-und-loslegen/A020-kontext.md): Darin legt der Agent erst einen Plan vor, statt zu handeln. Der Planmodus geht weiter als der Satz: Der Harness sagt dem Modell, dass es planen soll, und sperrt in Claude Code das Ändern (Stand Oktober 2026). Ein vollständiger Startprompt für die Lagerverwaltung zum Nachmachen steht im Beispiel [Lagerverwaltung](../Y-beispiele/Y010-lagerverwaltung.md).
 
 Warum erst reden? Weil der Agent nicht weiß, was Sie wollen. Er weiß, wie Lagerverwaltungen üblicherweise aussehen, und baut dann eine übliche. Ob die zu Ihrem Lager passt, erfährt er nur von Ihnen.
 

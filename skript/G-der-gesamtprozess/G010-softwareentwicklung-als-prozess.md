@@ -14,7 +14,7 @@ Bei Software ist das nicht anders, nur dass man die frühen Schritte leichter ü
 
 ## Die Phasen
 
-Das Regelwerk teilt die Arbeit in dreizehn [Phasen](../Z-anhang/Z010-glossar.md#phase). Jede Phase ist als Tätigkeit benannt, nicht als Zustand: „Anforderungen sammeln“, nicht „Anforderungsanalyse“. So ist klar, dass jemand etwas tut. Jede Phase hat ein Ergebnis, und das Ergebnis ist ein Dokument, das freigegeben werden kann. Die Phasen tragen das Präfix P und eine Nummer.
+Die dreizehn [Phasen](../Z-anhang/Z010-glossar.md#phase) kennen Sie aus dem Kapitel [Marken](../F-marken-und-freigaben/F010-marken.md). Neu ist hier die rechte Spalte: Jede Phase hat ein Ergebnis, und das Ergebnis ist ein Dokument, das freigegeben werden kann.
 
 | Phase | Tätigkeit | Ergebnis |
 |---|---|---|
@@ -34,17 +34,17 @@ Das Regelwerk teilt die Arbeit in dreizehn [Phasen](../Z-anhang/Z010-glossar.md#
 
 Diese Liste ist absichtlich nicht auf Software gemünzt. Die Vorlage, mit der Sie arbeiten, hat einen neutralen Kern, und ein [Referenzprozess](../Z-anhang/Z010-glossar.md#referenzprozess) belegt die Phasen für eine Projektart. Der Prozess für Softwareentwicklung, der in der Vorlage schon eingespielt ist, belegt sie so: Das Produkt aus P9 ist der Code mit seinen automatisierten Tests, die Spezifikation aus P8 ist so genau, dass sie ohne Fachwissen umsetzbar ist, und die Auslieferung aus P11 beschreibt je Zielumgebung, was ausgerollt wird. Andere Projektarten gibt es in der Vorlage als Steckbrief, etwa Rechtsfall, Publikation oder Hardwareentwicklung; sie sind zum Zeitpunkt dieses Skripts geplant, nicht ausgearbeitet (Stand Oktober 2026). Das ist der Punkt des Satzes am Anfang: Die Schritte sind dieselben, ob am Ende Code, ein Schriftsatz oder ein Gerät herauskommt.
 
-Die Phasen sind ein Angebot, kein Zwang. Sie dürfen in beliebiger Reihenfolge an ihnen arbeiten, etwa während der Architektur schon eine Technologie ausprobieren. Der Agent benutzt die Liste als Checkliste. Bei jedem Anlass fragt er: Haben Sie das schon bedacht? Darauf gibt es drei Antworten: Ja, das steht dort und dort, dann legt der Agent das Ergebnis mit dem Verweis ab. Nein, überspringen, dann vermerkt er die Phase als bewusst ausgelassen. Oder: Ja, machen wir jetzt.
+Die Phasen bleiben ein Angebot, die Liste ist die Checkliste aus dem Kapitel Marken. Neu ist, was aus Ihren drei Antworten wird: Ja, das steht dort und dort, dann legt der Agent das Ergebnis mit dem Verweis ab. Nein, überspringen, dann vermerkt er die Phase als bewusst ausgelassen. Oder: Ja, machen wir jetzt.
 
 ## Phasen ordnen Freigaben, nicht Arbeit
 
-Dieser Satz aus dem Kapitel [Freigabe von x für y](../F-marken-und-freigaben/F030-freigabe-von-x-fuer-y.md) ist der Schlüssel zum ganzen Prozess. Das Regelwerk kennt zwei Ordnungen, und sie sind verschieden.
+Dieser Satz aus dem Kapitel [Freigabe von x für y](../F-marken-und-freigaben/F030-freigabe-von-x-fuer-y.md) ist der Schlüssel zum ganzen Prozess. Er trennt zwei Ordnungen.
 
-Die Erarbeitung der [Elemente](../Z-anhang/Z010-glossar.md#element) ist ungeordnet. Eine Anforderung, eine Entscheidung, ein Testfall darf jederzeit entstehen und angenommen werden, sobald Sie es wissen. Eine Technologie-Entscheidung kann im Register stehen, bevor die Funktion fertig beschrieben ist. Die Phase ist kein Merkmal eines Elements.
+Die Erarbeitung der [Elemente](../Z-anhang/Z010-glossar.md#element) ist ungeordnet. Eine Technologie-Entscheidung kann im Register stehen, bevor die Funktion fertig beschrieben ist. Die Phase ist kein Merkmal eines Elements.
 
-Die Freigabe der [Freigabedokumente](../Z-anhang/Z010-glossar.md#freigabedokument) ist geordnet. Das Dokument einer Phase wird nach den Dokumenten der früheren Phasen derselben [Marke](../Z-anhang/Z010-glossar.md#marke) freigegeben. Jede [Freigabe](../Z-anhang/Z010-glossar.md#freigabe) nennt dabei ihren Zweck, und der Zweck ist die nächste Phase: Die Anforderungen werden freigegeben „für P4 Beschreiben der Funktion“, die Funktionsbeschreibung „für P5 Zerlegen in Bausteine“, die Spezifikation „für P9 Ausarbeiten“. Das Dokument, auf das Sie sich in der nächsten Phase stützen, steht damit fest, bevor die nächste Phase beginnt.
+Die Freigabe der [Freigabedokumente](../Z-anhang/Z010-glossar.md#freigabedokument) ist geordnet. Jede [Freigabe](../Z-anhang/Z010-glossar.md#freigabe) nennt dabei ihren Zweck, und der Zweck ist die nächste Phase: Die Anforderungen werden freigegeben „für P4 Beschreiben der Funktion“, die Funktionsbeschreibung „für P5 Zerlegen in Bausteine“, die Spezifikation „für P9 Ausarbeiten“. Das Dokument, auf das Sie sich in der nächsten Phase stützen, steht damit fest, bevor die nächste Phase beginnt.
 
-Fehlt ein früheres Dokument, etwa weil niemand die Architektur aufgeschrieben hat, blockiert der Agent nicht. Er warnt bei der nächsten Freigabe, und Sie entscheiden. Geben Sie trotzdem frei, nennt der Eintrag der Freigabe den fehlenden Vorgänger als Einschränkung. Eine Ausnahme gibt es: Der Testplan wird erst nach dem Git-Tag freigegeben. Was das ist, kommt jetzt.
+Fehlt ein früheres Dokument, blockiert der Agent nicht, er warnt, wie im Kapitel Freigabe von x für y beschrieben. Eine Ausnahme gibt es: Der Testplan wird erst nach dem Git-Tag freigegeben. Was das ist, kommt jetzt.
 
 ## Der Git-Tag: das Produkt in der Kette
 

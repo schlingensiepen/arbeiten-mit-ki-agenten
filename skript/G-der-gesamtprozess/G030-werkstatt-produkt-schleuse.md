@@ -44,9 +44,9 @@ Bei einem Repo gelten dieselben Regeln ohne die Grenze: Selbsttragende Dokumente
 
 ## Beispiel: DONE mit zwei Repos
 
-Stellen Sie sich vor, DONE soll veröffentlicht werden, die Arbeit daran nicht. Die Werkstatt ist das Repo, das Sie kennen: das Wiki mit den Anforderungen, den Entscheidungen, den Freigabedokumenten der Marke 1.0 und den Prüfberichten aus dem vorigen Kapitel. Das Produkt ist ein zweites Repo mit dem Backend, der Kommandozeile und den Tests; dort steht der Git-Tag der Marke 1.0. Dazu liegt dort das Handbuch: wie man DONE installiert, wie man ein TODO anlegt, delegiert und in Sichten findet. Der Agent hat es aus dem Wiki erzeugt, als die Beschreibung der Auslieferung für die Marke 1.0 freigegeben war, und Sie haben es nach einem Review freigegeben.
+Stellen Sie sich vor, DONE soll veröffentlicht werden, die Arbeit daran nicht. Die Werkstatt ist das Repo, das Sie kennen: das Wiki mit den Anforderungen, den Entscheidungen, den Freigabedokumenten der Marke 1.0 und den Prüfberichten aus dem vorigen Kapitel. Das Produkt ist ein zweites Repo mit dem Backend und den Tests; dort steht der Git-Tag der Marke 1.0. Dazu liegt dort das Handbuch: wie man DONE installiert, wie man ein TODO anlegt, delegiert und in Sichten findet. Der Agent hat es aus dem Wiki erzeugt, als die Beschreibung der Auslieferung für die Marke 1.0 freigegeben war, und Sie haben es nach einem Review freigegeben.
 
-Nun meldet ein Benutzer, dass im Handbuch ein Befehl der Kommandozeile falsch steht. Der Fehler wird nicht im Handbuch korrigiert. Er wird im Wiki behoben, dort, wo die Funktion beschrieben ist, und das Handbuch wird neu erzeugt und erneut freigegeben. Das Produkt-Repo zeigt danach genau eine saubere Änderung: Handbuch zur Marke 1.0, zweite Fassung. Die Diskussion, wie der Fehler entstand, bleibt in der Werkstatt.
+Nun meldet ein Benutzer, dass im Handbuch ein Aufruf der Schnittstelle falsch steht. Der Fehler wird nicht im Handbuch korrigiert. Er wird im Wiki behoben, dort, wo die Funktion beschrieben ist, und das Handbuch wird neu erzeugt und erneut freigegeben. Das Produkt-Repo zeigt danach genau eine saubere Änderung: Handbuch zur Marke 1.0, zweite Fassung. Die Diskussion, wie der Fehler entstand, bleibt in der Werkstatt.
 
 ## Was jetzt klar sein sollte
 

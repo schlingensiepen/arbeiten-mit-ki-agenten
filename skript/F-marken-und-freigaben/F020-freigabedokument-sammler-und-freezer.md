@@ -55,4 +55,4 @@ Die Freigabe gilt für genau dieses eingefrorene Dokument, und sie wird nicht zu
 - Es friert die Zusammenstellung ein. Ändert sich danach etwas, entsteht ein neues Dokument, das alte bleibt liegen.
 - Freigegeben wird nie das Register, sondern immer das Freigabedokument.
 
-Weiter mit [Freigabe von x für y](F030-freigabe-von-x-fuer-y.md).
+Weiter mit [Freigabe von x für y](F030-freigabe-von-x-fuer-y.md): Was „freigegeben für“ bedeutet und warum eine Freigabe immer einen Zweck nennt.

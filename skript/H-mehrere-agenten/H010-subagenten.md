@@ -64,7 +64,7 @@ Starte einen Subagenten. Sein Auftrag steht in auftrag.md, seinen Bericht schrei
 
 Was jetzt passiert: Der Hauptagent ruft das Tool für Subagenten auf und gibt ihm einen kurzen Prompt mit, der auf die beiden Dateien zeigt. Der Subagent liest `auftrag.md`, sucht, liest, verwirft, liest weiter, und schreibt `bericht.md`. Zurück kommt etwa: „Grün. Drei Fundstellen, die Methode unterscheidet terminierte Aufgaben im Kalender von allen anderen. Eine Stelle widerspricht, siehe Abschnitt Verlauf.“ Ihr Fenster ist um zwei kurze Texte gewachsen, um den Prompt und um die Rückmeldung. Alles, was der Subagent gelesen hat, ist nicht darin.
 
-Das Ergebnis ist eine Fremdaussage. Ob es in die Anforderungen von DONE eingeht, entscheiden Sie, nicht der Subagent und nicht der Hauptagent. Das Regelwerk hält diese Übernahme als Entscheidung fest, so wie es im Kapitel [Entscheiden im Gespräch](../E-mensch-und-agent/E020-entscheiden-im-gespraech.md) beschrieben ist.
+Das Ergebnis ist eine Fremdaussage. Ob es in die Anforderungen von DONE eingeht, entscheiden Sie, nicht der Subagent und nicht der Hauptagent. Das Regelwerk hält diese Übernahme als Entscheidung fest. Bis dahin ist das Ergebnis ein Nachweis, nicht die Wahrheit des Projekts, wie im Kapitel [Prüfen](../G-der-gesamtprozess/G020-pruefen.md) beschrieben.
 
 ## Von einem Agenten zu mehreren
 
