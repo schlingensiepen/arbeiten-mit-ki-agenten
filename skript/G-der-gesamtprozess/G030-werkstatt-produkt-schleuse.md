@@ -2,7 +2,7 @@
 
 > **Stand der Quellen:** [referenzprozess-softwareentwicklung](https://github.com/schlingensiepen/referenzprozess-softwareentwicklung) `release-2.0`, `docs/Mehrere-Repos.md`, `wiki/Two-Repo-Submodul-Muster.md`.
 
-Beim Aufsetzen eines Projekts stellt der Agent eine Frage, die im Kapitel [Ein Projekt aufsetzen](../D-wissen-im-wiki/D030-ein-projekt-aufsetzen.md) nur kurz vorkam: ein Repo mit allem oder ein zweites Repo für das Produkt? Für DONE fiel die Antwort auf ein Repo. Dieses Kapitel erklärt die andere Antwort. Sie löst ein Problem, das jedes Projekt irgendwann hat: Die Arbeit soll privat bleiben, das Ergebnis soll nach außen. Im Wiki stehen Entscheidungen, verworfene Wege, Notizen aus den Sitzungen, Prüfberichte. Das ist wertvoll, aber nicht für Außenstehende bestimmt. Der Code und sein Handbuch sollen dagegen öffentlich sein, mit einer Geschichte, die man vorzeigen kann.
+Beim Aufsetzen eines Projekts stellt der Agent eine Frage, die im Kapitel [Ein Projekt aufsetzen](../D-wissen-im-wiki/D035-ein-projekt-aufsetzen.md) nur kurz vorkam: ein Repo mit allem oder ein zweites Repo für das Produkt? Für DONE fiel die Antwort auf ein Repo. Dieses Kapitel erklärt die andere Antwort. Sie löst ein Problem, das jedes Projekt irgendwann hat: Die Arbeit soll privat bleiben, das Ergebnis soll nach außen. Im Wiki stehen Entscheidungen, verworfene Wege, Notizen aus den Sitzungen, Prüfberichte. Das ist wertvoll, aber nicht für Außenstehende bestimmt. Der Code und sein Handbuch sollen dagegen öffentlich sein, mit einer Geschichte, die man vorzeigen kann.
 
 ## Zwei Repos
 

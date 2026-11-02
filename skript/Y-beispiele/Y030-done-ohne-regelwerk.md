@@ -2,7 +2,7 @@
 
 > **Stand der Quellen:** keine gebundene Quelle. Der Prompt ist das Original, mit dem das Beispiel DONE begonnen hat, um einen Vornamen, einen lokalen Pfad und ein internes Werkzeug bereinigt.
 
-**Dieses Kapitel ist zum Lesen da, nicht zum Benutzen.** Wer DONE selbst aufsetzen will, nimmt den Prompt aus [DONE mit Referenzprozess](Y020-done-mit-referenzprozess.md). Der Prompt hier ist derselbe Auftrag ohne diesen kurzen Weg: der [Startprompt](../Z-anhang/Z010-glossar.md#startprompt), mit dem das Projekt DONE tatsächlich begonnen hat, in voller Länge. Er steht im Skript als Beleg. Er zeigt, was es kostet, einem [Agenten](../Z-anhang/Z010-glossar.md#agent) die ganze Arbeitsweise selbst zu erklären, und zwar in jedem Projekt von Neuem.
+**Dieses Kapitel ist zum Lesen da, nicht zum Benutzen.** Wer DONE selbst aufsetzen will, nimmt den Prompt aus [DONE mit Referenzprozess](Y040-done-mit-referenzprozess.md). Der Prompt hier ist derselbe Auftrag ohne diesen kurzen Weg: der [Startprompt](../Z-anhang/Z010-glossar.md#startprompt), mit dem das Projekt DONE tatsächlich begonnen hat, in voller Länge. Er steht im Skript als Beleg. Er zeigt, was es kostet, einem [Agenten](../Z-anhang/Z010-glossar.md#agent) die ganze Arbeitsweise selbst zu erklären, und zwar in jedem Projekt von Neuem.
 
 ## Was er zeigt
 
@@ -10,7 +10,7 @@ Lesen Sie den Prompt nicht Zeile für Zeile. Überfliegen Sie ihn und achten Sie
 
 **Erstens die Länge.** Rund dreihundert Zeilen, in einem Stück, als erste Nachricht an den Agenten. Der kurze Prompt kommt mit fünfundzwanzig Zeilen aus und richtet dasselbe Projekt ein.
 
-**Zweitens die Mischung.** Fachliches und Vorgehen wechseln sich ab, ohne Ordnung. Zwischen den Bestandteilen des Systems und den Regeln für Aufgaben, Tags und Sichten steht, wer wann prüft, wie Fragen zu stellen sind, wie weitere Agenten angelegt und benannt werden, wer einen Vertrag zwischen zwei Komponenten verantwortet, wie ein Testplan aufgebaut ist und welche Dokumente für Benutzer entstehen. All das ist Arbeitsweise. Nichts davon ist DONE. In [DONE mit Referenzprozess](Y020-done-mit-referenzprozess.md) fehlt dieser Teil vollständig, weil das Regelwerk ihn übernimmt. Was dort bleibt, das Projekt und sein fachlicher Kern, steckt auch hier drin, nur verteilt auf das Ganze.
+**Zweitens die Mischung.** Fachliches und Vorgehen wechseln sich ab, ohne Ordnung. Zwischen den Bestandteilen des Systems und den Regeln für Aufgaben, Tags und Sichten steht, wer wann prüft, wie Fragen zu stellen sind, wie weitere Agenten angelegt und benannt werden, wer einen Vertrag zwischen zwei Komponenten verantwortet, wie ein Testplan aufgebaut ist und welche Dokumente für Benutzer entstehen. All das ist Arbeitsweise. Nichts davon ist DONE. In [DONE mit Referenzprozess](Y040-done-mit-referenzprozess.md) fehlt dieser Teil vollständig, weil das Regelwerk ihn übernimmt. Was dort bleibt, das Projekt und sein fachlicher Kern, steckt auch hier drin, nur verteilt auf das Ganze.
 
 **Drittens die Haltbarkeit.** Der Prompt nennt Werkzeuge und Modelle beim Namen: ein Werkzeug für Recherchen, eines für Oberflächen, eines für die Prüfung von Code, dazu den Namen eines Modells. Er setzt Dinge voraus, die nur auf dem Rechner seines Verfassers so vorhanden waren. Ein solcher Prompt stimmt genau einmal. Beim nächsten Projekt haben sich die Werkzeuge geändert, und der Text muss neu geschrieben werden.
 
@@ -323,4 +323,4 @@ die gegeneinander abgewogen sind.
 - Der Teil, den nur der Mensch beisteuern kann, ist das Fachliche. Er ist in beiden Fassungen derselbe.
 - Der Rest ist Mechanik. Sie gehört in ein Regelwerk, das der Agent liest, nicht in jeden Prompt.
 
-Warum der naive Ansatz an diesem Aufwand und an anderem scheitert, begründet [Warum der naive Ansatz scheitert](../C-der-langfristige-ansatz/C010-warum-der-naive-ansatz-scheitert.md). Den Vergleich der beiden Prompts beim Aufsetzen zieht [Ein Projekt aufsetzen](../D-wissen-im-wiki/D030-ein-projekt-aufsetzen.md).
+Warum der naive Ansatz an diesem Aufwand und an anderem scheitert, begründet [Warum der naive Ansatz scheitert](../C-der-langfristige-ansatz/C010-warum-der-naive-ansatz-scheitert.md). Den Vergleich der beiden Prompts beim Aufsetzen zieht [Ein Projekt aufsetzen](../D-wissen-im-wiki/D035-ein-projekt-aufsetzen.md).

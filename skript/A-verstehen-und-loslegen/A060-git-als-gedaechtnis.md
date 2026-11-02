@@ -95,7 +95,7 @@ Im Container von clawbook ist `gh` installiert, und Sie haben sich beim ersten V
 
 ## Wie der Agent mit Git umgeht
 
-Alles bisher können Sie dem Agenten überlassen. „Sichere die Arbeit mit Git“ genügt, er kennt die Befehle. Nützlicher ist, wenn er es von selbst tut, und zwar nach festen Regeln. Solche Regeln stehen in einem [Regelwerk](../Z-anhang/Z010-glossar.md#regelwerk), den Dateien, die festlegen, wie ein Agent in einem Projekt arbeitet. Wie ein Regelwerk in ein Projekt kommt, zeigt das Kapitel [Ein Projekt aufsetzen](../D-wissen-im-wiki/D030-ein-projekt-aufsetzen.md). Was es für Git festlegt, lässt sich schon jetzt verstehen:
+Alles bisher können Sie dem Agenten überlassen. „Sichere die Arbeit mit Git“ genügt, er kennt die Befehle. Nützlicher ist, wenn er es von selbst tut, und zwar nach festen Regeln. Solche Regeln stehen in einem [Regelwerk](../Z-anhang/Z010-glossar.md#regelwerk), den Dateien, die festlegen, wie ein Agent in einem Projekt arbeitet. Wie ein Regelwerk in ein Projekt kommt, zeigt das Kapitel [Ein Projekt aufsetzen](../D-wissen-im-wiki/D035-ein-projekt-aufsetzen.md). Was es für Git festlegt, lässt sich schon jetzt verstehen:
 
 - **Ein Commit je Zug.** Ein Zug ist eine thematisch abgeschlossene Einheit aus mehreren Arbeitsschritten, etwa „Anforderungen überarbeitet“. Der Agent sichert nach jedem Zug, nicht erst am Ende, und bündelt keine drei Züge in einem Commit. So bleibt die Geschichte lesbar und jedes Zwischenergebnis erreichbar.
 - **Eine Nachricht mit Präfix.** Jede Commit-Nachricht beginnt mit einem Wort, das sagt, welcher Art die Änderung ist, dann ein Doppelpunkt und die Kurzbeschreibung. In der Geschichte sieht man so auf einen Blick, wo Dokumentation geändert wurde und wo Code.

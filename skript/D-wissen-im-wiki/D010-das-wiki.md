@@ -48,7 +48,7 @@ So lässt sich das Wiki auch verstehen: Es ist ein Weg, einen Agenten mit einem 
 
 ## Das Wiki kommt nicht leer
 
-Sie bauen kein Wiki, Sie füllen eines. Der Referenzprozess, mit dem im Kapitel [Ein Projekt aufsetzen](D030-ein-projekt-aufsetzen.md) ein Projekt beginnt, liefert ein vorbereitetes `wiki/` mit: alle Fassaden als Skelette, dazu die Regeln, nach denen der Agent sie pflegt. Zwei Hilfsdateien führt der Agent automatisch, einen Index aller Detail-Knoten und ein Protokoll aller Übernahmen; die bearbeiten Sie nicht.
+Sie bauen kein Wiki, Sie füllen eines. Der Referenzprozess, mit dem im Kapitel [Ein Projekt aufsetzen](D035-ein-projekt-aufsetzen.md) ein Projekt beginnt, liefert ein vorbereitetes `wiki/` mit: alle Fassaden als Skelette, dazu die Regeln, nach denen der Agent sie pflegt. Zwei Hilfsdateien führt der Agent automatisch, einen Index aller Detail-Knoten und ein Protokoll aller Übernahmen; die bearbeiten Sie nicht.
 
 Das Wiki ist dabei nur einer von mehreren Ordnern mit fester Rolle. Originale, die Sie hereingeben, liegen in `raw/` und werden nie verändert. Das Wiki lebt und ändert sich ständig. Was eingefroren und freigegeben wird, liegt in `output/`; darum geht es im Teil [Marken und Freigaben](../F-marken-und-freigaben/README.md).
 

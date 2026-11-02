@@ -4,5 +4,5 @@ Teil C hat begründet, warum das Wissen aus dem Gespräch heraus und auf die Pla
 
 1. [Das Wiki](D010-das-wiki.md)
 2. [Regelwerk und Sessionstart](D020-regelwerk-und-sessionstart.md)
-3. [Ein Projekt aufsetzen](D030-ein-projekt-aufsetzen.md)
+3. [Ein Projekt aufsetzen](D035-ein-projekt-aufsetzen.md)
 4. [Register und Elemente](D040-register-und-elemente.md)

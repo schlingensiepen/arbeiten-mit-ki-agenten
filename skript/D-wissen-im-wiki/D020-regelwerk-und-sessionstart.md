@@ -20,7 +20,7 @@ Die Festlegungen selbst, also was gilt und warum, stehen in keiner dieser drei D
 
 ## Der Sessionstart
 
-Jede Sitzung beginnt gleich, mit dem [Sessionstart](../Z-anhang/Z010-glossar.md#sessionstart). Beim allerersten Mal kommen die Schritte des Einrichtens hinzu; die stehen im Kapitel [Ein Projekt aufsetzen](D030-ein-projekt-aufsetzen.md). Danach läuft der Start so ab:
+Jede Sitzung beginnt gleich, mit dem [Sessionstart](../Z-anhang/Z010-glossar.md#sessionstart). Beim allerersten Mal kommen die Schritte des Einrichtens hinzu; die stehen im Kapitel [Ein Projekt aufsetzen](D035-ein-projekt-aufsetzen.md). Danach läuft der Start so ab:
 
 1. **Orientieren.** Der Agent prüft, ob ein Git-Repository da ist und ob Änderungen herumliegen, die noch in keinem Commit stehen; das meldet er, blockiert aber nicht. Er prüft seine Instruktionsdatei: vorhanden, vollständig, jünger als der MasterPrompt. Fehlende Standardordner legt er ohne Rückfrage an.
 2. **Kontext laden.** Nicht alles wird gelesen. Vollständig liest er die Instruktionsdatei, die Übersicht, welche Fassaden im Projekt aktiv sind, die Projektfakten, die Regeln für das Gespräch, offene Fragen, Fristen, die Werkzeugliste und Ihre offenen Punkte. In den Projektfakten haben die Stolpersteine Vorrang: Hinweise auf wiederkehrende Fehler des Agenten und heikle Sachverhalte, die immer sichtbar bleiben sollen. Die übrigen Fassaden und die Styleguides merkt er sich nur und liest sie, wenn er sie braucht. Das Mission Statement liest er nicht, es ist für Menschen geschrieben. Und auch der geladene Kontext ersetzt das Nachschlagen nicht: Vor einer Behauptung schlägt er im Wiki nach.
@@ -59,4 +59,4 @@ In `Tools.md` stehen außerdem die Werkzeug-Wahlen des Projekts: Erweiterungen w
 - Die Arbeit läuft in Zügen mit je einem Commit, mit Abschluss-Commit am Ende, damit jederzeit jemand anderes übernehmen könnte.
 - Ein Werkzeug statt einer Handarbeit spart Kontext und bleibt dem Projekt erhalten.
 
-Weiter mit [Ein Projekt aufsetzen](D030-ein-projekt-aufsetzen.md): wie aus einem leeren Ordner und einem Satz ein Projekt mit Regelwerk und Wiki wird.
+Weiter mit [Ein Projekt aufsetzen](D035-ein-projekt-aufsetzen.md): wie aus einem leeren Ordner und einem Satz ein Projekt mit Regelwerk und Wiki wird.
