@@ -61,4 +61,4 @@ Mit Elementen ist es genauso. Nehmen Sie an, für DONE gilt in Marke 2.0 die Anf
 - Festlegen heißt jetzt entscheiden, Vertagen heißt eine Idee mit Auslöser anlegen, und eine gute Entscheidung nennt ihren Preis.
 - Geändert wird durch Ablösen, aufgegeben durch Verwerfen. Gelöscht wird nichts, damit alles, was sich auf ein Element bezieht, gültig bleibt.
 
-Weiter mit [Wer entscheidet was](../E-mensch-und-agent/E010-wer-entscheidet-was.md): welche Entscheidungen der Agent selbst trifft und welche nur Sie treffen können.
+Weiter mit [Wissen ins Projekt laden](D050-wissen-ins-projekt-laden.md): wie neben dem Startprompt aufbereitetes Wissen aus einer Sammlung ins Projekt kommt.

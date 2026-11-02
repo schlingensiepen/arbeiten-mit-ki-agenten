@@ -1,6 +1,6 @@
 # simple-a2a
 
-> **Stand der Quellen:** [skill-a2a](https://github.com/schlingensiepen/skill-a2a) `v1.0.0`, `README.md`, `skills/a2a/SKILL.md`, `skills/a2a/invitation.md`; [simple-a2a](https://github.com/schlingensiepen/simple-a2a) `v0.1.1`, `README.md`, `docs/quick-start.md`, `mcp/README.md`, `src/simple_a2a/describe/texts/messaging/guide.md`, `src/simple_a2a/describe/texts/admin/realms.md`.
+> **Stand der Quellen:** [skill-a2a](https://github.com/schlingensiepen/skill-a2a) `v1.0.1`, `README.md`, `AGENTS.md`, `skills/a2a/SKILL.md`, `skills/a2a/invitation.md`; [simple-a2a](https://github.com/schlingensiepen/simple-a2a) `v0.1.1`, `README.md`, `docs/quick-start.md`, `mcp/README.md`, `src/simple_a2a/describe/texts/messaging/guide.md`, `src/simple_a2a/describe/texts/admin/realms.md`.
 
 Zwei Agenten aus dem vorigen Kapitel laufen nebeneinander, aber keiner weiß vom anderen. Im Beispiel DONE müssen der Agent des Backends und der Agent der Kommandozeile die Schnittstelle abstimmen: welche Befehle es gibt, welche Daten hin- und hergehen. Wenn Sie das selbst übertragen, aus dem einen Fenster kopieren und in das andere einfügen, kostet das Ihre Zeit und Ihr Fenster. Dass Agenten miteinander reden, ist wieder ein Mechanismus, das eigene Fenster zu schonen. Dieses Kapitel zeigt, wie Agenten einander Nachrichten schicken. Zuerst die Wörter, dann der einfache Weg mit Nachrichten als Dateien, dann seine Grenze, und schließlich der kleine Dienst [simple-a2a](../Z-anhang/Z010-glossar.md#simple-a2a), der diese Grenze aufhebt.
 
@@ -43,12 +43,24 @@ Drei Regeln gelten immer. Ein Agent legt nie das Postfach eines anderen an; fehl
 
 Ihre Sitzung arbeitet am Backend, ein zweiter Agent soll an der Kommandozeile arbeiten. Die Reihenfolge zählt: erst der Skill, dann die Einladung, zuletzt der Start des zweiten Agenten. Er bekommt die Einladung mit seinem Auftrag; was erst nach seinem Start dort steht, sagt ihm niemand.
 
-**Schritt 1: Skill installieren.** Sie kopieren das Verzeichnis `skills/a2a/` des Repos dorthin, wo Ihr Harness nach Skills sucht, für Claude Code also nach `~/.claude/skills/a2a/`. Beide Agenten laufen unter demselben Benutzerkonto, einmal genügt also. Die Skripte müssen dabei ausführbar bleiben, `cp -r` lässt sie so. Ein Harness ohne Skills bekommt den Pfad zur Datei `SKILL.md` genannt.
+**Schritt 1: Skill installieren lassen.** Das Repo enthält mit der Datei `AGENTS.md` eine Anleitung für den Agenten selbst, und seine README nennt diesen Weg zuerst. Sie brauchen nur einen Prompt:
+
+```text
+Lade den Skill von github.com/schlingensiepen/skill-a2a und installiere ihn für alle deine Projekte.
+```
+
+Der Agent holt das Repo, kopiert das Verzeichnis `skills/a2a/` dorthin, wo sein Harness nach Skills sucht, für Claude Code also nach `~/.claude/skills/a2a/`, macht die Skripte ausführbar und lässt die Tests des Repos laufen. Sie enden mit `… passed, 0 failed`. „Für alle deine Projekte“ steht im Prompt, weil die Anleitung ihn sonst danach fragen lässt, bevor er an einen Ort installiert, der für alle Ihre Projekte gilt. Hier ist das richtig: Der zweite Agent arbeitet in einem anderen Verzeichnis. Beide laufen unter demselben Benutzerkonto, einmal genügt also. Ein Harness ohne Skills legt das Verzeichnis an einen Ort, den er wiederfindet, und bekommt den Pfad zur Datei `SKILL.md` in seiner Instruktionsdatei genannt.
+
+Von Hand geht es so; die letzte Zeile macht die Skripte ausführbar:
 
 ```bash
 git clone https://github.com/schlingensiepen/skill-a2a.git
-cp -r skill-a2a/skills/a2a ~/.claude/skills/
+mkdir -p ~/.claude/skills
+cp -R skill-a2a/skills/a2a ~/.claude/skills/a2a
+chmod 755 ~/.claude/skills/a2a/scripts/a2a-send ~/.claude/skills/a2a/scripts/a2a-watch
 ```
+
+Für eine neue Version löschen Sie vorher das alte Verzeichnis, sonst legt `cp -R` das neue als `a2a/a2a` hinein.
 
 **Schritt 2: Einladung schreiben lassen.** Sie sagen dem ersten Agenten:
 

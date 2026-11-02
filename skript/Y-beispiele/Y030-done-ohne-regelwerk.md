@@ -8,7 +8,7 @@
 
 Lesen Sie den Prompt nicht Zeile für Zeile. Überfliegen Sie ihn und achten Sie auf drei Dinge.
 
-**Erstens die Länge.** Rund dreihundert Zeilen, in einem Stück, als erste Nachricht an den Agenten. Der kurze Prompt kommt mit fünfundzwanzig Zeilen aus und richtet dasselbe Projekt ein.
+**Erstens die Länge.** Rund dreihundert Zeilen, in einem Stück, als erste Nachricht an den Agenten. Der kurze Prompt kommt mit fünfzehn Zeilen aus und richtet dasselbe Projekt ein.
 
 **Zweitens die Mischung.** Fachliches und Vorgehen wechseln sich ab, ohne Ordnung. Zwischen den Bestandteilen des Systems und den Regeln für Aufgaben, Tags und Sichten steht, wer wann prüft, wie Fragen zu stellen sind, wie weitere Agenten angelegt und benannt werden, wer einen Vertrag zwischen zwei Komponenten verantwortet, wie ein Testplan aufgebaut ist und welche Dokumente für Benutzer entstehen. All das ist Arbeitsweise. Nichts davon ist DONE. In [DONE mit Referenzprozess](Y040-done-mit-referenzprozess.md) fehlt dieser Teil vollständig, weil das Regelwerk ihn übernimmt. Was dort bleibt, das Projekt und sein fachlicher Kern, steckt auch hier drin, nur verteilt auf das Ganze.
 
