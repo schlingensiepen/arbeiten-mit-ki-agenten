@@ -50,6 +50,10 @@ Der Agent liest die Anleitung, bindet die Vorlage ein, kopiert die Projektdateie
 
 Wenn Sie den Prompt für ein eigenes Projekt nehmen, ändern Sie die Beschreibung. Startsatz und Erlaubnis bleiben, ebenso der Schlusssatz, dass der Agent fachlich nachfragen soll. Alles ab „Das Projekt“ schreiben Sie für Ihr Vorhaben neu. Den Satz zum Koordinator nehmen Sie nur auf, wenn Ihr Projekt ebenfalls in mehrere Projekte zerfallen soll.
 
+## Durchgespielt
+
+Dieser Prompt ist gegen die öffentliche Vorlage durchgespielt worden, von einem Agenten, der die Antworten selbst gegeben hat (Stand November 2026). Das Projekt stand danach als Koordinator, die Prüfung mit dem Lint lief ohne Befund, und die Sammlung ließ sich ohne Anmeldung laden. Fachliche Fragen aus dem Prompt blieben offen, sie sammelte der Agent in `TODO.md`. Sie brauchen dabei mehr Geduld als im Durchlauf, denn Sie beantworten die Fragen selbst, und der Agent braucht Ihre Zustimmung zu seinen Befehlen.
+
 ## Was jetzt klar sein sollte
 
 - Ein Startprompt mit Referenzprozess hat drei Teile: den Startsatz, die Erlaubnis zum Ausführen und die Beschreibung des Projekts.
