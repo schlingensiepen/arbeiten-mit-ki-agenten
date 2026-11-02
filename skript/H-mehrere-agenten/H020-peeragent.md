@@ -49,7 +49,7 @@ Andere Harnesses bekommen den Pfad zur Datei `SKILL.md` genannt und lesen sie al
 
 Dasselbe Prinzip wie beim Subagenten, nur strenger. Der zweite Agent weiß nichts von Ihrem Projekt, Ihrer Sitzung und Ihnen. Alles, was er braucht, steht in einer Auftragsdatei in seinem Arbeitsverzeichnis. Der Prompt, den er beim Start bekommt, zeigt nur darauf. peeragent erzwingt das: Ein Startprompt über 120 Zeichen wird abgewiesen, bevor irgendetwas startet. Absolute Pfade zählen dabei nicht mit, der Zeiger auf die Datei kostet also nichts.
 
-Die Gründe sind handfest. Drei der fünf Harnesses bekommen den Prompt als Argument auf der Befehlszeile, wo ihn jeder Benutzer des Rechners in der Prozessliste lesen kann. Ein langer Prompt ist außerdem aus dem Blick, sobald der Bildschirm weitergescrollt ist. Eine Datei dagegen lässt sich versionieren, erneut lesen und beim nächsten Start wieder verwenden.
+Die Gründe sind handfest. Der Harness bekommt den Prompt als Argument auf der Befehlszeile, wo ihn jeder Benutzer des Rechners in der Prozessliste lesen kann. Ein langer Prompt ist außerdem aus dem Blick, sobald der Bildschirm weitergescrollt ist. Eine Datei dagegen lässt sich versionieren, erneut lesen und beim nächsten Start wieder verwenden.
 
 Die Vorlage für die Auftragsdatei hat fünf Abschnitte, und jeder steht dort, weil ohne ihn ein gestarteter Agent schon einmal schiefgegangen ist:
 
@@ -61,13 +61,24 @@ Die Vorlage für die Auftragsdatei hat fünf Abschnitte, und jeder steht dort, w
 
 Dazu kommt die Angabe, wo Sie selbst sind: Rechner, Benutzerkonto, Verzeichnis. Dateien in beide Richtungen brauchen alle drei.
 
-Für DONE sieht die Auftragsdatei im Arbeitsverzeichnis der Kommandozeile so aus; die Pfade ersetzen Sie durch Ihre:
+## Vorbereiten, Schritt für Schritt
 
-```markdown
+Im Beispiel DONE braucht der zweite Agent drei Dinge: ein eigenes Arbeitsverzeichnis, die Auftragsdatei und den Startprompt. Alle Pfade liegen in Ihrem Home-Verzeichnis. Dieses Beispiel nimmt an, dass Ihr Projekt DONE in `~/source/sandbox/done` liegt; liegt es anderswo, ändern Sie den Pfad im Auftrag.
+
+**Schritt 1: Ordner anlegen.** `done-cli` ist das Arbeitsverzeichnis der Kommandozeile, `austausch/done-cli` der Ordner, in dem Sie und der zweite Agent einander schreiben. Er liegt außerhalb des Projekts.
+
+```bash
+mkdir -p ~/source/sandbox/done-cli ~/austausch/done-cli
+```
+
+**Schritt 2: Auftragsdatei schreiben.** Der Befehl `cat > Datei <<EOF` schreibt alle folgenden Zeilen bis zur Zeile `EOF` in die Datei. `$HOME` ersetzt die Shell dabei durch den vollen Pfad Ihres Home-Verzeichnisses. So stehen in der Datei absolute Pfade, also Pfade, die mit `/` beginnen. Sie gelten von jedem Verzeichnis aus, und im Startprompt kosten nur sie keine Zeichen. Die Tilde `~` beginnt nicht mit `/` und zählt dort mit.
+
+```bash
+cat > ~/source/sandbox/done-cli/AUFTRAG.md <<EOF
 # Auftrag: Kommandozeile für DONE bauen
 
 ## So erreichst du mich
-Ordner /srv/austausch/done-cli/. Du schreibst status.md und
+Ordner $HOME/austausch/done-cli/. Du schreibst status.md und
 überschreibst sie bei jeder Meldung. Ich schreibe antwort.md.
 Ich lese alle dreißig Minuten.
 
@@ -75,25 +86,32 @@ Ich lese alle dreißig Minuten.
 Wenn die Schritte unter Einrichten erledigt sind, schreibe die
 Zeile BEREIT nach status.md, bevor du mit der Arbeit beginnst.
 Nenne dabei das Verzeichnis, in dem du dich tatsächlich befindest.
+Es soll $HOME/source/sandbox/done-cli sein.
 
 ## Einrichten
-- Lies die Instruktionsdatei und führe den Sessionstart aus.
-- Lass die Tests laufen. Sind sie nicht grün, melde das und stoppe.
+- Lies die Instruktionsdatei von DONE in
+  $HOME/source/sandbox/done/. Ändere dort nichts.
+- Gibt es in deinem Verzeichnis schon Tests, lass sie laufen.
+  Sind sie nicht grün, melde das und stoppe.
 
 ## Die Arbeit
 Baue die Kommandozeile für DONE nach dem freigegebenen
-Freigabedokument der ersten Marke in output/. Die Schnittstelle
-zum Backend steht dort; ändere sie nicht.
+Freigabedokument der ersten Marke in
+$HOME/source/sandbox/done/output/. Die Schnittstelle zum Backend
+steht dort; ändere sie nicht.
 
 ## Umfang und Ende
 Nur die Kommandozeile, nichts am Backend. Stoppe, wenn alle Tests
 grün sind, und melde das in status.md.
+EOF
 ```
 
-Der Startprompt daneben, in einer eigenen Datei:
+**Schritt 3: Startprompt schreiben.** Er kommt in eine eigene Datei neben dem Auftrag:
 
-```text
-Lies /srv/done-cli/AUFTRAG.md und führe den Auftrag aus. Nur die Kommandozeile, dann stoppen und in /srv/austausch/done-cli/status.md melden.
+```bash
+cat > ~/source/sandbox/done-cli/.peeragent-prompt.txt <<EOF
+Lies $HOME/source/sandbox/done-cli/AUFTRAG.md und führe den Auftrag aus. Nur die Kommandozeile, dann stoppen und in $HOME/austausch/done-cli/status.md melden.
+EOF
 ```
 
 Ohne die beiden Pfade sind das rund achtzig Zeichen, weit innerhalb der Grenze.
@@ -101,7 +119,7 @@ Ohne die beiden Pfade sind das rund achtzig Zeichen, weit innerhalb der Grenze.
 ## Der Start und der erste Bildschirm
 
 ```bash
-peeragent start agent --folder /srv/done-cli --harness claude --prompt-file /srv/done-cli/.peeragent-prompt.txt
+peeragent start agent --folder ~/source/sandbox/done-cli --harness claude --prompt-file ~/source/sandbox/done-cli/.peeragent-prompt.txt
 ```
 
 `--folder` ist das Arbeitsverzeichnis des zweiten Agenten, und es ist keine Nebensache. Der gestartete Harness erbt nichts vom Aufrufer, weder dessen aktuelles Verzeichnis noch den Ort der Prompt-Datei. Von diesem Pfad hängt ab, was der Agent sieht, worauf sich seine Vertrauensabfrage bezieht, wo sein Gesprächsverlauf gespeichert wird und wie die tmux-Sitzung heißt. Nennen Sie das Projektverzeichnis selbst, nie den Ordner darüber: Dann meldet nichts einen Fehler, aber alles sitzt eine Ebene zu hoch.
@@ -134,7 +152,7 @@ tmux capture-pane -t "=peeragent-done-cli-claude-1a2b3c4d:" -p
 Steht der Prompt dort und arbeitet der Harness, sind Sie fertig. Nur wenn die Eingabezeile leer ist und der Prompt nirgends zu sehen, wurde er nicht übernommen. Dann, und nur dann, reichen Sie ihn nach:
 
 ```bash
-peeragent send --session peeragent-done-cli-claude-1a2b3c4d --prompt-file /srv/done-cli/.peeragent-prompt.txt
+peeragent send --session peeragent-done-cli-claude-1a2b3c4d --prompt-file ~/source/sandbox/done-cli/.peeragent-prompt.txt
 ```
 
 Ein zweimal zugestellter Prompt heißt: Der Auftrag wird zweimal ausgeführt. peeragent meldet ausdrücklich, wenn ein Prompt nicht zugestellt wurde; `send` gehört nur hinter diese Meldung.
@@ -166,7 +184,7 @@ Einige Regeln aus der Dokumentation, die sich bewährt haben:
 Einen Harness in einer tmux-Sitzung können Sie auch von Hand starten:
 
 ```bash
-tmux new-session -d -s done-cli -c /srv/done-cli claude
+tmux new-session -d -s done-cli -c ~/source/sandbox/done-cli claude
 ```
 
 peeragent lohnt sich, wenn Sie die einheitliche, maschinenlesbare Meldung über den ersten Bildschirm, seine Einordnung und das Protokoll je Aufruf wollen, also vor allem dann, wenn ein Agent den zweiten startet. Die Pflichten von oben, Auftragsdatei, Meldung nach dem Einrichten, Sitzungsname an den Menschen, gelten so oder so.

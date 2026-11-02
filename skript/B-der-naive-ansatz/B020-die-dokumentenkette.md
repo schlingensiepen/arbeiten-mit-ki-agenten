@@ -6,11 +6,11 @@
 
 Das Datenmodell einer Software beschreibt den Zustand der Welt, in unserem Beispiel also den Bestand des Lagers. Dafür alleine bezahlt aber niemand, der eine Software kauft. Bezahlt wird der Weg von einem Zustand in den nächsten, in unserem Fall das Einlagern, Auslagern und Reportieren. Denn Software soll ja genau Arbeitsabläufe unterstützen.
 
-Im vorigen Kapitel ist eine Datei entstanden: die Anforderungen an die Lagerverwaltung. Zwischen dieser Datei und dem fertigen Programm liegen weitere Schritte, und der naive Ansatz macht aus jedem Schritt ein Dokument. Diese Folge von Dokumenten, jedes auf dem vorigen aufgebaut, heißt [Dokumentenkette](../Z-anhang/Z010-glossar.md#dokumentenkette). Dieses Kapitel zeigt, woher die Kette kommt und wie sie für die Lagerverwaltung aussieht. Die beiden folgenden Kapitel gehen sie ab.
+Im vorigen Kapitel ist eine Datei entstanden: `anforderungen.md`, die Anforderungen an die Lagerverwaltung. Zwischen dieser Datei und dem fertigen Programm liegen weitere Schritte, und der naive Ansatz macht aus jedem Schritt ein Dokument. Diese Folge von Dokumenten, jedes auf dem vorigen aufgebaut, heißt [Dokumentenkette](../Z-anhang/Z010-glossar.md#dokumentenkette). Dieses Kapitel zeigt, woher die Kette kommt und wie sie für die Lagerverwaltung aussieht. Die beiden folgenden Kapitel gehen sie ab.
 
 ## Zustand und Ablauf
 
-Bevor die Kette kommt, eine Grundfigur, die Sie in jedem ihrer Dokumente wiederfinden: Es gibt einen Zustand der Welt, dann läuft etwas ab, dann gibt es einen neuen Zustand. Im Lager: Es liegen zehn Pakete im Fach, jemand lagert drei aus, es liegen sieben Pakete im Fach. Auf Papier ist das dasselbe mit einem Lagerbuch oder einer Karteikarte: Der Eintrag ist der Zustand, das Umschreiben ist der Ablauf.
+Bevor die Kette kommt, eine Grundfigur, die Sie in jedem ihrer Dokumente wiederfinden: Es gibt einen Zustand der Welt, dann läuft etwas ab, dann gibt es einen neuen Zustand. Im Lager: Es liegen zehn Pakete am Lagerort, jemand lagert drei aus, es liegen sieben Pakete am Lagerort. Auf Papier ist das dasselbe mit einem Lagerbuch oder einer Karteikarte: Der Eintrag ist der Zustand, das Umschreiben ist der Ablauf.
 
 Software bildet beides ab. Das Datenmodell aus dem vorigen Kapitel beschreibt den Zustand: Artikel, Lagerorte, Bestände. Die Abläufe sind die Funktionen, die von einem Zustand in den nächsten führen: Einlagern, Auslagern, Auswerten. Dabei wählt man den Ausschnitt der Realität so, dass er handhabbar bleibt. Für die Lagerverwaltung reichen die Artikelnummer und ein paar Eigenschaften, die Farbe der Verpackung interessiert niemanden.
 
@@ -35,13 +35,27 @@ Für das Beispiel genügen fünf Schritte, jeder ein eigenes Dokument im Projekt
 
 **Die Dokumentenkette der Lagerverwaltung.** Je Schritt ein Dokument, jedes baut auf dem vorigen auf, und der Agent schreibt jedes aus dem vorigen.
 
-1. **Anforderungen.** Die Datei aus dem vorigen Kapitel.
-2. **Datenmodell und Abläufe.** Artikel, Lagerort, Bestand, Bewegung, und die Abläufe Einlagern, Auslagern, Auswerten. Das ist die Grundfigur von oben, aufgeschrieben.
-3. **Spezifikation.** Die Bauanleitung: welche Befehle es gibt, was jeder Befehl prüft, was er verändert, was er ausgibt.
-4. **Implementierung.** Der Quelltext. Er ist auch nur ein Satz Dateien, und er entsteht aus der Spezifikation.
-5. **Test.** Die Prüfungen, die zeigen, dass die Implementierung die Anforderungen erfüllt.
+1. **Anforderungen.** Die Datei `anforderungen.md` aus dem vorigen Kapitel.
+2. **Datenmodell und Abläufe.** Die Datei `datenmodell-und-ablaeufe.md`: Artikel, Lagerort, Bestand, Bewegung, und die Abläufe Einlagern, Auslagern, Auswerten. Das ist die Grundfigur von oben, aufgeschrieben.
+3. **Spezifikation.** Die Datei `spezifikation.md`, die Bauanleitung: welche Befehle es gibt, was jeder Befehl prüft, was er verändert, was er ausgibt.
+4. **Implementierung.** Der Quelltext. Er ist auch nur ein Satz Dateien, und er entsteht aus der Spezifikation. Ihre Namen wählt der Agent beim Bauen.
+5. **Test.** Die Prüfungen, die zeigen, dass die Implementierung die Anforderungen erfüllt. Auch sie sind ein Satz Dateien, den der Agent beim Bauen anlegt.
 
-Der Ablauf mit dem Agenten ist für jedes Glied derselbe: Sie geben ihm das vorige Dokument und lassen ihn das nächste schreiben. Sie lesen es, Sie korrigieren, und dann kommt das nächste Glied. Die Vorlage, mit der das Skript ab Teil D arbeitet, kennt dreizehn solcher Schritte, vom Konzipieren bis zum Betreiben, und nennt sie Phasen; dieselben Dokumente finden Sie dort als Register für Anforderungen, Funktionsbeschreibungen, Spezifikationen, Testfälle und Testberichte wieder. Für das Beispiel reichen fünf, und das Wort [Phase](../Z-anhang/Z010-glossar.md#phase) bekommt im Kapitel [Marken](../F-marken-und-freigaben/F010-marken.md) seine Bedeutung.
+Der Ablauf mit dem Agenten ist für jedes Glied derselbe: Sie geben ihm das vorige Dokument und lassen ihn das nächste schreiben. Sie lesen es, Sie korrigieren, und dann kommt das nächste Glied. Für Dokument 2 genügt ein kurzer Prompt, im selben Ordner und mit festem Dateinamen:
+
+```text
+Lies anforderungen.md. Schreib daraus das Datenmodell und die Abläufe in die Datei datenmodell-und-ablaeufe.md: welche Dinge es gibt, welche Eigenschaften sie haben, wie sie zusammenhängen, und die Abläufe Einlagern, Auslagern und Auswerten. Schreib noch keinen Code.
+```
+
+Wenn Sie Dokument 2 gelesen und korrigiert haben, folgt der Prompt für Dokument 3:
+
+```text
+Lies anforderungen.md und datenmodell-und-ablaeufe.md. Schreib daraus die Spezifikation in die Datei spezifikation.md: welche Befehle es gibt, was jeder Befehl prüft, was er verändert und was er ausgibt. Schreib noch keinen Code.
+```
+
+Die festen Namen haben einen einfachen Grund: Jeder spätere Prompt kann sich auf sie beziehen.
+
+Die Vorlage, mit der das Skript ab Teil D arbeitet, der [Referenzprozess Softwareentwicklung](../Z-anhang/Z010-glossar.md#referenzprozess), kennt dreizehn solcher Schritte, vom Konzipieren bis zum Betreiben, und nennt sie Phasen; dieselben Dokumente finden Sie dort als Register für Anforderungen, Funktionsbeschreibungen, Spezifikationen, Testfälle und Testberichte wieder. Für das Beispiel reichen fünf, und das Wort [Phase](../Z-anhang/Z010-glossar.md#phase) bekommt im Kapitel [Marken](../F-marken-und-freigaben/F010-marken.md) seine Bedeutung.
 
 ## Ein Irrweg: je Schritt ein Agent
 
@@ -53,7 +67,7 @@ Es löst aber das eigentliche Problem nicht. Das Problem ist nicht, dass die Ket
 
 - Die Grundfigur jeder Software: ein Zustand, ein Ablauf, ein neuer Zustand. Das Datenmodell beschreibt den Zustand, die Funktionen sind die Abläufe, und bezahlt werden die Abläufe.
 - Die klassische Dokumentenkette: Anforderungen, Architektur, Spezifikation, Testkonzept, jedes Dokument aus dem vorigen. Eine Entscheidung vorn ändert alles dahinter.
-- Für die Lagerverwaltung sind es fünf Dokumente: Anforderungen, Datenmodell und Abläufe, Spezifikation, Implementierung, Test. Der naive Ansatz lässt den Agenten jedes aus dem vorigen schreiben.
+- Für die Lagerverwaltung sind es fünf Dokumente: Anforderungen, Datenmodell und Abläufe, Spezifikation, Implementierung, Test. Die ersten drei heißen `anforderungen.md`, `datenmodell-und-ablaeufe.md` und `spezifikation.md`. Der naive Ansatz lässt den Agenten jedes aus dem vorigen schreiben.
 - Mehr Agenten machen die Kette nicht besser. Das Problem sind die Versionen.
 
 Weiter mit [Bauen und prüfen](B030-bauen-und-pruefen.md): Der Agent schreibt die Implementierung, und Sie lesen sie, ohne die Sprache zu können.

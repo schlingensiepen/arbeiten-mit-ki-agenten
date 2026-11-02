@@ -6,7 +6,7 @@ Das [Kontextfenster](../Z-anhang/Z010-glossar.md#kontextfenster) ist begrenzt, d
 
 ## Was ein Subagent ist
 
-Ein Subagent ist ein Agent, den der [Harness](../Z-anhang/Z010-glossar.md#harness) aus einem laufenden Gespräch heraus startet. Technisch ist er ein weiteres [Tool](../Z-anhang/Z010-glossar.md#tool): Das Modell fordert es an wie das Lesen einer Datei, nur dass dieses Tool einen ganzen zweiten Agenten anwirft. Der bekommt dasselbe Modell und dieselben Tools, aber ein leeres Fenster. Er kennt Ihr Gespräch nicht, er kennt nur den einen Prompt, den er mitbekommt. Damit durchläuft er seine eigene Schleife aus Prompt, Antwort, Tool-Aufruf und Ergebnis, wie in [Was ein Agent ist](../A-verstehen-und-loslegen/A010-was-ein-agent-ist.md) beschrieben, und gibt am Ende einen Text an den Agenten zurück, der ihn gestartet hat.
+Ein Subagent ist ein Agent, den der [Harness](../Z-anhang/Z010-glossar.md#harness) aus einem laufenden Gespräch heraus startet. Technisch ist er ein weiteres [Tool](../Z-anhang/Z010-glossar.md#tool): Das Modell fordert es an wie das Lesen einer Datei, nur dass dieses Tool einen ganzen zweiten Agenten anwirft. Welches Modell und welche Tools er bekommt, hängt vom Harness ab (Stand Oktober 2026). Sein Fenster ist in jedem Fall leer. Er kennt Ihr Gespräch nicht, er kennt nur den einen Prompt, den er mitbekommt. Damit durchläuft er seine eigene Schleife aus Prompt, Antwort, Tool-Aufruf und Ergebnis, wie in [Was ein Agent ist](../A-verstehen-und-loslegen/A010-was-ein-agent-ist.md) beschrieben, und gibt am Ende einen Text an den Agenten zurück, der ihn gestartet hat.
 
 Entscheidend ist, was wo landet. Alles, was der Subagent liest, bleibt in seinem Fenster, und das wird nach seiner Rückkehr weggeworfen. In Ihrem Fenster kommt nur sein Rückgabetext an. Aus einer Recherche über zehn Seiten werden so zwanzig Zeilen Ergebnis. Das Regelwerk nennt ihn an manchen Stellen auch Unteragent, gemeint ist dasselbe.
 
@@ -14,13 +14,13 @@ Ob Ihr Harness Subagenten starten kann, steht in dessen Dokumentation. Die Arbei
 
 ## Warum: das Fenster schonen
 
-In der Vorlesung hieß es: Eine Recherche läuft nicht im eigenen Fenster, ein anderer Agent macht sie und liefert das Ergebnis. Das ist der erste Gewinn. Ihr Fenster bleibt frei für die eigentliche Arbeit, und was der Subagent an Material durchgesehen hat, verdrängt später nichts, was Sie noch brauchen. Umfangreiche Fundstellen, etwa Handbücher oder Normtexte, lässt das Regelwerk deshalb grundsätzlich von Subagenten auswerten, statt sie vollständig in das eigene Fenster zu laden.
+Eine Recherche muss nicht im eigenen Fenster laufen: Ein anderer Agent macht sie und liefert das Ergebnis. Das ist der erste Gewinn. Ihr Fenster bleibt frei für die eigentliche Arbeit, und was der Subagent an Material durchgesehen hat, verdrängt später nichts, was Sie noch brauchen. Umfangreiche Fundstellen, etwa Handbücher oder Normtexte, lässt das Regelwerk deshalb grundsätzlich von Subagenten auswerten, statt sie vollständig in das eigene Fenster zu laden.
 
 Der zweite Gewinn ist weniger offensichtlich. Der Subagent fängt frisch an, ohne den Ballast und ohne die Annahmen Ihres Gesprächs. Wer eine Stunde lang an einer Spezifikation geschrieben hat, liest über ihre Lücken hinweg; ein Agent, der sie zum ersten Mal sieht, nicht. Genau darum lässt das Regelwerk Prüfer in frischem Kontext starten. Wie eine solche Prüfung abläuft, steht im Kapitel [Prüfen](../G-der-gesamtprozess/G020-pruefen.md); dieses Kapitel liefert den Mechanismus, mit dem ein Prüfer gestartet wird.
 
 ## Der Auftrag ist eine Datei
 
-Der Subagent weiß nichts außer dem, was in seinem Prompt steht. Das macht den Auftrag zur eigentlichen Arbeit. Die Vorlesung bringt es auf eine Regel: Sein Arbeitsauftrag ist eine Datei auf der Platte. Der Prompt an den Subagenten sagt dann nur noch, wo diese Datei liegt und wohin das Ergebnis soll. Das Regelwerk legt für solche Aufträge einen festen Rahmen fest:
+Der Subagent weiß nichts außer dem, was in seinem Prompt steht. Das macht den Auftrag zur eigentlichen Arbeit. Daraus folgt eine Regel: Sein Arbeitsauftrag ist eine Datei auf der Platte. Der Prompt an den Subagenten sagt dann nur noch, wo diese Datei liegt und wohin das Ergebnis soll. Das Regelwerk legt für solche Aufträge einen festen Rahmen fest:
 
 1. **Vorher liegt alles auf der Platte.** Was der Subagent wissen muss, steht in Dateien, nicht in Ihrem Chat. Er liest nur die Platte, Ihr Gespräch kann er nicht sehen.
 2. **Die Zieldatei steht im Auftrag.** Genauer Pfad und Dateiname, dazu die erwartete Gliederung. Die Anweisung lautet: Schreibe genau diese eine Datei.
@@ -74,7 +74,7 @@ Für anderes reicht es nicht. Wenn ein zweiter Agent über Stunden neben Ihrem a
 
 ## Was jetzt klar sein sollte
 
-- Ein Subagent ist ein Agent, den der Harness aus dem Gespräch heraus startet: gleiches Modell, gleiche Tools, leeres Fenster. Zurück kommt nur sein Ergebnis.
+- Ein Subagent ist ein Agent, den der Harness aus dem Gespräch heraus startet, mit leerem Fenster; Modell und Tools hängen vom Harness ab. Zurück kommt nur sein Ergebnis.
 - Er schont Ihr Fenster, weil alles, was er liest, bei ihm bleibt. Und er sieht frisch, weil er Ihre Annahmen nicht kennt; darum prüft man mit ihm.
 - Sein Auftrag ist eine Datei auf der Platte. Der Auftrag nennt die Zieldatei, die Schreibgrenzen und die Regeln, der Rückgabetext bleibt kurz.
 - Er lebt nur für seinen Auftrag und berichtet nur seinem Auftraggeber. Für parallele Arbeit im eigenen Fenster braucht es einen zweiten Agenten als eigenen Prozess.

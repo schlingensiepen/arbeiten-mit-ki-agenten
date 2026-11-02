@@ -6,7 +6,7 @@ In Teil B haben Sie etwas gebaut, und am Ende ist es an einer kleinen Änderung 
 
 ## Parallele Wahrheiten
 
-Im Fall aus dem Kapitel [Wo der Ansatz bricht](../B-der-naive-ansatz/B040-wo-der-ansatz-bricht.md) sagte die Spezifikation vier Befehle und der Quelltext fünf. Das ist die kleinste Form eines Problems, das bei jeder Software auftritt, die länger als eine Woche lebt. Es gibt einen Hauptzweig. Dann will ein Kunde eine Sonderversion, und jemand kopiert die Dokumente. Dann soll es eine abgespeckte Variante geben, noch eine Kopie. Jede Kopie entwickelt sich weiter, und bald gibt es zu jeder Frage drei Antworten, die alle einmal richtig waren. Das Skript nennt das parallele Wahrheiten.
+Im Fall aus dem Kapitel [Wo der Ansatz bricht](../B-der-naive-ansatz/B040-wo-der-ansatz-bricht.md) sagte die Spezifikation vier Befehle und der Quelltext fünf. Das ist die kleinste Form eines Problems, das bei jeder Software auftritt, die länger als eine Woche lebt. Es gibt einen Hauptzweig, also die eine Fassung, an der alle arbeiten und aus der geliefert wird. Dann will ein Kunde eine Sonderversion, und jemand kopiert die Dokumente. Dann soll es eine abgespeckte Variante geben, noch eine Kopie. Jede Kopie entwickelt sich weiter, und bald gibt es zu jeder Frage drei Antworten, die alle einmal richtig waren. Das Skript nennt das parallele Wahrheiten.
 
 Die Dokumentenkette hat dagegen kein Mittel, denn sie kennt nur das eine Dokument je Schritt. Zwei Versionen heißen zwei Ketten, und ab da gilt in beiden etwas anderes, ohne dass irgendwo steht, was.
 
@@ -20,7 +20,7 @@ Die Kette verlangt also genau das, was der Agent nicht hat: ein Gedächtnis, das
 
 Die Kette geht von vorn nach hinten. Das ist richtig für den ersten Durchlauf und falsch für alles danach. Beim Testen stellt sich heraus, dass eine Anforderung fehlt. Beim Bauen zeigt sich, dass eine Festlegung im Datenmodell nicht aufgeht. An Funktionen für Version 2 wird gearbeitet, während Version 1 noch nicht fertig ist. Jedes Mal müsste man vorn anfangen und alles dahinter neu schreiben, und das tut niemand, also veralten die vorderen Dokumente.
 
-Die Vorlage, die das Skript ab Teil D benutzt, zieht daraus eine klare Folgerung. Sie sagt: Die Schritte sind ein Angebot, kein Zwang, und der Anwender darf in beliebiger Reihenfolge an ihnen arbeiten. Fehlt eine Grundlage, warnt der Agent und blockiert nicht. Was dann noch geordnet wird, und warum das reicht, ist das Thema von Teil F.
+Ab Teil D benutzt das Skript eine Vorlage für Softwareprojekte, den [Referenzprozess Softwareentwicklung](../Z-anhang/Z010-glossar.md#referenzprozess). Die Vorlage zieht daraus eine klare Folgerung. Sie sagt: Die Schritte sind ein Angebot, kein Zwang, und der Anwender darf in beliebiger Reihenfolge an ihnen arbeiten. Fehlt eine Grundlage, warnt der Agent und blockiert nicht. Was dann noch geordnet wird, und warum das reicht, ist das Thema von Teil F.
 
 ## Alles jedes Mal neu erklären
 
@@ -36,7 +36,7 @@ Die Vorlage setzt dagegen Prüfungen vor jede Freigabe, durch einen oder mehrere
 
 ## Arbeitsmaterial und Ergebnis liegen durcheinander
 
-Sehen Sie sich den Projektordner am Ende von Teil B an. Darin liegen die Anforderungen, Notizen aus dem Gespräch, ein Datenmodell, eine Spezifikation, deren Stand unklar ist, der Quelltext, die Tests, vielleicht eine Kopie der Anforderungen für Version 2. Wer das Programm haben will, bekommt alles davon mit. Wer weiterarbeiten will, muss erst herausfinden, was davon aktuell ist und was Arbeitsmaterial war.
+Sehen Sie sich den Projektordner am Ende von Teil B an. Darin liegen die Anforderungen, Notizen aus dem Gespräch, ein Datenmodell, eine Spezifikation, von der niemand mehr weiß, ob sie noch gilt, der Quelltext, die Tests, vielleicht eine Kopie der Anforderungen für Version 2. Wer das Programm haben will, bekommt alles davon mit. Wer weiterarbeiten will, muss erst herausfinden, was davon aktuell ist und was Arbeitsmaterial war.
 
 Beides gehört getrennt: das, womit man arbeitet, und das, was man weitergibt. Wie die Vorlage das trennt und wie das Ergebnis aus dem Arbeitsmaterial entsteht, zeigt das Kapitel [Werkstatt, Produkt, Schleuse](../G-der-gesamtprozess/G030-werkstatt-produkt-schleuse.md).
 

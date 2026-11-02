@@ -2,14 +2,14 @@
 
 > **Stand der Quellen:** keine gebundene Quelle. Dieses Kapitel beschreibt kein Werkzeug, sondern einen Arbeitsschritt.
 
-Die Kette aus dem vorigen Kapitel liegt als Dateien im Projektordner, bis zur Spezifikation. Jetzt kommt der Schritt, für den viele den Agenten überhaupt wollen: Er soll bauen. Dieses Kapitel zeigt, wie Sie bauen lassen, wie Sie das Ergebnis lesen, ohne die Programmiersprache zu können, was das Ihr Kontextfenster kostet, und warum die Prüfung am Ende trotzdem bei Ihnen bleibt.
+Die Kette aus dem vorigen Kapitel liegt als Dateien im Projektordner, bis zur Spezifikation: `anforderungen.md`, `datenmodell-und-ablaeufe.md` und `spezifikation.md`. Jetzt kommt der Schritt, für den viele den Agenten überhaupt wollen: Er soll bauen. Dieses Kapitel zeigt, wie Sie bauen lassen, wie Sie das Ergebnis lesen, ohne die Programmiersprache zu können, was das Ihr Kontextfenster kostet, und warum die Prüfung am Ende trotzdem bei Ihnen bleibt.
 
 ## Bauen lassen
 
 Der Auftrag ist kurz, denn die Arbeit steckt schon in den Dokumenten:
 
 ```text
-Implementiere die Lagerverwaltung nach der Spezifikation in Spezifikation.md. Halte dich an das Datenmodell und die Abläufe aus den Dokumenten im Ordner.
+Implementiere die Lagerverwaltung nach der Spezifikation in spezifikation.md. Halte dich an das Datenmodell und die Abläufe aus datenmodell-und-ablaeufe.md.
 ```
 
 Die Programmiersprache können Sie frei wählen oder dem Agenten überlassen. Ein guter Kandidat ist Java, weil Java die Strukturen des Datenmodells im Quelltext gut sichtbar macht. In der ersten Runde muss niemand Java können. Das ist der Grund für die Reihenfolge, die dieser Teil einhält: Lesen ist leicht, selbst programmieren ist viel aufwendiger. Also erst die Anforderungen, dann ausprogrammieren lassen, dann lesen.
@@ -36,7 +36,7 @@ Die zweite Rechnung ist die aus dem Kapitel [Kontext](../A-verstehen-und-loslege
 
 Der Agent meldet: fertig, die Tests laufen durch. Was heißt das? Es heißt, dass das Programm die Prüfungen besteht, die der Agent selbst geschrieben hat. Derselbe Agent hat die Anforderungen gelesen, die Spezifikation geschrieben, den Quelltext geschrieben und die Tests dazu, alles in einem Kontext. Hat er eine Anforderung falsch verstanden, dann steckt das Missverständnis in der Spezifikation, im Quelltext und im Test gleichermaßen, und der Test ist grün.
 
-Ob das Programm tut, was Sie wollten, wissen deshalb nur Sie. Nehmen Sie die Anforderungen aus dem ersten Kapitel und gehen Sie sie Punkt für Punkt durch, am laufenden Programm. Was fehlt oder falsch ist, geht zurück ins Gespräch, und der Agent bessert nach. Das ist im naiven Ansatz die ganze Prüfung, und sie hat zwei Schwächen: Sie können nicht alles lesen, und Sie prüfen gegen Dokumente, die derselbe Agent geschrieben hat. Wie man unabhängig prüfen lässt, ist das Thema des Kapitels [Prüfen](../G-der-gesamtprozess/G020-pruefen.md). Für jetzt reicht: Grün heißt nicht richtig.
+Ob das Programm tut, was Sie wollten, wissen deshalb nur Sie. Nehmen Sie `anforderungen.md` und gehen Sie die Anforderungen Punkt für Punkt durch, am laufenden Programm. Was fehlt oder falsch ist, geht zurück ins Gespräch, und der Agent bessert nach. Das ist im naiven Ansatz die ganze Prüfung, und sie hat zwei Schwächen: Sie können nicht alles lesen, und Sie prüfen gegen Dokumente, die derselbe Agent geschrieben hat. Wie man unabhängig prüfen lässt, ist das Thema des Kapitels [Prüfen](../G-der-gesamtprozess/G020-pruefen.md). Für jetzt reicht: Grün heißt nicht richtig.
 
 ## Was jetzt klar sein sollte
 

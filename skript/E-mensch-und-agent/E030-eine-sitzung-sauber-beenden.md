@@ -6,7 +6,7 @@ Eine [Sitzung](../Z-anhang/Z010-glossar.md#sitzung) hat ihren eigenen [Kontext](
 
 ## Der Zustand, den die nächste Sitzung braucht
 
-Das Ziel ist im Regelwerk genau benannt: Vor jedem Übergabe-Moment stellt der Agent den Zustand her, in dem ein fremder Agent allein aus den Dateien nahtlos übernehmen könnte. Fremd heißt: ohne das Gespräch gelesen zu haben, vielleicht ein anderes Modell, vielleicht in einem Monat. Übergabe-Momente sind das Ende oder die Pause einer Sitzung, Ihre Aufforderung „Speicherpunkt setzen“ und der Start eines [Subagenten](../Z-anhang/Z010-glossar.md#subagent), der ebenfalls nur die Dateien sieht.
+Das Ziel ist im Regelwerk genau benannt: Vor jedem Übergabe-Moment stellt der Agent den Zustand her, in dem ein fremder Agent allein aus den Dateien nahtlos übernehmen könnte. Fremd heißt: ohne das Gespräch gelesen zu haben, vielleicht ein anderes Modell, vielleicht in einem Monat. Übergabe-Momente sind das Ende oder die Pause einer Sitzung, Ihre Aufforderung dazu, etwa „Speicherpunkt setzen“, und der Start eines [Subagenten](../Z-anhang/Z010-glossar.md#subagent), der ebenfalls nur die Dateien sieht.
 
 Dass die nächste Sitzung dann wirklich weitermachen kann, liegt am [Sessionstart](../Z-anhang/Z010-glossar.md#sessionstart) aus [Regelwerk und Sessionstart](../D-wissen-im-wiki/D020-regelwerk-und-sessionstart.md): Der Agent liest beim Start den Arbeitsstand und meldet sich mit Erledigt, Aktion, Frage. Beide Enden passen zusammen. Das Ende der einen Sitzung schreibt, was der Anfang der nächsten liest.
 
@@ -18,11 +18,11 @@ Dass die nächste Sitzung dann wirklich weitermachen kann, liegt am [Sessionstar
 
 **Berichte ablegen.** Ergebnisse, die sich jemand später ansehen soll, etwa der Bericht eines Prüfers oder eine Recherche, kommen als Datei ins Wiki, bevor der Agent sie Ihnen im Chat zusammenfasst. Die Zusammenfassung im Chat ist flüchtig, die Datei bleibt.
 
-**Committen.** Der Agent arbeitet mit [Git](../Z-anhang/Z010-glossar.md#git) und setzt einen [Commit](../Z-anhang/Z010-glossar.md#commit) je Zug, also je thematisch abgeschlossener Einheit. Am Ende der Sitzung folgt ein Abschluss-Commit für alles, was noch nicht erfasst ist, damit die Sitzung mit sauberem Arbeitsbaum endet. Ist schon alles committet, entfällt er. Jede Commit-Nachricht beginnt mit einem Präfix aus einem festen Katalog, etwa `Wiki:` für eine Wiki-Änderung. Gepusht wird nur auf Ihre Anfrage, und Zugangsdaten gehören in keine committete Datei.
+**Committen.** Der Agent arbeitet mit [Git](../Z-anhang/Z010-glossar.md#git) und setzt einen [Commit](../Z-anhang/Z010-glossar.md#commit) je Zug, also je thematisch abgeschlossener Einheit. Am Ende der Sitzung folgt ein Abschluss-Commit für alles, was noch nicht erfasst ist, damit die Sitzung mit sauberem Arbeitsbaum endet. Der Arbeitsbaum sind die Dateien, die gerade in Ihrem Projektordner liegen. Sauber ist er, wenn jede Änderung daran in einem Commit steht. Ist schon alles committet, entfällt der Abschluss-Commit. Jede Commit-Nachricht beginnt mit einem Präfix aus einem festen Katalog, etwa `Wiki:` für eine Wiki-Änderung. Gepusht wird nur auf Ihre Anfrage, und Zugangsdaten gehören in keine committete Datei.
 
 ## Das macht der Agent
 
-Die vier Schritte sind Pflicht des Agenten, nicht Ihre. Sie müssen keine Dateien schreiben. Ihr Anteil ist, das Ende anzukündigen, statt das Fenster zu schließen: „Wir hören für heute auf“ oder „Setz einen Speicherpunkt“. Dann läuft die Übergabe, und der Agent meldet sie im Antwort-Raster. Hat eine Sitzung die Übergabe versäumt, fällt das beim nächsten Sessionstart auf: Zu dem, was der Agent dort prüft und meldet, gehören versäumte Übergaben.
+Die vier Schritte sind Pflicht des Agenten, nicht Ihre. Sie müssen keine Dateien schreiben. Ihr Anteil ist, das Ende anzukündigen, statt das Fenster zu schließen: „Wir hören für heute auf“ oder „Setz einen Speicherpunkt“. Das sind Beispiele, kein fester Befehl. Es genügt jede Formulierung, aus der das hervorgeht. Dann läuft die Übergabe, und der Agent meldet sie im Antwort-Raster. Hat eine Sitzung die Übergabe versäumt, fällt das beim nächsten Sessionstart auf: Zu dem, was der Agent dort prüft und meldet, gehören versäumte Übergaben.
 
 ## Beispiel DONE: mitten im Anforderungsgespräch
 

@@ -44,17 +44,19 @@ Die Erarbeitung der [Elemente](../Z-anhang/Z010-glossar.md#element) ist ungeordn
 
 Die Freigabe der [Freigabedokumente](../Z-anhang/Z010-glossar.md#freigabedokument) ist geordnet. Das Dokument einer Phase wird nach den Dokumenten der früheren Phasen derselben [Marke](../Z-anhang/Z010-glossar.md#marke) freigegeben. Jede [Freigabe](../Z-anhang/Z010-glossar.md#freigabe) nennt dabei ihren Zweck, und der Zweck ist die nächste Phase: Die Anforderungen werden freigegeben „für P4 Beschreiben der Funktion“, die Funktionsbeschreibung „für P5 Zerlegen in Bausteine“, die Spezifikation „für P9 Ausarbeiten“. Das Dokument, auf das Sie sich in der nächsten Phase stützen, steht damit fest, bevor die nächste Phase beginnt.
 
-Fehlt ein früheres Dokument, etwa weil niemand die Architektur aufgeschrieben hat, blockiert der Agent nicht. Er warnt bei der nächsten Freigabe, und Sie entscheiden. Geben Sie trotzdem frei, nennt der Eintrag der Freigabe den fehlenden Vorgänger als Einschränkung. Eine Ausnahme gibt es: Der Testplan wird erst nach dem Tag freigegeben. Was der Tag ist, kommt jetzt.
+Fehlt ein früheres Dokument, etwa weil niemand die Architektur aufgeschrieben hat, blockiert der Agent nicht. Er warnt bei der nächsten Freigabe, und Sie entscheiden. Geben Sie trotzdem frei, nennt der Eintrag der Freigabe den fehlenden Vorgänger als Einschränkung. Eine Ausnahme gibt es: Der Testplan wird erst nach dem Git-Tag freigegeben. Was das ist, kommt jetzt.
 
-## Der Tag: das Produkt in der Kette
+## Der Git-Tag: das Produkt in der Kette
 
-Die Phase P9, das Ausarbeiten, fällt aus der Reihe. Ihr Ergebnis ist kein Dokument, sondern das Produkt: bei Software der Code mit seinen Tests. Ein Produkt kann man nicht wie ein Dokument einfrieren und ablegen. Dafür gibt es in [Git](../Z-anhang/Z010-glossar.md#git) den Tag: eine Markierung an einem bestimmten [Commit](../Z-anhang/Z010-glossar.md#commit), die einen Namen trägt. Der Agent setzt den Tag nach Ihrem OK in dem Repo, das den Code trägt. Vorbedingung ist, dass die automatisierten Tests grün sind. Der Name des Tags folgt einer Konvention, die im Wiki festgehalten ist; er ist nicht die Bezeichnung der Marke. Die Marke heißt „1.1“, der Tag kann „v1.1.0“ heißen.
+Die Phase P9, das Ausarbeiten, fällt aus der Reihe. Ihr Ergebnis ist kein Dokument, sondern das Produkt: bei Software der Code mit seinen Tests. Ein Produkt kann man nicht wie ein Dokument einfrieren und ablegen. Dafür gibt es in [Git](../Z-anhang/Z010-glossar.md#git) den [Tag](../Z-anhang/Z010-glossar.md#tag): eine Markierung an einem bestimmten [Commit](../Z-anhang/Z010-glossar.md#commit), die einen Namen trägt. Dieses Skript schreibt dafür ab hier Git-Tag, denn das Wort hat zwei Bedeutungen, die nichts miteinander zu tun haben. Der Git-Tag markiert einen Commit. Der Tag im Beispiel DONE ist ein Schlagwort an einem TODO. Das Regelwerk sagt für die Markierung meist nur Tag, und so steht es auch im Bild weiter unten.
 
-Ein gesetzter Tag wird nie verschoben und nie gelöscht. Muss der Code korrigiert werden, entsteht ein neuer Tag mit einer neuen Freigabe, und die alte wird abgelöst. Das ist dieselbe Regel wie bei den Freigabedokumenten: Was einmal fest ist, bleibt fest; Änderungen kommen als Nachfolger dazu.
+Der Agent setzt den Git-Tag nach Ihrem OK in dem Repo, das den Code trägt. Vorbedingung ist, dass die automatisierten Tests grün sind. Der Name des Git-Tags folgt einer Konvention, die im Wiki festgehalten ist; er ist nicht die Bezeichnung der Marke. Die Marke heißt „1.1“, der Git-Tag kann „v1.1.0“ heißen.
+
+Ein gesetzter Git-Tag wird nie verschoben und nie gelöscht. Muss der Code korrigiert werden, entsteht ein neuer Git-Tag mit einer neuen Freigabe, und die alte wird abgelöst. Das ist dieselbe Regel wie bei den Freigabedokumenten: Was einmal fest ist, bleibt fest; Änderungen kommen als Nachfolger dazu.
 
 ## Die Prüfkette
 
-Die Freigabedokumente einer Marke bilden mit dem Tag eine Reihe, in der jedes Glied auf den vorigen aufbaut. Das Skript nennt diese Reihe [Prüfkette](../Z-anhang/Z010-glossar.md#prüfkette), weil vor jeder Freigabe geprüft wird, ob das neue Glied zu den alten passt. Das Regelwerk sagt kürzer Kette und nennt die einzelne Prüfung Kettenprüfung.
+Die Freigabedokumente einer Marke bilden mit dem Git-Tag eine Reihe, in der jedes Glied auf den vorigen aufbaut. Das Skript nennt diese Reihe [Prüfkette](../Z-anhang/Z010-glossar.md#prüfkette), weil vor jeder Freigabe geprüft wird, ob das neue Glied zu den alten passt. Das Regelwerk sagt kürzer Kette und nennt die einzelne Prüfung Kettenprüfung.
 
 Die Regel: Jedes Dokument wird vor seiner Freigabe gegen alle freigegebenen Vorgänger derselben Marke geprüft, nicht nur gegen den direkten Vorgänger. Geprüft wird auf drei Dinge:
 
@@ -68,18 +70,18 @@ Die Kette wirkt auch rückwärts. Fällt beim Spezifizieren auf, dass eine Anfor
 
 ![Ein grauer Container mit der Beschriftung Marke 1.0. Darin sieben Spalten von links nach rechts: Anforderungen sammeln, Beschreiben der Funktion, Zerlegen in Bausteine, Spezifizieren, Ausarbeiten, Testen, Ausliefern. Unter jeder Phase ein blauer Block mit ihrem Freigabedokument und der Phasennummer: Anforderungen P3, Funktionsbeschreibung P4, Architektur P5, Spezifikation P8, Testplan P10, Auslieferung P11; unter Ausarbeiten statt eines Blocks ein blauer Kreis mit der Aufschrift Tag P9. Eine schwarze Linie mit Pfeilspitze verbindet alle Glieder nach rechts. Drei orange Pfeile führen von der Spezifikation zurück zu Architektur, Funktionsbeschreibung und Anforderungen, daneben steht: vor der Freigabe geprüft gegen alle freigegebenen Vorgänger.](bilder/G010-phasenkette.svg)
 
-**Phasen und Prüfkette.** Jede Phase endet in einem Freigabedokument, das Ausarbeiten im Tag auf dem Code. Die Freigaben laufen von links nach rechts; vor jeder Freigabe prüft der Agent das neue Glied gegen alle, die davor schon freigegeben sind, hier die Spezifikation gegen Architektur, Funktionsbeschreibung und Anforderungen. Das Bild zeigt sieben der dreizehn Phasen; Konzipieren, Stand der Technik, Starten von Teilaktivitäten, Auswählen der Technologie, Produzieren und Betreiben fehlen, damit es lesbar bleibt.
+**Phasen und Prüfkette.** Jede Phase endet in einem Freigabedokument, das Ausarbeiten im Git-Tag auf dem Code, im Bild kurz Tag. Die Freigaben laufen von links nach rechts; vor jeder Freigabe prüft der Agent das neue Glied gegen alle, die davor schon freigegeben sind, hier die Spezifikation gegen Architektur, Funktionsbeschreibung und Anforderungen. Das Bild zeigt sieben der dreizehn Phasen; Konzipieren, Stand der Technik, Starten von Teilaktivitäten, Auswählen der Technologie, Produzieren und Betreiben fehlen, damit es lesbar bleibt.
 
 ## Beispiel: Die erste Marke von DONE
 
-Beim Aufsetzen von DONE hieß die erste Marke „1.0, Erster Release“. Sie umfasst das Backend und die Kommandozeile. So läuft sie durch die Phasen:
+Beim Aufsetzen von DONE hieß die erste Marke „1.0, Erster Release“. In diesem Beispiel nehmen wir wie im Kapitel [Marken](../F-marken-und-freigaben/F010-marken.md) an, dass sie das Backend und die Kommandozeile umfasst. Das ist eine Annahme, den Umfang entscheiden Sie. So läuft sie durch die Phasen:
 
 1. **Anforderungen sammeln.** Im Gespräch entstehen Anforderungen und werden als Elemente angenommen: TODOs haben Sub-TODOs und Abhängigkeiten, was keinen Tag hat, liegt in der Inbox, TODOs lassen sich delegieren. Der Agent bildet das Freigabedokument der Anforderungen zur Marke 1.0. Es wird geprüft und freigegeben „für P4 Beschreiben der Funktion“.
 2. **Beschreiben der Funktion.** Aus den Anforderungen wird eine geschlossene Beschreibung, was DONE aus Sicht des Benutzers tut. Vor der Freigabe prüft der Agent sie gegen die Anforderungen: Ist jede aufgegriffen, widerspricht nichts, steht nichts darin, was keine Anforderung trägt?
 3. **Zerlegen in Bausteine.** Die Architektur nennt das Backend mit seiner Schnittstelle und die Kommandozeile als Bausteine. Geprüft gegen Anforderungen und Funktionsbeschreibung.
 4. **Spezifizieren.** Die Bauanleitung, so genau, dass sie ohne Fachwissen umsetzbar ist, auch von einem weiteren Agenten. Geprüft gegen alle drei Vorgänger.
-5. **Ausarbeiten.** Der Agent schreibt Code und Tests. Sind die Tests grün, setzt er nach Ihrem OK den Tag.
-6. **Testen.** Der Testplan enthält, was sich nicht automatisieren lässt, etwa Ihren eigenen Durchgang durch die Kommandozeile. Er wird erst nach dem Tag freigegeben; das Ergebnis ist ein Testbericht.
+5. **Ausarbeiten.** Der Agent schreibt Code und Tests. Sind die Tests grün, setzt er nach Ihrem OK den Git-Tag.
+6. **Testen.** Der Testplan enthält, was sich nicht automatisieren lässt, etwa Ihren eigenen Durchgang durch die Kommandozeile. Er wird erst nach dem Git-Tag freigegeben; das Ergebnis ist ein Testbericht.
 7. **Ausliefern.** Die Beschreibung, wie DONE auf eine Zielumgebung kommt.
 
 Zum Schluss bildet der Agent ein letztes Freigabedokument, das die Marke abschließt und alle Glieder nennt. Mit seiner Freigabe ist die Marke 1.0 abgeschlossen und eingefroren, und die nächste Marke beginnt, etwa mit einem weiteren Zugang zu DONE. Dafür wird nicht alles neu gebildet: Ein Freigabedokument aus der Marke 1.0, das weiter gilt, gilt auch für die Marke 1.1, solange es nicht überholt ist.
@@ -88,7 +90,7 @@ Zum Schluss bildet der Agent ein letztes Freigabedokument, das die Marke abschli
 
 - Der Prozess besteht aus Phasen, jede als Tätigkeit benannt, jede mit einem Freigabedokument als Ergebnis. Die Phasen sind ein Angebot und eine Checkliste, kein Zwang.
 - Die Phasen ordnen die Freigaben, nicht die Arbeit: Elemente entstehen jederzeit, Freigabedokumente werden der Reihe nach freigegeben, jedes für den Zweck der nächsten Phase.
-- Das Produkt selbst, bei Software der Code, wird nicht als Dokument eingefroren, sondern mit einem Tag markiert. Ein Tag wird nie verschoben.
+- Das Produkt selbst, bei Software der Code, wird nicht als Dokument eingefroren, sondern mit einem Git-Tag markiert. Ein Git-Tag wird nie verschoben. Mit dem Tag an einem TODO in DONE hat er nur das Wort gemeinsam.
 - Die Prüfkette: Vor jeder Freigabe wird das neue Glied gegen alle freigegebenen Vorgänger derselben Marke geprüft, auf Widerspruch, Abdeckung und Unbegründetes.
 
 Weiter mit [Prüfen](G020-pruefen.md): Wer prüft, warum ein zweites Modell darauf schaut und was ein Programm ohne Modell vorher erledigt.

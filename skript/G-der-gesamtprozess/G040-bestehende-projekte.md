@@ -2,7 +2,7 @@
 
 > **Stand der Quellen:** [referenzprozess-softwareentwicklung](https://github.com/schlingensiepen/referenzprozess-softwareentwicklung) `release-2.0`, `docs/Migration.md`, `docs/Upgrade.md`, `migration/MIGRATION.md`, `upgrade/UPGRADE.md`, `setup/init-migration.sh`, `setup/upgrade.sh`.
 
-Das Kapitel [Ein Projekt aufsetzen](../D-wissen-im-wiki/D030-ein-projekt-aufsetzen.md) ging von einem leeren Ordner aus. Die meisten Projekte sind nicht leer. Entweder gibt es schon Code und Notizen, aber kein Regelwerk; oder das Projekt arbeitet schon mit der Vorlage, nur mit einem älteren Stand. Für beide Fälle hat die Vorlage einen Sonderweg: die [Migration](../Z-anhang/Z010-glossar.md#migration) bringt ein Projekt ohne Regelwerk nachträglich unter das Regelwerk, das [Upgrade](../Z-anhang/Z010-glossar.md#upgrade) hebt ein Projekt aus der Vorlage auf deren neuen Stand. Dieses Kapitel zeigt beide so weit, dass Sie wissen, was auf Sie zukommt und was Sie entscheiden. Die Einzelheiten stehen in der Anleitung, die der Agent selbst liest.
+Das Kapitel [Ein Projekt aufsetzen](../D-wissen-im-wiki/D030-ein-projekt-aufsetzen.md) ging von einem leeren Ordner aus. Die meisten Projekte sind nicht leer. Entweder gibt es schon Code und Notizen, aber kein Regelwerk; oder das Projekt arbeitet schon mit der Vorlage, nur mit einer älteren Version. Für beide Fälle hat die Vorlage einen Sonderweg: die [Migration](../Z-anhang/Z010-glossar.md#migration) bringt ein Projekt ohne Regelwerk nachträglich unter das Regelwerk, das [Upgrade](../Z-anhang/Z010-glossar.md#upgrade) hebt ein Projekt aus der Vorlage auf deren neue Version. Dieses Kapitel zeigt beide so weit, dass Sie wissen, was auf Sie zukommt und was Sie entscheiden. Die Einzelheiten stehen in der Anleitung, die der Agent selbst liest.
 
 Welcher Weg gilt, erkennt der Agent am Projekt. Ein Projekt aus der Vorlage trägt einen Herkunfts-Vermerk in der Datei `wiki/Aktivierter-Prozess.md`; ein sehr frühes Projekt ohne Vermerk erkennt er daran, dass die Dateien des Regelwerks neben einem `wiki/` liegen. Das ist ein Upgrade. Ein Ordner, der sein Wissen in verstreuten Dateien sammelt, ist eine Migration. Der Agent sagt Ihnen, was er vorfindet; erkennt er den falschen Weg, verweist er auf den richtigen.
 
@@ -44,7 +44,7 @@ Das Skript überschreibt nie eine vorgefundene Datei. Trägt eine Datei denselbe
 | Bekannte Fehler, offene Bugs | Register Fehlermeldungen |
 | Beschreibungen, was die Software tut | Register Funktionsbeschreibungen |
 | Getroffene Festlegungen, Beschlüsse | Register Entscheidungen |
-| Architektur, Soll und dokumentierter Ist-Stand | Architektur-Fassade, der Ist-Stand als eigener Abschnitt |
+| Architektur, Soll und dokumentierter Ist-Zustand | Architektur-Fassade, der Ist-Zustand als eigener Abschnitt |
 | Testfälle | Register Testfälle |
 | Fachbegriffe | Glossar, als Vorschläge zur Freigabe |
 | Changelog, Release-Notizen | Chronologie; das Original bleibt liegen und wird verlinkt |
@@ -61,42 +61,42 @@ Was danach anders ist als bei einem neuen Projekt: Die erste [Marke](../Z-anhang
 
 ### Beispiel: Die frühe Lagerverwaltung
 
-In Teil B ist die Lagerverwaltung nach dem naiven Ansatz entstanden: ein Ordner mit einer README, einer Datei mit Anforderungen, einer mit der Architektur, einer Spezifikation, einem Testkonzept, dem Code und einer Aufgabenliste. Kein Wiki, kein Register, keine Marke. So wird sie migriert.
+In Teil B ist die Lagerverwaltung nach dem naiven Ansatz entstanden: ein Ordner mit der [Dokumentenkette](../B-der-naive-ansatz/B020-die-dokumentenkette.md), also `anforderungen.md`, `datenmodell-und-ablaeufe.md` und `spezifikation.md`, dazu der Quelltext und die Tests. Kein Wiki, kein Register, keine Marke. So wird sie migriert.
 
-Der Agent sichert den Ordner mit einem Commit und bindet die Vorlage ein. Im Fragen-Block bestätigen Sie die sechs Dateien als Wissensträger; die Aufgabenliste ist die mit offenen Arbeiten. Die eigene `TODO.md` kollidiert mit der der Vorlage; Sie wählen, sie zu integrieren und die alte Fassung zu behalten. Dann arbeitet der Agent: Jede Anforderung aus der Anforderungsdatei wird ein Element im Register Anforderungen, mit der Datei als Herkunft. Die Architekturdatei wird zur Architektur-Fassade; was den gebauten Ist-Stand beschreibt, kommt in einen eigenen Abschnitt. Die Spezifikation beschreibt überwiegend, was die Software aus Sicht des Lageristen tut, also wandert sie in die Funktionsbeschreibungen; nur die Teile, die eine Bauanleitung sind, werden Spezifikation. Die Testfälle aus dem Testkonzept werden Elemente im Register Testfälle. Aus der README holt er die Festlegungen, etwa die Wahl der Programmiersprache, ins Register Entscheidungen. Die Punkte der Aufgabenliste verteilt er: Geplantes wird Anforderung, Unverbindliches wird Idee. Die alte Liste bleibt als `TODO-vorgefunden.md` liegen, die neue `TODO.md` verlinkt sie.
+Der Agent sichert den Ordner mit einem Commit und bindet die Vorlage ein. Im Fragen-Block bestätigen Sie die drei Dokumente und die Tests als Wissensträger. Eine Liste offener Arbeiten gibt es nicht, und kein Dateiname kollidiert mit der Vorlage. Läge eine eigene `TODO.md` im Ordner, wäre das anders: Der Agent empfähle, sie zu integrieren und die alte Fassung als `TODO-vorgefunden.md` zu behalten. Dann arbeitet der Agent: Jede Anforderung aus `anforderungen.md` wird ein Element im Register Anforderungen, mit der Datei als Herkunft. Dort stehen auch Festlegungen, etwa „inaktiv statt gelöscht“; die holt er ins Register Entscheidungen. Aus `datenmodell-und-ablaeufe.md` kommt das Datenmodell in die Architektur-Fassade. Die Abläufe sind die Funktionen der Software, sie wandern in die Funktionsbeschreibungen. Auch `spezifikation.md` beschreibt überwiegend, was die Software aus Sicht des Lageristen tut, und wandert dorthin; nur die Teile, die eine Bauanleitung sind, werden Spezifikation. Was die Tests prüfen, wird zu Elementen im Register Testfälle. Quelltext und Tests selbst bleiben unverändert liegen.
 
 Zwei Prüfer lesen gegen, einer findet eine Anforderung, die beim Übertragen verkürzt wurde. Nach der Korrektur sind beide grün. Sie nehmen die Rekonstruktion an. Die Lagerverwaltung hat jetzt ein Wiki, die Marke `Uebernahme-` mit dem Datum, und als erste Aufgabe danach: die Freigabedokumente dieser Marke bilden und durch die Prüfkette führen, wie im Kapitel [Softwareentwicklung als Prozess](G010-softwareentwicklung-als-prozess.md).
 
 ## Upgrade: ein Projekt aus der Vorlage
 
-Die Vorlage ändert sich. Sie trägt eine Versionsnummer, zum Zeitpunkt dieses Skripts 2.0 nach den früheren Ständen 1.0 und 1.1 (Stand Oktober 2026). Welchen Stand Ihr Projekt hat, steht im Herkunfts-Vermerk. Das Upgrade hebt das Projekt auf den aktuellen Stand derselben Vorlage, aus der es stammt, und es behält dabei seinen Prozess. Sie starten den Agenten im Projektordner mit einem Satz:
+Die Vorlage ändert sich. Sie trägt eine Versionsnummer, zum Zeitpunkt dieses Skripts 2.0 nach den früheren Versionen 1.0 und 1.1 (Stand Oktober 2026). Welche Version Ihr Projekt hat, steht im Herkunfts-Vermerk. Das Upgrade hebt das Projekt auf die aktuelle Version derselben Vorlage, aus der es stammt, und es behält dabei seinen Prozess. Sie starten den Agenten im Projektordner mit dem Satz aus der Anleitung; „aktueller Stand“ meint darin die aktuelle Version:
 
 ```text
 Hebe das Projekt in diesem Verzeichnis auf den aktuellen Stand nach der Anleitung unter https://github.com/schlingensiepen/referenzprozess-softwareentwicklung.
 ```
 
-Der Ablauf hat eine Frage und acht Schritte. Die Frage kommt zuerst: Der Agent liest, welchen Stand und welche Einbindung das Projekt hat, legt Ihnen eine Übersicht vor und schlägt den Weg vor. Mit Ihrer Antwort führt er die Schritte aus; Sie stoßen nur an.
+Der Ablauf hat eine Frage und acht Schritte. Die Frage kommt zuerst: Der Agent liest, welche Version und welche Einbindung das Projekt hat, legt Ihnen eine Übersicht vor und schlägt den Weg vor. Mit Ihrer Antwort führt er die Schritte aus; Sie stoßen nur an.
 
 1. **Sicherung.** Ein Commit des unveränderten Zustands, angekündigt.
-2. **Vorlage tauschen.** `_template/` bekommt den neuen Stand: bei einer verknüpften Vorlage wird das Submodul weitergesetzt, bei einer eingefrorenen Kopie wird die Kopie ersetzt. Die alte bleibt in der Git-Geschichte. Danach ein eigener Commit.
+2. **Vorlage tauschen.** `_template/` bekommt die neue Version: bei einer verknüpften Vorlage wird das Submodul weitergesetzt, bei einer eingefrorenen Kopie wird die Kopie ersetzt. Die alte bleibt in der Git-Geschichte. Danach ein eigener Commit.
 3. **Mechanik.** Ein Skript erledigt, was keine Inhalte berührt:
 
    ```sh
    sh _template/setup/upgrade.sh
    ```
 
-   Mit `--nur-pruefen` zeigt es vorher, was es täte. Es benennt Dateien um, die im neuen Stand anders heißen, legt Dateien an, die im Projekt fehlen, stellt Formalien in den Köpfen der Knoten um und schreibt die Versionsfolge in den Herkunfts-Vermerk. Eine bestehende Datei überschreibt es nie. Was es nicht mechanisch erledigen kann, etwa Links auf umbenannte Dateien, listet es für den Agenten auf, der es mit Blick auf den Zusammenhang nachzieht. Ein zweiter Lauf ändert nichts mehr.
+   Mit `--nur-pruefen` zeigt es vorher, was es täte. Es benennt Dateien um, die in der neuen Version anders heißen, legt Dateien an, die im Projekt fehlen, stellt Formalien in den Köpfen der Knoten um und schreibt die Versionsfolge in den Herkunfts-Vermerk. Eine bestehende Datei überschreibt es nie. Was es nicht mechanisch erledigen kann, etwa Links auf umbenannte Dateien, listet es für den Agenten auf, der es mit Blick auf den Zusammenhang nachzieht. Ein zweiter Lauf ändert nichts mehr.
 4. **Pflicht-Fassaden und laufende Marke.** Register, die in jedem Projekt Pflicht sind, werden aktiv; fehlt eine Marke, die gerade läuft, legt der Agent die von Ihnen genannte an.
-5. **Delta-Nachzug.** Für jede Datei, die es im Projekt und im neuen Stand gibt, etwa das Regelwerk im Projektordner oder die Köpfe der Fassaden, vergleicht der Agent beide und legt Ihnen die Unterschiede als Vorschläge vor. Überschrieben wird nichts.
+5. **Delta-Nachzug.** Für jede Datei, die es im Projekt und in der neuen Version gibt, etwa das Regelwerk im Projektordner oder die Köpfe der Fassaden, vergleicht der Agent beide und legt Ihnen die Unterschiede als Vorschläge vor. Überschrieben wird nichts.
 6. **Versionssprung.** Was der Sprung von einer bestimmten alten auf die neue Version zusätzlich verlangt, steht in einer eigenen Datei der Vorlage.
-7. **Herkunft.** Der Herkunfts-Vermerk trägt danach die neue Version mit dem Tag des Upgrades und darunter die alte mit ihrem Ende. Ein Projekt sammelt so seine Versionsfolge. Der Tag des Upgrades ist zugleich der Stichtag für den Lint: Neue Pflichtfelder gelten als Fehler nur für Elemente ab diesem Tag; für den Bestand sind sie Hinweise.
+7. **Herkunft.** Der Herkunfts-Vermerk trägt danach die neue Version mit dem Datum des Upgrades und darunter die alte mit ihrem Ende. Ein Projekt sammelt so seine Versionsfolge. Dieses Datum ist zugleich der Stichtag für den Lint: Neue Pflichtfelder gelten als Fehler nur für Elemente ab diesem Datum; für den Bestand sind sie Hinweise.
 8. **Absicherung.** Der Lint ohne Fehler, dann zwei Prüfer verschiedener Modelle als frische Agenten, mit Ampel und höchstens drei Runden wie bei der Migration, danach Sie, wenn Sie Prüfer sind. Zum Schluss der Abschluss-Commit.
 
 Danach gilt für die laufende Marke die normale Prüfkette. Die Anleitung bleibt in der Vorlage und wird nicht ins Projekt kopiert. Davon getrennt ist das Hinzufügen oder Wechseln eines Referenzprozesses; es läuft als eigener Vorgang, und wenn dabei bestehende Einträge umgebaut werden, folgt dieselbe Absicherung.
 
 ## Was jetzt klar sein sollte
 
-- Migration und Upgrade sind die Wege für Projekte, die schon da sind. Die Migration bringt Wissen aus verstreuten Dateien ins Wiki; das Upgrade hebt ein Projekt aus der Vorlage auf deren neuen Stand. Der Agent erkennt am Herkunfts-Vermerk, welcher Weg gilt.
+- Migration und Upgrade sind die Wege für Projekte, die schon da sind. Die Migration bringt Wissen aus verstreuten Dateien ins Wiki; das Upgrade hebt ein Projekt aus der Vorlage auf deren neue Version. Der Agent erkennt am Herkunfts-Vermerk, welcher Weg gilt.
 - Beide folgen denselben Grundsätzen: Nichts geht verloren, alles wird einsortiert, im Zweifel fragt der Agent, gesammelt in einem Block. Kein Kommando ohne Ihre Zustimmung.
 - Die Migration endet mit einer Marke `Uebernahme-` und dem Datum; übernommene Elemente sind Bestand ohne Marke, alte Dateien bleiben liegen. Das Upgrade endet mit einer neuen Zeile im Herkunfts-Vermerk.
 - Beide schließen mit derselben Absicherung: Lint, zwei Prüfer mit Ampel, dann Sie.

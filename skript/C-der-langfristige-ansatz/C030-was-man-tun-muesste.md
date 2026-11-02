@@ -74,7 +74,8 @@ Die sechs Ansätze sind zugleich der Fahrplan für den Rest des Skripts. Ab Teil
 | Entscheidungen beim Menschen | E Mensch und Agent | [Wer entscheidet was](../E-mensch-und-agent/E010-wer-entscheidet-was.md) |
 | Nach Marken schneiden | F Marken und Freigaben | [Marken](../F-marken-und-freigaben/F010-marken.md) |
 | Parallelisierbar machen | F, dazu H Mehrere Agenten | [Subagenten](../H-mehrere-agenten/H010-subagenten.md) |
-| Prüfen lassen, Produkt trennen | G Der Gesamtprozess | [Softwareentwicklung als Prozess](../G-der-gesamtprozess/G010-softwareentwicklung-als-prozess.md) |
+| Prüfen lassen | G Der Gesamtprozess | [Softwareentwicklung als Prozess](../G-der-gesamtprozess/G010-softwareentwicklung-als-prozess.md) |
+| Das Produkt trennen | G Der Gesamtprozess | [Werkstatt, Produkt, Schleuse](../G-der-gesamtprozess/G030-werkstatt-produkt-schleuse.md) |
 
 ## Was jetzt klar sein sollte
 

@@ -27,7 +27,7 @@ tmux attach -t lager     # an die Sitzung lager anhängen
 tmux attach              # an die zuletzt benutzte Sitzung anhängen
 ```
 
-Lösen, ohne die Sitzung zu beenden: `Strg+B` drücken, loslassen, dann `D`. Sie sind wieder in der normalen Shell, die Sitzung läuft im Hintergrund weiter. Beenden Sie dagegen den Agenten mit `/exit` und die Shell in der Sitzung mit `exit`, ist die Sitzung zu Ende.
+Lösen, ohne die Sitzung zu beenden: `Strg+B` drücken, loslassen, dann `d`. Sie sind wieder in der normalen Shell, die Sitzung läuft im Hintergrund weiter. Beenden Sie dagegen den Agenten mit `/exit` und die Shell in der Sitzung mit `exit`, ist die Sitzung zu Ende.
 
 Die Faustregel: Zum Arbeiten mit dem Agenten eine tmux-Sitzung öffnen und den Agenten darin starten. Um später an den laufenden Agenten zu kommen, ein beliebiges Terminal öffnen und `tmux attach`. Ob das Terminal in VS Code liegt, in PowerShell nach `ssh clawbook` oder in einem Tab unter Windows, ist egal; die Sitzung ist dieselbe. Der Projektverwalter `wsm` aus dem Kapitel [Einen Agenten bekommen](A030-einen-agenten-bekommen.md) startet Agenten von sich aus in einer tmux-Sitzung.
 
@@ -42,7 +42,7 @@ cd ~/source/sandbox/lager
 claude -c
 ```
 
-Der Agent liest dann den alten Verlauf wieder in den Kontext und macht weiter, als wäre nichts gewesen. Zwei Dinge sollten Sie dazu wissen. Erstens kommt der Verlauf vollständig zurück, mit allem, was das Fenster vorher schon gefüllt hat. Zweitens ist der gespeicherte Verlauf ein Verlauf, kein Ergebnis. Bevor Sie am Abend aufhören, lassen Sie den Agenten den Zwischenstand in Dateien schreiben, wie im Kapitel Kontext beschrieben. Dann hängt der nächste Tag nicht daran, dass das Fortsetzen klappt.
+Der Agent liest dann den alten Verlauf wieder in den Kontext und macht weiter, als wäre nichts gewesen. Zwei Dinge sollten Sie dazu wissen. Erstens kommt der Verlauf vollständig zurück, mit allem, was das Fenster vorher schon gefüllt hat. Zweitens ist der gespeicherte Verlauf ein Verlauf, kein Ergebnis. Bevor Sie am Abend aufhören, lassen Sie den Agenten das Erreichte in Dateien schreiben, wie im Kapitel Kontext beschrieben. Dann hängt der nächste Tag nicht daran, dass das Fortsetzen klappt.
 
 ## Zwei Wege zur laufenden Sitzung
 
@@ -56,7 +56,7 @@ Sie haben jetzt Sitzungen, die weiterlaufen. Bleibt die Frage, wie Sie bequem zu
 irm https://github.com/schlingensiepen/tmux-helper/releases/latest/download/open-tmux-tabs.exe -OutFile "$env:TEMP\open-tmux-tabs.exe"; Start-Process "$env:TEMP\open-tmux-tabs.exe" -Wait
 ```
 
-Dazu brauchen Sie das Windows Terminal, das bei Windows 11 dabei ist, den OpenSSH-Client von Windows, tmux auf dem entfernten Rechner und einen SSH-Zugang mit Schlüssel. Bei clawbook ist das alles schon da; der Rechner heißt in der SSH-Konfiguration `clawbook`. Beim ersten Start drücken Sie `n`, geben `clawbook` ein und bestätigen. Der Eintrag wird grün, sobald die Verbindung steht, rechts erscheinen die laufenden tmux-Sitzungen. Enter öffnet alle als Tabs im Windows Terminal, je Tab eine SSH-Verbindung mit angehängter Sitzung. Das Programm bleibt danach offen, sodass Sie später weitere Sitzungen auswählen und öffnen können.
+Dazu brauchen Sie das Windows Terminal, das ab Windows 11 vorinstalliert ist und sich sonst aus dem Microsoft Store installieren lässt, den OpenSSH-Client von Windows, tmux auf dem entfernten Rechner und einen SSH-Zugang mit Schlüssel. Bei clawbook ist das alles schon da; der Rechner heißt in der SSH-Konfiguration `clawbook`. Beim ersten Start drücken Sie `n`, geben `clawbook` ein und bestätigen. Der Eintrag wird grün, sobald die Verbindung steht, rechts erscheinen die laufenden tmux-Sitzungen. Enter öffnet alle als Tabs im Windows Terminal, je Tab eine SSH-Verbindung mit angehängter Sitzung. Das Programm bleibt danach offen, sodass Sie später weitere Sitzungen auswählen und öffnen können.
 
 ![Links ein oranger Block tmux-helper, Open-TmuxTabs, mit einem Pfeil öffnet auf einen Container Windows Terminal, der drei grüne Tabs enthält: lager, done, notizen. Rechts ein Container Entfernter Rechner mit einer Fläche tmux, darin drei blaue Blöcke Sitzung lager, Sitzung done, Sitzung notizen, jeweils mit Agent läuft. Von jedem Tab führt ein Pfeil ssh zur gleichnamigen Sitzung.](bilder/A050-sitzungen.svg)
 
@@ -67,7 +67,7 @@ Für eine einzelne Sitzung ist das Terminal in VS Code schneller. tmux-helper lo
 ## Was jetzt klar sein sollte
 
 - Die Shell startet den Agenten als Kindprozess. Geht das Terminal oder die Verbindung weg, endet die Shell und mit ihr der Agent.
-- tmux löst Sitzungen vom Fenster. Agent in einer tmux-Sitzung starten, mit `Strg+B`, `D` lösen, mit `tmux attach` zurückkommen. Das hält, solange der Rechner läuft.
+- tmux löst Sitzungen vom Fenster. Agent in einer tmux-Sitzung starten, mit `Strg+B`, `d` lösen, mit `tmux attach` zurückkommen. Das hält, solange der Rechner läuft.
 - Eine beendete Sitzung lässt sich oft fortsetzen, in Claude Code mit `claude -c`. Verlassen Sie sich trotzdem auf Dateien, nicht auf den Verlauf.
 - Zurück zur Sitzung kommen Sie über das Terminal in VS Code oder, bei mehreren Sitzungen, über tmux-helper unter Windows.
 

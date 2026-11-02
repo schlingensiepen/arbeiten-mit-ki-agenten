@@ -6,7 +6,7 @@ Das vorige Kapitel endete mit einer offenen Frage: Was heißt „freigegeben fü
 
 ## Ein Beispiel aus dem Fahrzeugbau
 
-In der Fahrzeugentwicklung wird ein Planungsstand nicht einfach freigegeben, sondern für etwas: dieser Planungsstand für die Detaillierung, dieser Detaillierungsgrad für die Bestellung der Werkzeuge, dieser Werkzeugplan für die Vorbereitung der Produktion. Für eine Messe wird eine Version eingefroren, die genau diesem Zweck dient. Dass eine Version für die Messe taugt, heißt nicht, dass man danach Werkzeuge bestellen darf. Jede Freigabe beantwortet eine andere Frage, und wer sich auf ein Dokument verlässt, muss wissen, welche Frage beantwortet ist.
+In der Fahrzeugentwicklung wird eine Planung nicht einfach freigegeben, sondern für etwas: diese Planung für die Detaillierung, dieser Detaillierungsgrad für die Bestellung der Werkzeuge, dieser Werkzeugplan für die Vorbereitung der Produktion. Für eine Messe wird eine Version eingefroren, die genau diesem Zweck dient. Dass eine Version für die Messe taugt, heißt nicht, dass man danach Werkzeuge bestellen darf. Jede Freigabe beantwortet eine andere Frage, und wer sich auf ein Dokument verlässt, muss wissen, welche Frage beantwortet ist.
 
 Software ist da nicht anders. Eine Funktionsbeschreibung kann gut genug sein, damit jemand daraus die Bausteine des Systems ableitet, und trotzdem nicht gut genug, um danach auszuliefern.
 
@@ -24,9 +24,11 @@ Im Bild sehen Sie die Funktionsbeschreibung zur Marke 1.0 von DONE, dort mit dem
 
 Eine Freigabe ist eine [Entscheidung](../Z-anhang/Z010-glossar.md#entscheidung) und steht als solche im Register, mit Nummer und Verweis auf das Dokument. Ihr Wortlaut ist fest:
 
-> Stand x von ⟨Artefakt⟩, freigegeben für Zweck Z
+> Stand x von ⟨Artefakt⟩, freigegeben für Zweck Z [zu Marke M]
 
-x ist die Version des Dokuments, ⟨Artefakt⟩ seine Art, etwa Anforderungen oder Funktionsbeschreibung, und Z der Zweck: eine Phase mit ihrem Tätigkeitsnamen oder ein freier Zweck. Für DONE lautet der Eintrag zur Freigabe aus dem vorigen Kapitel etwa „Stand 01_DON von Anforderungen, freigegeben für P4 Beschreiben der Funktion“, wobei `01_DON` die erste Version mit dem Bearbeiter-Kürzel des Projekts ist. Der Wortlaut ist verbindlich, weil ein Prüfprogramm, der [Lint](../Z-anhang/Z010-glossar.md#lint), Freigaben im Register an genau dieser Form erkennt. Deshalb fällt hier das Wort Stand: Es ist Teil der Formel.
+x ist die Version des Dokuments, ⟨Artefakt⟩ seine Art, etwa Anforderungen oder Funktionsbeschreibung, und Z der Zweck: eine Phase mit ihrem Tätigkeitsnamen oder ein freier Zweck. Für DONE lautet der Eintrag zur Freigabe aus dem vorigen Kapitel etwa „Stand 01_DON von Anforderungen, freigegeben für P4 Beschreiben der Funktion“, wobei `01_DON` die erste Version mit dem Bearbeiter-Kürzel des Projekts ist. Das Wort „Zweck“ darf dabei entfallen. Der Wortlaut ist verbindlich, weil ein Prüfprogramm, der [Lint](../Z-anhang/Z010-glossar.md#lint), Freigaben im Register an genau dieser Form erkennt. Deshalb fällt hier das Wort Stand: Es ist Teil der Formel.
+
+Die eckigen Klammern zeigen, dass der Zusatz „zu Marke M“ nicht immer dasteht. Die Marke steht schon im Kopf des Freigabedokuments. Der Zusatz wiederholt sie nur und steht, wenn sie nicht die laufende Marke ist. Läuft 1.1 und werden schon Anforderungen zu 2.0 freigegeben, heißt es also „Stand 01_DON von Anforderungen, freigegeben für P4 Beschreiben der Funktion zu Marke 2.0“. Immer steht der Zusatz, wenn es kein Freigabedokument gibt, denn dann ist der Eintrag die einzige Stelle, die die Marke nennt. Das betrifft die Freigabe des Produkts selbst. Sie läuft über eine Markierung in Git, den [Git-Tag](../Z-anhang/Z010-glossar.md#tag), und das Kapitel [Softwareentwicklung als Prozess](../G-der-gesamtprozess/G010-softwareentwicklung-als-prozess.md) erklärt sie.
 
 Bei den Dokumenten, die der Prozess verlangt, verweist der Eintrag außerdem auf den Bericht des Prüfers, der das Dokument vor der Freigabe gegen seine Vorgänger geprüft hat. Eine Einschränkung steht ausdrücklich dabei, etwa dass ein Vorgänger fehlt oder dass Prüfer und Ersteller dasselbe Modell waren. Was geprüft wird und von wem, ist Thema von [Prüfen](../G-der-gesamtprozess/G020-pruefen.md).
 
@@ -50,7 +52,7 @@ Zum Schluss eine Abgrenzung. Wenn Sie dem Agenten erlauben, einen einzelnen Befe
 
 - Eine Freigabe sagt nie nur „gut“, sondern „gut für y“: für eine Phase oder einen freien Zweck wie Versand.
 - Ein Dokument kann für einen Zweck freigegeben sein und für einen anderen nicht. Keine Freigabe impliziert eine andere.
-- Die Freigabe ist eine Entscheidung im Register mit festem Wortlaut: Stand x von ⟨Artefakt⟩, freigegeben für Zweck Z.
+- Die Freigabe ist eine Entscheidung im Register mit festem Wortlaut: Stand x von ⟨Artefakt⟩, freigegeben für Zweck Z [zu Marke M]. Der Zusatz steht, wenn die Marke nicht die laufende ist oder es kein Freigabedokument gibt.
 - Phasen ordnen Freigaben, nicht Arbeit. Der Übergang zur nächsten Phase ist eine Freigabe.
 - Eine Freigabe wird nicht zurückgenommen. Ändert sich etwas, gibt es ein neues Dokument mit neuer Freigabe.
 

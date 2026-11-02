@@ -40,7 +40,7 @@ Dabei passiert ein Wechsel der Perspektive, der leicht übersehen wird. In der F
 
 ## Das Sprachmodell
 
-Ein [Sprachmodell](../Z-anhang/Z010-glossar.md#llm) ist dieselbe Sache in groß. Die Eingabe ist Text, zerlegt in [Tokens](../Z-anhang/Z010-glossar.md#token), die Stücke, in die das Modell Text teilt. Die Ausgabe ist das wahrscheinliche nächste Token. Die Vergangenheit, aus der gelernt wird, ist sehr viel Text. Aus jedem Stück davon lässt sich ein Beispiel bilden, denn die richtige Fortsetzung steht ja da. Der Fehler ist, wie weit die Vorhersage neben dem tatsächlichen nächsten Token lag. Die Gewichte werden so lange verschoben, bis dieser Fehler über den gesamten Text klein ist. Sogar die Zerlegung in Tokens wird dabei mitgelernt. Gewichte gibt es jetzt nicht zwei, sondern weit mehr als tausend.
+Ein [Sprachmodell](../Z-anhang/Z010-glossar.md#llm) ist dieselbe Sache in groß. Die Eingabe ist Text, zerlegt in [Tokens](../Z-anhang/Z010-glossar.md#token), die Stücke, in die das Modell Text teilt. Die Ausgabe ist das wahrscheinliche nächste Token. Die Vergangenheit, aus der gelernt wird, ist sehr viel Text. Aus jedem Stück davon lässt sich ein Beispiel bilden, denn die richtige Fortsetzung steht ja da. Der Fehler ist, wie weit die Vorhersage neben dem tatsächlichen nächsten Token lag. Die Gewichte werden so lange verschoben, bis dieser Fehler über den gesamten Text klein ist. Gewichte gibt es jetzt nicht zwei, sondern bei heutigen Modellen weit mehr als tausend (Stand Oktober 2026).
 
 Daraus folgt, was das Kapitel über Agenten nur festgestellt hat. Alles, was das Modell weiß, steckt in den Gewichten, und die stammen aus dem Text, der beim Training vorlag. Nach dem Training ändern sich die Gewichte nicht mehr. Deshalb veraltet das Wissen des Modells, und deshalb lernt ein Chatbot aus Ihrem Gespräch nichts dazu. Er wird nicht besser, er bekommt nur mehr [Kontext](../A-verstehen-und-loslegen/A020-kontext.md).
 
@@ -56,7 +56,7 @@ Das Wort Schlussfolgern trifft es nicht, auch wenn Reasoning so übersetzt wird.
 
 - Lernen heißt, Gewichte so lange zu verschieben, bis der Fehler klein ist. Die Fehlerfunktion misst den Fehler, Lernen sucht ihr Minimum.
 - Die Gewichte sind alles, was ein Modell gelernt hat. Nach dem Training stehen sie fest. Deshalb veraltet das Wissen eines Modells, und deshalb lernt es aus Ihrem Gespräch nichts.
-- Ein Sprachmodell ist dasselbe Verfahren in groß: Text hinein, nächstes Token heraus, weit mehr als tausend Gewichte.
+- Ein Sprachmodell ist dasselbe Verfahren in groß: Text hinein, nächstes Token heraus, nur mit sehr viel mehr Gewichten.
 - Reasoning entsteht durch Nachtrainieren mit prüfbaren Aufgaben. Es bleibt Weiterschreiben, nur mit Zwischenschritten.
 
 Zurück zu [Was ein Agent ist](../A-verstehen-und-loslegen/A010-was-ein-agent-ist.md).

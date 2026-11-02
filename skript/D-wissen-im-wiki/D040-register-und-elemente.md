@@ -1,6 +1,6 @@
 # Register und Elemente
 
-> **Stand der Quellen:** [referenzprozess-softwareentwicklung](https://github.com/schlingensiepen/referenzprozess-softwareentwicklung) `release-2.0`, `Wiki.md`, `docs/Wiki-und-Register.md`.
+> **Stand der Quellen:** [referenzprozess-softwareentwicklung](https://github.com/schlingensiepen/referenzprozess-softwareentwicklung) `release-2.0`, `Wiki.md`, `docs/Wiki-und-Register.md`, `wiki/Entscheidungen.md`.
 
 Viele Fassaden des Wikis sind Register: Listen mit nummerierten Einträgen, dahinter je ein Detail-Knoten. Anforderungen, Entscheidungen, Fehlermeldungen, Testfälle, alles läuft nach demselben Muster. Dieses Kapitel erklärt das Muster an den Entscheidungen: warum eine Festlegung eine Nummer und eine Begründung bekommt, was passiert, wenn sie sich ändert, und warum nichts davon jemals gelöscht wird. Neu ist daran wenig. Das Software Engineering kennt das Werkzeug seit Langem als Decision Record: Man schreibt auf, was entschieden wurde, im Prinzip ein großer Log. Agenten brauchen nichts anderes, nur konsequenter.
 
@@ -12,20 +12,23 @@ Die Einträge sind von zweierlei Art. [Elemente](../Z-anhang/Z010-glossar.md#ele
 
 ## Eine Entscheidung bekommt eine Nummer und eine Begründung
 
-Eine [Entscheidung](../Z-anhang/Z010-glossar.md#entscheidung) ist eine festgelegte Projekt-Wahrheit. Ihr Eintrag nennt die Wahl, die Begründung, die verworfenen Alternativen und Verweise auf das, worauf sie sich stützt, dazu die Marke, für die sie gilt, und das Datum. Sie kommt erst mit Ihrem OK ins Register, und zwar direkt als angenommen; Entwürfe liegen nie im Wiki. Vor jeder neuen Entscheidung durchsucht der Agent das Register nach verwandten Einträgen und nennt sie Ihnen. So kann ein Eintrag für DONE aussehen:
+Eine [Entscheidung](../Z-anhang/Z010-glossar.md#entscheidung) ist eine festgelegte Projekt-Wahrheit. Ihr Eintrag nennt die Wahl, die Begründung und Verweise auf das, worauf sie sich stützt, dazu die Marke, für die sie gilt, und die Daten. Die verworfenen Alternativen stehen im Detail-Knoten. Sie kommt erst mit Ihrem OK ins Register, und zwar direkt als angenommen; Entwürfe liegen nie im Wiki. Vor jeder neuen Entscheidung durchsucht der Agent das Register nach verwandten Einträgen und nennt sie Ihnen; was er geprüft hat, steht im Feld `Nachbarschaft`. So kann ein Eintrag für DONE aussehen, `NNN` ist dabei die dreistellige laufende Nummer:
 
 ```markdown
-### DEC-7 — Delegierte TODOs bleiben auf beiden Seiten
+### DEC-NNN — Delegierte TODOs bleiben auf beiden Seiten
 
-- **Status:** angenommen
-- **Zielmarke:** 1.0
+- **Status:** angenommen — **Datum:** 2026-10-20
 - **Angelegt:** 2026-10-20
-- **Wahl:** Beim Delegieren entstehen zwei verlinkte TODOs, eines je Benutzer.
-- **Begründung:** Beide wollen sehen, wie weit es ist. Der Empfänger ordnet mit
-  eigenen Tags, der Absender behält die Frist im Blick.
-- **Verworfen:** Ein gemeinsamer Eintrag für beide. Dann müssten sich beide
-  auf Tags und Sichten einigen.
+- **Zielmarke:** 1.0
+- **Wahl und Begründung:** Beim Delegieren entstehen zwei verlinkte TODOs,
+  eines je Benutzer. Beide wollen sehen, wie weit es ist. Der Empfänger ordnet
+  mit eigenen Tags, der Absender behält die Frist im Blick.
+- **Verweise:** Anforderung zum Delegieren
+- **Nachbarschaft:** keine verwandten Einträge
+- **Detail:** DEC-NNN Delegierte TODOs bleiben auf beiden Seiten
 ```
+
+Das Feld `Datum` nennt den letzten Wechsel des Status, `Angelegt` den Tag der Anlage. `Zielmarke` ist das Wort des Regelwerks für die Marke des Eintrags. Das Feld `Detail` zeigt im Wiki als Link auf den Detail-Knoten. Dort steht unter „Verworfene Alternativen“ für dieses Beispiel: Ein gemeinsamer Eintrag für beide. Dann müssten sich beide auf Tags und Sichten einigen.
 
 Warum der Aufwand? Weil diese Entscheidung die Voraussetzung für die nächsten ist. Die Funktionsbeschreibung des Delegierens, das Datenmodell, die Testfälle: Alle stützen sich darauf, dass es zwei TODOs gibt. Wer in drei Monaten fragt, warum das so ist, findet die Nummer in jedem dieser Dokumente und die Begründung im Register. Und wenn der Agent behauptet, das sei so entschieden, nennt er die Nummer. Ohne Nummer ist es eine Erinnerung, und die wird erst geprüft.
 
@@ -47,7 +50,7 @@ Was angenommen ist, wird nicht mehr geändert. Ändert sich die Sache, entsteht 
 
 Eine zweite Form ist das [Verwerfen](../Z-anhang/Z010-glossar.md#verwerfen): Ein Element wird mit Begründung aufgegeben, ohne Nachfolger. Auch dann bleibt es stehen, und seine Nummer bleibt vergeben.
 
-Der Gedanke dahinter ist derselbe wie beim Artikel in der Lagerverwaltung. Ein Artikel, der nicht mehr geführt wird, wird nicht gelöscht, sondern inaktiv gesetzt. Denn jede Buchung der Vergangenheit verweist auf ihn: von welchem Fach in welches Fach, welcher Artikel. Löscht man den Artikel, stimmen die Buchungen nicht mehr. Setzt man ihn inaktiv, bleibt das Archiv intakt, und der Eintrag stimmt noch in tausend Jahren.
+Der Gedanke dahinter ist derselbe wie beim Artikel in der Lagerverwaltung. Ein Artikel, der nicht mehr geführt wird, wird nicht gelöscht, sondern inaktiv gesetzt. Denn jede Buchung der Vergangenheit verweist auf ihn: welcher Artikel, welche Menge, an welchem Lagerort. Löscht man den Artikel, stimmen die Buchungen nicht mehr. Setzt man ihn inaktiv, bleibt das Archiv intakt, und der Eintrag stimmt noch in tausend Jahren.
 
 Mit Elementen ist es genauso. Nehmen Sie an, für DONE gilt in Marke 2.0 die Anforderung, dass Sichten nach Tags, Terminen und Text filtern. Die Funktionsbeschreibung für 2.0 verweist auf diese Anforderung. Für Marke 3.0 wünscht sich jemand zusätzlich Filter nach Personen. Dann wird die Anforderung nicht umgeschrieben, sondern durch eine neue abgelöst, die für 3.0 gilt. Die Funktionsbeschreibung für 2.0 bleibt sinnvoll, weil die alte Anforderung weiter dasteht und weiter dasselbe sagt. Hätte man sie überschrieben, würde die Beschreibung von 2.0 plötzlich auf einen Text zeigen, den es zur Zeit von 2.0 nicht gab.
 

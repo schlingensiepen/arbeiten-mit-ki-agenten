@@ -2,7 +2,7 @@
 
 Ein Skript für Studierende des ersten Semesters ohne Vorkenntnisse: wie man mit KI-Agenten arbeitet, warum ein Gespräch allein nicht trägt, und wie eine Arbeitsweise aussieht, die über Wochen, viele Sitzungen und mehrere Versionen hält. Es erklärt die Werkzeuge, die dazu gehören, und begründet, warum sie so gebaut sind, wie sie gebaut sind.
 
-Das Skript steht unter `skript/`, je Teil ein Ordner mit einem README und den Kapiteln. Es ist aus einer Werkstatt abgeleitet; jedes Kapitel nennt oben, aus welchen öffentlichen Quellen und welchem Stand es stammt. Was nur für heute gilt, trägt einen Stand, etwa „Stand Oktober 2026“.
+Das Skript steht unter `skript/`, je Teil ein Ordner mit einem README und den Kapiteln. Es ist aus einer Werkstatt abgeleitet; jedes Kapitel nennt oben, aus welchen öffentlichen Quellen und welcher Version es stammt. Was nur für heute gilt, trägt ein Datum, etwa „Stand Oktober 2026“.
 
 ## Für wen
 
@@ -27,7 +27,7 @@ Drei Teile stehen außerhalb der Lesekette. Die Kapitel verweisen an der passend
 - [Teil Y: Beispiele](skript/Y-beispiele/README.md) enthält die Startprompts der beiden Beispiele, die das Skript tragen, zum Nachmachen und zum Lesen.
 - [Teil Z: Anhang](skript/Z-anhang/README.md) enthält das Glossar. Jedes Kapitel verlinkt einen Fachbegriff beim ersten Auftreten dorthin.
 
-Jedes Kapitel ist für sich lesbar, beginnt mit dem Stand seiner Quellen und endet mit dem, was danach klar sein sollte, und dem Link zum nächsten Kapitel. Befehle stehen als kopierbare Codeblöcke.
+Die Kapitel der Lesekette setzen die vorherigen voraus; lesen Sie sie der Reihe nach. Jedes Kapitel beginnt mit der Zeile „Stand der Quellen“ und endet mit dem, was danach klar sein sollte, und dem Link zum nächsten Kapitel. Befehle stehen als kopierbare Codeblöcke.
 
 ## Behandelte Werkzeuge
 
@@ -44,4 +44,4 @@ Das Skript erklärt die folgenden Werkzeuge und zeigt sie am Beispiel. Es empfie
 
 Inhalt unter CC BY 4.0, Attribution: Jörn Schlingensiepen,
 `https://github.com/schlingensiepen/arbeiten-mit-ki-agenten`. Quelltext unter
-Apache-2.0 (Ordner `tools/`). Details: [`LICENSE`](LICENSE).
+Apache-2.0. Details: [`LICENSE`](LICENSE).

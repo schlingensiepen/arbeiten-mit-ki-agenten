@@ -2,7 +2,7 @@
 
 > **Stand der Quellen:** keine gebundene Quelle. Dieses Kapitel führt einen Fall durch.
 
-Die Lagerverwaltung läuft. Die Anforderungen stehen in einer Datei, das Datenmodell in der nächsten, die Spezifikation in der dritten, der Quelltext liegt daneben, die Tests sind grün. Bis hierher hat der naive Ansatz getragen. Dieses Kapitel zeigt an einem Fall, wo er bricht. Es erklärt noch nicht, warum; das tut Teil C. Hier geht es nur darum, den Bruch einmal gesehen zu haben.
+Die Lagerverwaltung läuft. Die Anforderungen stehen in `anforderungen.md`, Datenmodell und Abläufe in `datenmodell-und-ablaeufe.md`, die Spezifikation in `spezifikation.md`, der Quelltext liegt daneben, die Tests sind grün. Bis hierher hat der naive Ansatz getragen. Dieses Kapitel zeigt an einem Fall, wo er bricht. Es erklärt noch nicht, warum; das tut Teil C. Hier geht es nur darum, den Bruch einmal gesehen zu haben.
 
 ## Eine Änderung kommt
 
@@ -26,11 +26,11 @@ Jetzt gibt es im Projektordner zwei Wahrheiten. Die Spezifikation sagt, es gibt 
 
 Denn die nächste [Sitzung](../Z-anhang/Z010-glossar.md#sitzung) beginnt mit leerem Kontext, so war es im Kapitel [Kontext](../A-verstehen-und-loslegen/A020-kontext.md). Der Agent weiß nichts vom Storno. Soll er die nächste Änderung einbauen, liest er die Spezifikation, und die kennt kein Storno. Je nachdem, was Sie ihn fragen, baut er das Storno ein zweites Mal, baut daran vorbei oder meldet einen Widerspruch zwischen Dokument und Quelltext, den Sie dann aufklären müssen. Der Ausweg wäre, dass er jedes Mal alles liest, alle Dokumente und den ganzen Quelltext. Das kostet genau das, was knapp ist: den Kontext.
 
-Und das war eine Änderung. Nach der dritten und fünften weiß niemand mehr, welches Dokument welchen Stand hat. Die Dokumente, die am Anfang die Stärke des Ansatzes waren, werden zur Altlast. Man hört auf, sie zu lesen, weil man ihnen nicht mehr traut, und dann kann man sie auch weglassen.
+Und das war eine Änderung. Nach der dritten und fünften weiß niemand mehr, welches Dokument noch gilt. Die Dokumente, die am Anfang die Stärke des Ansatzes waren, werden zur Altlast. Man hört auf, sie zu lesen, weil man ihnen nicht mehr traut, und dann kann man sie auch weglassen.
 
 ## Der zweite Fall: zwei Versionen zugleich
 
-Nehmen Sie dazu den Fall aus dem Kapitel [Die Dokumentenkette](B020-die-dokumentenkette.md): Version 1 der Lagerverwaltung ist im Einsatz, und Version 2 soll mehrere Benutzer können. Daran arbeiten Sie jetzt mit dem Agenten. Die Anforderungen für Version 2 sind andere als für Version 1, also kopieren Sie die Datei: eine für Version 1, eine für Version 2. Dasselbe mit dem Datenmodell, der Spezifikation, dem Quelltext. Aus einer Kette werden zwei.
+Das Kapitel [Die Dokumentenkette](B020-die-dokumentenkette.md) hat das eigentliche Problem schon genannt: Es wird mehrere Versionen geben, und an der nächsten wird gearbeitet, während die erste läuft. Nehmen Sie dafür einen konkreten Fall: Version 1 der Lagerverwaltung ist im Einsatz, und Version 2 soll mehrere Benutzer können. Daran arbeiten Sie jetzt mit dem Agenten. Die Anforderungen für Version 2 sind andere als für Version 1, also kopieren Sie die Datei `anforderungen.md`: eine für Version 1, eine für Version 2. Dasselbe mit dem Datenmodell, der Spezifikation, dem Quelltext. Aus einer Kette werden zwei.
 
 Dann kommt das Storno. Es gehört in Version 1, denn dort wird gearbeitet. Es gehört auch in Version 2, denn die soll alles können, was Version 1 kann. Eine Änderung, zwei Ketten, zehn Dokumente. Und bei jedem Dokument die Frage, ob die Kopie noch mit dem Original übereinstimmt oder sich schon auseinanderentwickelt hat.
 

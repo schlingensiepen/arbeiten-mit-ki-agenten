@@ -8,7 +8,7 @@ Dies ist der [Startprompt](../Z-anhang/Z010-glossar.md#startprompt) für das ers
 
 Wer einem Agenten „schreib mir eine Lagerverwaltung“ sagt, bekommt Code. Sofort, und ziemlich viel davon. Das ist der Code-Impuls, und er ist das Problem: Der Agent baut dann etwas, das niemand so bestellt hat, weil niemand vorher gesagt hat, was gebraucht wird. Der Prompt steuert dagegen. Er sagt, worum es geht, und verbietet im selben Atemzug den Code. Zuerst werden die Anforderungen entwickelt, im Gespräch: Der Agent fragt, Sie entscheiden.
 
-Das Zweite, was der Prompt tut: Er hält das Vorhaben klein. Ein Benutzer, ein einfaches Lager, Bedienung im Terminal, eine Liste statt eines Bestellvorschlags. Alles, was man weglassen kann, wird weggelassen. Was der Prompt an Fachlichem vorgibt, ist bewusst wenig. Den Rest soll der Agent erfragen.
+Das Zweite, was der Prompt tut: Er hält das Vorhaben klein. Ein Benutzer, ein Lagerort je Artikel, Bedienung im Terminal, eine Liste statt eines Bestellvorschlags. Alles, was man weglassen kann, wird weggelassen. Was der Prompt an Fachlichem vorgibt, ist bewusst wenig. Den Rest soll der Agent erfragen.
 
 ## Der Prompt
 
@@ -17,12 +17,12 @@ Ich möchte ein Lagerverwaltungsprogramm schreiben. Schreib noch keinen Code. Wi
 
 Das Programm bleibt klein:
 - Ein Benutzer an einem Rechner. Kein Mehrbenutzerbetrieb, kein Netz.
-- Ein einfaches Lager: Artikel mit Bestand. Keine Lagerplätze, keine Chargen.
+- Ein einfaches Lager: Jeder Artikel hat einen Bestand und genau einen Lagerort. Keine Chargen.
 - Bedienung im Terminal, keine grafische Oberfläche.
 - Statt eines Bestellvorschlags reicht eine Liste der Artikel, deren Bestand unter einer Mindestmenge liegt. Bestellen entscheide ich selbst.
 
 Was ich schon weiß:
-- Es gibt Artikel und Bewegungen. Eine Bewegung ist ein Zugang oder ein Abgang mit Menge und Datum.
+- Es gibt Artikel, Lagerorte und Bewegungen. Eine Bewegung ist ein Zugang oder ein Abgang mit Menge und Datum.
 - Der Bestand eines Artikels ergibt sich aus seinen Bewegungen.
 - Artikel werden nicht gelöscht, sondern inaktiv gesetzt, damit alte Bewegungen weiter auf sie zeigen.
 

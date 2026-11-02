@@ -14,9 +14,11 @@ In Teil B haben Sie für die Lagerverwaltung erst die Anforderungen entwickelt u
 | 6. Jemand prüft unabhängig | prüfen lassen | G |
 | 7. Arbeitsmaterial und Ergebnis sind getrennt | Produkt vom Arbeitsmaterial trennen | G |
 
+Zwei Wörter brauchen Sie dafür schon jetzt, ausführlich kommen sie später. Eine [Marke](../Z-anhang/Z010-glossar.md#marke) ist ein benanntes Ergebnis, das nach außen geht, etwa Version 1.0. Ein [Element](../Z-anhang/Z010-glossar.md#element) ist ein einzelner nummerierter Eintrag, etwa eine Anforderung oder eine Entscheidung.
+
 ## 1. Wissen übersteht die Sitzung
 
-Der Kontext ist Arbeitsspeicher. Endet die Sitzung, ist er weg, und mit ihm alles, was nur im Gespräch stand. Die Dokumentenkette hatte dafür schon eine halbe Antwort: Die Dokumente lagen auf der Platte. Gefehlt hat alles andere, die Regeln, die Entscheidungen, der Stand der Arbeit. Die Forderung: Alles, was eine Sitzung überdauern soll, liegt als Datei im Projekt, und die nächste Sitzung findet es dort.
+Der Kontext ist Arbeitsspeicher. Endet die Sitzung, ist er weg, und mit ihm alles, was nur im Gespräch stand. Die Dokumentenkette hatte dafür schon eine halbe Antwort: Die Dokumente lagen auf der Platte. Gefehlt hat alles andere, die Regeln, die Entscheidungen, wie weit die Arbeit ist. Die Forderung: Alles, was eine Sitzung überdauern soll, liegt als Datei im Projekt, und die nächste Sitzung findet es dort.
 
 Die Antwort darauf ist ein [Wiki](../Z-anhang/Z010-glossar.md#wiki) im Projektordner, Teil D. Die Vorlage sagt dazu, lebendes Wissen ändere sich dort fortlaufend, und genau das ist gewollt: Das Wiki ist der Ort, an dem das Wissen lebt, nicht der Chat.
 
@@ -36,7 +38,7 @@ Die Vorlage hält das durchgängig so. Wo eine Prüfung ein Urteil verlangt, ble
 
 Das war der Bruch in Teil B: Eine Änderung berührte jedes Dokument hinter ihr, und bei zwei Versionen jedes Dokument zweimal. Die Forderung: Eine Änderung erzeugt etwas Neues, statt Bestehendes umzuschreiben, und sie betrifft nur das, wofür sie gilt.
 
-Die Vorlage tut dafür zweierlei. Sie schneidet die Arbeit nicht nach Schritten, sondern nach [Marken](../Z-anhang/Z010-glossar.md#marke): benannten Ergebnissen, die nach außen gehen, etwa Version 1.0 und Version 1.1. Und sie friert ein, worauf sich jemand verlassen soll: Aus dem lebenden Wissen wird ein eingefrorenes [Freigabedokument](../Z-anhang/Z010-glossar.md#freigabedokument) zu genau einer Marke. Ändert sich danach etwas, entsteht ein neues Dokument, das alte bleibt unverändert liegen. Ein Element, das ein älteres ablöst, gilt ab seiner Marke; für die Marken davor gilt das alte weiter. So gibt es keine Kopien, die auseinanderlaufen, sondern Fassungen, von denen jede sagt, wofür sie gilt. Das ist Teil F.
+Die Vorlage tut dafür zweierlei. Sie schneidet die Arbeit nicht nach Schritten, sondern nach Marken: benannten Ergebnissen, die nach außen gehen, etwa Version 1.0 und Version 1.1. Und sie friert ein, worauf sich jemand verlassen soll: Aus dem lebenden Wissen wird ein eingefrorenes [Freigabedokument](../Z-anhang/Z010-glossar.md#freigabedokument) zu genau einer Marke. Ändert sich danach etwas, entsteht ein neues Dokument, das alte bleibt unverändert liegen. Ein Element, das ein älteres ablöst, gilt ab seiner Marke; für die Marken davor gilt das alte weiter. So gibt es keine Kopien, die auseinanderlaufen, sondern Fassungen, von denen jede sagt, wofür sie gilt. Das ist Teil F.
 
 ## 5. Arbeit läuft nebeneinander
 

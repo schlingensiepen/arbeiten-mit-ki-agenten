@@ -1,6 +1,6 @@
 # Einen Agenten bekommen
 
-> **Stand der Quellen:** [clawbook-lehre](https://github.com/schlingensiepen/clawbook-lehre) `main`, `docs/README.md`, `docs/installation.md`, `docs/setup/README.md`, `docs/pflege.md`.
+> **Stand der Quellen:** [clawbook-lehre](https://github.com/schlingensiepen/clawbook-lehre) `main`, `docs/README.md`, `docs/installation.md`, `docs/setup/README.md`, `docs/setup/anthropic.md`, `docs/setup/github.md`, `docs/pflege.md`.
 
 Die ersten beiden Kapitel haben erklärt, was ein Agent ist und warum sein Kontext begrenzt ist. Jetzt brauchen Sie einen. Dieses Kapitel zeigt die drei Wege dorthin, beschreibt einen davon Schritt für Schritt und gibt Ihnen die wenigen Befehle mit, die Sie im Terminal brauchen. Alles Weitere in diesem Skript setzt voraus, dass bei Ihnen ein Agent läuft.
 
@@ -55,7 +55,7 @@ Der Befehl lädt ein Verwaltungs-Skript und zeigt ein Menü. Beim ersten Mal wä
 ssh clawbook
 ```
 
-SSH ist das Verfahren, mit dem Sie sich von Windows aus im Container anmelden; statt eines Passworts dient eine Schlüsseldatei, die das Skript angelegt hat. Beim ersten Verbinden fragt der Container, ob Sie sich bei [GitHub](../Z-anhang/Z010-glossar.md#github) anmelden wollen. GitHub ist ein Dienst im Netz, auf dem Projekte liegen; Sie brauchen ein kostenloses Konto. Melden Sie sich gleich an, denn Git und der Projektverwalter des Containers bauen darauf auf. Beantragen Sie bei der Gelegenheit das Student Developer Pack von GitHub: Die Prüfung dauert einige Tage, und mit ihm ist der Agent Copilot CLI für Studierende kostenlos.
+SSH ist das Verfahren, mit dem Sie sich von Windows aus im Container anmelden; statt eines Passworts dient eine Schlüsseldatei, die das Skript angelegt hat. Beim ersten Verbinden fragt der Container, ob Sie sich bei [GitHub](../Z-anhang/Z010-glossar.md#github) anmelden wollen. GitHub ist ein Dienst im Netz, auf dem Projekte liegen; Sie brauchen ein kostenloses Konto. Melden Sie sich gleich an, denn Git und der Projektverwalter `wsm` bauen darauf auf. `wsm` ist ein Befehl im Container, der Projektordner anlegt und Agenten darin startet. Beantragen Sie bei der Gelegenheit das Student Developer Pack von GitHub: Die Prüfung dauert einige Tage, und mit ihm ist der Agent Copilot CLI für Studierende kostenlos.
 
 Danach erscheint das clawbook-Menü. Mit `0` schließen Sie es und landen in der Eingabezeile des Containers. Sie erkennen sie daran, dass die Zeile mit `student@` beginnt und nicht mehr mit `PS C:\`. Alles, was Sie jetzt tippen, läuft im Container. Mit `exit` kommen Sie zurück nach Windows, der Container läuft weiter.
 
@@ -69,7 +69,7 @@ Einen grafischen Bildschirm hat der Container auch, erreichbar über die Remoted
 
 Im Container sind die Werkzeuge installiert, aber noch nicht angemeldet. Die Zugänge gehören Ihnen, deshalb stecken sie nicht im Image. Sie richten sie einmal ein; sie landen in Ihrem Home-Verzeichnis und bleiben erhalten.
 
-Welche Agenten im Container liegen und was sie kosten, steht in der Übersicht der Anleitung, mit Datum, weil sich Preise und Angebote ändern. Zum Stand Oktober 2026 sind es Claude Code (`claude`), Codex (`codex`), Copilot CLI (`copilot`), OpenCode (`opencode`) und Antigravity (`agy`). Sie müssen nichts kaufen, um anzufangen: Für jedes Werkzeug gibt es einen kostenlosen Einstieg, und die Anleitung nennt die Reihenfolge, in der Sie vorgehen. Wenn Sie etwas Kostenpflichtiges abschließen, gilt überall dasselbe: Abos verlängern sich automatisch, also das Kündigungsdatum in den Kalender; bei Guthaben nach Verbrauch das automatische Nachladen ausschalten und ein Ausgabenlimit setzen.
+Welche Agenten im Container liegen und was sie kosten, steht in der Übersicht der Anleitung, mit Datum, weil sich Preise und Angebote ändern. Stand Oktober 2026 sind es Claude Code (`claude`), Codex (`codex`), Copilot CLI (`copilot`), OpenCode (`opencode`) und Antigravity (`agy`). Sie müssen nichts kaufen, um anzufangen, einen kostenlosen Einstieg gibt es aber nur für einige Werkzeuge. Kostenlos ausprobieren lassen sich die Copilot CLI mit dem Student Developer Pack, Codex mit dem kostenlosen Plan von ChatGPT, Antigravity mit einem Google-Konto und OpenCode mit einigen kostenlosen Modellen. Claude Code gehört nicht dazu: Es braucht ein Abo oder Guthaben nach Verbrauch, der kostenlose Plan von Claude enthält es nicht (Stand Oktober 2026). Die Anleitung nennt die Reihenfolge, in der Sie vorgehen. Wenn Sie etwas Kostenpflichtiges abschließen, gilt überall dasselbe: Abos verlängern sich automatisch, also das Kündigungsdatum in den Kalender; bei Guthaben nach Verbrauch das automatische Nachladen ausschalten und ein Ausgabenlimit setzen.
 
 Die Anmeldung läuft bei fast allen Werkzeugen gleich. Sie starten das Werkzeug im Container, es zeigt einen Link und einen Code, Sie öffnen den Link im Browser unter Windows, melden sich an und geben den Code ein. Ein Browserfenster kann der Container nicht vor Ihnen öffnen, deshalb der Umweg.
 
@@ -106,7 +106,7 @@ mkdir lager      # einen Ordner lager anlegen
 find . -name "*.md"   # alle Markdown-Dateien ab hier suchen
 ```
 
-Die Tilde `~` steht für Ihr Home-Verzeichnis, den persönlichen Ordner im Container. Ihre Projekte liegen darunter in `~/source`, geordnet nach Bereichen: `~/source/<Bereich>/<Projekt>`. Ein Beispielprojekt ist schon da, `~/source/samples/primer`; dort können Sie gefahrlos ausprobieren. Der Befehl `wsm` legt neue Projekte in dieser Struktur an und startet Agenten darin, `wsm --help` zeigt seine Möglichkeiten.
+Die Tilde `~` steht für Ihr Home-Verzeichnis, den persönlichen Ordner im Container. Ihre Projekte liegen darunter in `~/source`, geordnet nach Bereichen: `~/source/<Bereich>/<Projekt>`. Ein Beispielprojekt ist schon da, `~/source/samples/primer`; dort können Sie gefahrlos ausprobieren. Der Projektverwalter `wsm` legt neue Projekte in dieser Struktur an und startet Agenten darin, `wsm --help` zeigt seine Möglichkeiten.
 
 Lernen Sie diese Befehle nicht wie Vokabeln. Benutzen Sie sie: Wechseln Sie in das Beispielprojekt, sehen Sie nach, was dort liegt, legen Sie einen Ordner an und gehen Sie wieder zurück. Nach einer Woche sitzen sie.
 
