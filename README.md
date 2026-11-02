@@ -34,6 +34,7 @@ Die Kapitel der Lesekette setzen die vorherigen voraus; lesen Sie sie der Reihe 
 Das Skript erklärt die folgenden Werkzeuge und zeigt sie am Beispiel. Es empfiehlt keines; was ein Werkzeug kann und wo seine Grenze liegt, steht im jeweiligen Kapitel.
 
 - [referenzprozess-softwareentwicklung](https://github.com/schlingensiepen/referenzprozess-softwareentwicklung): die Vorlage für Projekte mit vorbereitetem Wiki, Regelwerk und Anleitungen für neues Projekt, Migration und Upgrade (Teile D bis G).
+- [proposals](https://github.com/schlingensiepen/proposals): eine Konzept-Sammlung als Beispiel, erprobte Vorgehensweisen, die ein Agent gezielt nachschlägt und als Arbeitsanweisung nehmen kann (Teil D).
 - [clawbook-lehre](https://github.com/schlingensiepen/clawbook-lehre): ein fertig eingerichteter Arbeitsrechner für die Arbeit mit Agenten als Container-Image (Teil A).
 - [tmux-helper](https://github.com/schlingensiepen/tmux-helper): ein Windows-Programm, das tmux-Sitzungen entfernter Rechner auflistet und als Tabs öffnet (Teil A).
 - [peeragent](https://github.com/schlingensiepen/peeragent): startet einen zweiten Agenten als eigenen Prozess in einer tmux-Sitzung (Teil H).

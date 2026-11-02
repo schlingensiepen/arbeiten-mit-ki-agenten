@@ -1,6 +1,6 @@
 # Glossar
 
-> **Stand der Quellen:** [referenzprozess-softwareentwicklung](https://github.com/schlingensiepen/referenzprozess-softwareentwicklung) `release-2.0`, `docs/Begriffe.md`; [peeragent](https://github.com/schlingensiepen/peeragent) `v0.2.0`, `docs/glossary.md`.
+> **Stand der Quellen:** [referenzprozess-softwareentwicklung](https://github.com/schlingensiepen/referenzprozess-softwareentwicklung) `release-2.0`, `docs/Begriffe.md`, `docs/Mehrere-Repos.md`, `MasterPrompt.md`; [peeragent](https://github.com/schlingensiepen/peeragent) `v0.2.0`, `docs/glossary.md`; [simple-a2a](https://github.com/schlingensiepen/simple-a2a) `v0.1.1`, `README.md`; [skill-a2a](https://github.com/schlingensiepen/skill-a2a) `v1.0.1`, `skills/a2a/SKILL.md`; [clawbook-lehre](https://github.com/schlingensiepen/clawbook-lehre) `main`, `docs/setup/kurs-dienste.md`; [proposals](https://github.com/schlingensiepen/proposals) `release/2026-11-02`, `README.md`.
 
 Die Wörter dieses Skripts in je ein bis drei Sätzen, alphabetisch. Jedes Kapitel verlinkt einen Fachbegriff beim ersten Auftreten hierher. Wer von hier kommt, findet die Definition; der Zusammenhang steht im Kapitel, das den Begriff einführt. Englische Fachwörter, die im Deutschen üblich sind, bleiben stehen und werden erklärt. Wo das Regelwerk ein anderes Wort benutzt als das Skript, steht es dabei.
 
@@ -27,6 +27,10 @@ Was ein Programm können muss oder können kann, als Satz festgehalten und numme
 ## Antwort-Raster
 
 Feste Form der strukturierten Meldungen des Agenten: Erledigt, was getan ist; Aktion, was er als Nächstes tut, wenn man nicht widerspricht; Frage, was er vom Menschen braucht.
+
+## Arbeitsbaum
+
+Die Dateien eines Repos im Ordner, so wie sie gerade sind. Sauber ist der Arbeitsbaum, wenn nichts geändert ist, was nicht in einem Commit liegt.
 
 ## Arbeitsmodus
 
@@ -92,9 +96,13 @@ Das Zusammenfassen des bisherigen Gesprächs, wenn das Kontextfenster voll wird.
 
 Abgeschlossene Umgebung auf einem Rechner, die ihre eigene Software mitbringt und vom Rest weitgehend getrennt ist.
 
+## Contract
+
+Wort des Regelwerks für eine vereinbarte Schnittstelle zwischen den Teilen eines Systems. Sie gehört dem Anbieter, im Regelwerk Provider, und der Koordinator führt sie im Verzeichnis der Schnittstellen.
+
 ## Datenmodell
 
-Der Teil einer Software, der den Zustand der Welt beschreibt, im Beispiel der Lagerverwaltung den Bestand des Lagers: welche Dinge es gibt, welche Attribute sie haben und wie sie zusammenhängen.
+Die Festlegung darüber, welche Arten von Dingen es gibt und welche Attribute und Beziehungen jede Art hat, im Beispiel der Lagerverwaltung: Ein Artikel hat eine Artikelnummer, eine Bezeichnung und einen Bestand und liegt an genau einem Lagerort. Es entsteht im Gespräch über die Anforderungen; die Daten kommen später, wenn das Programm läuft.
 
 ## Dokumentenkette
 
@@ -114,7 +122,7 @@ Festgelegte Projekt-Wahrheit mit Nummer, Wahl und Begründung. Sie kommt nur mit
 
 ## Ersatzweg
 
-Weg einer Prüfung, die ein zweites Modell verlangt, wenn kein Werkzeug ein zweites Modell bereitstellt: dasselbe Modell prüft in frischem Kontext, mit sichtbarer Einschränkung in der Freigabe, oder ein Mensch prüft. Der Anwender wählt ihn beim Aufsetzen des Projekts.
+Weg einer Prüfung, die ein zweites Modell verlangt, wenn kein Werkzeug ein zweites Modell bereitstellt: dasselbe Modell prüft in frischem Kontext, der Ein-Modell-Weg, mit sichtbarer Einschränkung in der Freigabe, oder ein Mensch prüft. Der Anwender wählt ihn beim Aufsetzen des Projekts.
 
 ## Fassade
 
@@ -122,7 +130,7 @@ Weg einer Prüfung, die ein zweites Modell verlangt, wenn kein Werkzeug ein zwei
 
 ## Freigabe
 
-Die Erklärung, dass ein Freigabedokument für einen bestimmten Zweck verlässlich ist, gebucht als Entscheidung in der Form „Stand x von ⟨Artefakt⟩, freigegeben für Zweck Z“. Sie wird nie zurückgenommen, eine Änderung ergibt ein neues Dokument mit neuer Freigabe.
+Die Erklärung, dass ein Freigabedokument für einen bestimmten Zweck verlässlich ist, gebucht als Entscheidung in der Form „Stand x von ⟨Artefakt⟩, freigegeben für Zweck Z [zu Marke M]“. Der Zusatz steht, wenn die Marke nicht die laufende ist oder es kein Freigabedokument gibt. Sie wird nie zurückgenommen, eine Änderung ergibt ein neues Dokument mit neuer Freigabe.
 
 ## Freigabedokument
 
@@ -136,6 +144,10 @@ Methode, Aufgaben aus dem Kopf in ein verlässliches System zu holen und zu ordn
 
 Die Zahlen in einem Modell, die beim Training angepasst werden. Sie sind das, was das Modell gelernt hat.
 
+## gh
+
+Das Kommandozeilen-Werkzeug von GitHub. Es legt zum Beispiel mit `gh repo create` ein Repo auf GitHub an.
+
 ## Git
 
 Programm, das die Geschichte eines Projekts aufzeichnet: Jede Änderung bleibt nachvollziehbar und lässt sich zurücknehmen.
@@ -144,13 +156,21 @@ Programm, das die Geschichte eines Projekts aufzeichnet: Jede Änderung bleibt n
 
 Dienst im Netz, auf dem Git-Repos liegen, gesichert und für andere erreichbar.
 
+## Git-Tag
+
+Siehe Tag.
+
 ## Harness
 
 Das Programm um das Sprachmodell herum: Es legt dem Modell den Kontext vor, führt dessen Tool-Aufrufe aus und steckt die Ergebnisse in den nächsten Prompt. Das Wort heißt wörtlich Zaumzeug: Der Harness führt das Modell, ohne selbst klug zu sein.
 
+## Hauptzweig
+
+Die eine Fassung eines Projekts, an der alle arbeiten und aus der geliefert wird.
+
 ## Inbox
 
-Englisch für Postfach. Im Beispiel DONE heißt daneben die Ablage für Aufgaben ohne Tag Inbox, nach der Methode Getting Things Done.
+Englisch für Postfach, siehe dort. Im Beispiel DONE heißt Inbox etwas anderes: die Ablage für Aufgaben ohne Tag, nach der Methode Getting Things Done. Beide haben nur das Wort gemeinsam.
 
 ## Init
 
@@ -162,7 +182,7 @@ Die agent-spezifische Datei, die der Agent beim Start automatisch lädt, etwa `C
 
 ## Kardinalität
 
-Die Anzahl auf einer Seite einer Beziehung zwischen zwei Dingen im Modell: eins oder viele. Ob ein Artikel in einem Fach liegt oder in mehreren, ist eine Frage der Kardinalität, und die Antwort gibt der Anwendungsfall.
+Die Anzahl auf einer Seite einer Beziehung zwischen zwei Dingen im Modell: eins oder viele. Ob ein Artikel an einem Lagerort liegt oder an mehreren, ist eine Frage der Kardinalität, und die Antwort gibt der Anwendungsfall.
 
 ## Kettenprüfung
 
@@ -186,11 +206,19 @@ Die begrenzte Menge an Text, die dem Sprachmodell auf einmal vorgelegt werden ka
 
 ## Konzept-Sammlung
 
-Mitgelieferte Sammlungen erprobter Arbeitsweisen; der Agent schlägt beim Einrichten vor, welche zum Projekt passen.
+Sammlung erprobter Arbeitsweisen in einem eigenen Repo. Der Agent schlägt beim Einrichten vor, was zum Projekt passt, und übernimmt nur, was der Mensch auswählt.
 
 ## Koordinator
 
 Das Projekt, das ein System in Komponenten zerlegt und deren Lieferungen integriert.
+
+## Langfristiger Ansatz
+
+Eine Arbeitsweise, die über Wochen, über viele Sitzungen und über mehrere Versionen trägt: Wissen im Wiki, Entscheidungen beim Menschen, Schnitt nach Marken, unabhängige Prüfung und ein vom Arbeitsmaterial getrenntes Produkt. Gegenstück zum naiven Ansatz.
+
+## Lieferung
+
+Der Git-Tag einer Komponente: das Ergebnis, das sie dem Koordinator als Nachricht meldet und das er an der Marke bucht.
 
 ## Lint
 
@@ -222,7 +250,7 @@ Programm, das einem Agenten nach einem festen Standard, dem Model Context Protoc
 
 ## Metamodell
 
-Die Festlegung darüber, welche Arten von Dingen es im Modell gibt und welche Attribute und Beziehungen jede Art hat: das Modell des Modells. Es entsteht im Gespräch über die Anforderungen; die Daten kommen später, wenn das Programm läuft.
+Das Modell des Modells, eine Ebene über dem Datenmodell. Es legt fest, woraus ein Datenmodell bestehen kann: aus Arten von Dingen, ihren Attributen und ihren Beziehungen.
 
 ## Migration
 
@@ -238,11 +266,19 @@ Der Ausschnitt der Realität, den eine Software abbildet, so genau, wie der Anwe
 
 ## Nachricht
 
-Datei, mit der ein Repo einem anderen etwas mitteilt, etwa eine Lieferung oder einen Änderungswunsch. Sie liegt nur beim Absender; der Empfänger bucht daraus in seine eigenen Register. Nicht gemeint sind eine Commit-Nachricht und ein Versand an Menschen. Was ein Agent einem anderen ins Postfach legt, heißt im Skript ebenfalls Nachricht; siehe Postfach.
+Text, den ein Agent einem anderen schickt; er liegt im Postfach, bis der Empfänger hineinsieht. Im Regelwerk die Datei in `output/nachrichten/` des Absenders, mit der ein Repo einem anderen etwas mitteilt, etwa eine Lieferung oder einen Änderungswunsch; sie ist ab der Anlage eingefroren, ein Werkzeug kann ihren Inhalt zustellen, und der Empfänger bucht daraus in seine eigenen Register. Nicht gemeint sind eine Commit-Nachricht und ein Versand an Menschen.
+
+## Nachrichten-Wächter
+
+Wort des Regelwerks für eine Prüfung, die der Agent jedes Projekts beim Sessionstart, täglich und bei jeder eingegangenen Nachricht ausführt: Sind eigene Nachrichten noch ohne Quittung, sind an ihn gerichtete noch nicht gebucht? Er meldet, er blockiert nicht.
 
 ## Nachweis
 
 Eintrag in einem Register, der nie abgelöst, sondern nur mit Vermerken ergänzt wird: der Bericht eines Prüfers, ein Rechercheergebnis, ein eingegangenes Dokument. Gegenstück zum Element.
+
+## Naiver Ansatz
+
+Der direkte Weg von den Anforderungen zum Programm, mit einem Agenten, ohne Regelwerk und ohne Vorlage, je Schritt ein Dokument. Er scheitert nicht an einem Fehler, sondern an Ursachen, die beim ersten Durchlauf unsichtbar sind.
 
 ## peeragent
 
@@ -258,11 +294,11 @@ Betriebsart, in der der Agent erst einen Plan vorlegt, statt zu handeln. Technis
 
 ## Postfach
 
-Der Eingang, in dem die Nachrichten für einen Agenten liegen, bis er hineinsieht; englisch Inbox. Beim einfachen Weg ein Verzeichnis, bei simple-a2a ein Postfach je Agent und Team.
+Der Eingang, in dem die Nachrichten für einen Agenten liegen, bis er hineinsieht; englisch Inbox. Je Team hat jeder Agent genau eines. Auf dem einfachen Weg ist es ein Verzeichnis, sonst führt es der Dienst simple-a2a.
 
 ## Produkt
 
-Das, was eine Marke hervorbringt und nach außen geht, bei Software der Code mit seinen Tests. Es wird nicht als Dokument eingefroren, sondern in Git mit einem Tag markiert. Liegt es in einem eigenen Repo, heißt dieses Produkt-Repo, im Gegensatz zur Werkstatt.
+Das, was eine Marke hervorbringt und nach außen geht, bei Software der Code mit seinen Tests. Es wird nicht als Dokument eingefroren, sondern mit einem Git-Tag markiert. Liegt es in einem eigenen Repo, heißt dieses Produkt-Repo, im Gegensatz zur Werkstatt.
 
 ## Prompt
 
@@ -270,7 +306,7 @@ Der Text, der dem Sprachmodell vorgelegt wird; im engeren Sinn die Eingabe des M
 
 ## Prozess
 
-Die Folge der Phasen, die ein Projekt von der ersten Anforderung bis zur Auslieferung durchläuft, jede als Tätigkeit benannt und jede mit einem Freigabedokument als Ergebnis. Die Phasen sind ein Angebot und eine Checkliste, kein Zwang.
+Die Folge der Phasen, die ein Projekt von der ersten Anforderung bis zur Auslieferung durchläuft, jede als Tätigkeit benannt und jede mit einem Freigabedokument als Ergebnis, das Ausarbeiten mit dem Git-Tag auf dem Produkt. Die Phasen sind ein Angebot und eine Checkliste, kein Zwang.
 
 ## Prüfer
 
@@ -298,7 +334,7 @@ Erneute Prüfung, nachdem die Befunde einer Prüfung eingearbeitet sind.
 
 ## Referenzprozess
 
-Vorlage für Softwareprojekte mit vorbereitetem Wiki, Regelwerk und Anleitungen für neues Projekt, Migration und Upgrade. Das Regelwerk unterscheidet genauer zwischen Starter und Prozess, im Skript steht das Wort für beides.
+Im Skript kurz für den Referenzprozess Softwareentwicklung, die öffentliche Vorlage für Softwareprojekte mit Regelwerk, vorbereitetem Wiki und Anleitungen für neues Projekt, Migration und Upgrade. Genau genommen belegt ein Referenzprozess die Phasen für eine Projektart; der für Softwareentwicklung ist in der Vorlage schon eingespielt.
 
 ## Regelwerk
 
@@ -308,6 +344,10 @@ Die Dateien, die festlegen, wie ein Agent in einem Projekt arbeitet, mit dem Mas
 
 Übersichtsdatei im Wiki mit nummerierten Einträgen, etwa Entscheidungen oder Anforderungen.
 
+## Remote
+
+Das Repo im Netz, in das die Commits geschoben werden, etwa auf GitHub.
+
 ## Repo
 
 Kurz für Repository: ein Projektordner unter der Aufsicht von Git mit seiner ganzen Geschichte.
@@ -316,9 +356,17 @@ Kurz für Repository: ein Projektordner unter der Aufsicht von Git mit seiner ga
 
 Prüfdurchgang mit frischem Kontext, der einen Bericht und ein Urteil ergibt. Wer geprüft hat, hat nicht mitgeschrieben.
 
+## Rolle
+
+Die Stellung eines Projekts in einem System: Standalone, Koordinator oder Komponente. Standalone ist ein einzelnes Repo ohne Zerlegung und beim Einrichten vorausgewählt. Daneben spricht das Skript von den Rollen von Mensch und Agent: Der Mensch entscheidet, der Agent leitet ab, legt vor und führt aus.
+
+## Rücklauf
+
+Nachricht des Koordinators an die betroffenen Komponenten, wenn eine Änderung seine Grundlagen betrifft, also Funktionsbeschreibung, Zuschnitt der Komponenten oder Übergabe. Die Freigabedokumente einer Komponente, die auf das alte Übergabe-Dokument verweisen, sind damit überholt.
+
 ## Schleuse
 
-Der geregelte Übergang von der Werkstatt ins Produkt: Kleinteilige Dokumente werden zu in sich vollständigen, und was nicht nach außen gehört, bleibt zurück.
+Der geregelte Übergang von der Werkstatt ins Produkt: Kleinteilige Dokumente werden zu in sich vollständigen, und was nicht nach außen gehört, bleibt zurück. Es gibt sie erst bei zwei Repos, und sie ist kein Programm, sondern eine Regel.
 
 ## selbsttragend
 
@@ -326,7 +374,7 @@ Eigenschaft eines Dokuments, das am Stück an einen Empfänger ohne Zugang zum W
 
 ## Sessionstart
 
-Der feste Ablauf zu Beginn jeder Sitzung: Der Agent orientiert sich, lädt den nötigen Kontext, gleicht Stände ab und meldet sich bereit.
+Der feste Ablauf zu Beginn jeder Sitzung: Der Agent orientiert sich, lädt den nötigen Kontext, sucht, was liegen geblieben ist, und meldet sich bereit.
 
 ## Shell
 
@@ -344,13 +392,17 @@ Eine zusammenhängende Arbeit mit einem Agenten, von seinem Start bis zum Ende, 
 
 Anleitung für eine bestimmte Art von Aufgabe, die der Agent bei Bedarf in den Kontext lädt. Technisch ein weiteres Stück Prompt. Wer keine Mail verschickt, liest den Mail-Skill nicht; so bleibt das Fenster frei.
 
+## skill-a2a
+
+Skill, der Agenten auf demselben Rechner unter demselben Benutzerkonto beibringt, einander Nachrichten als Dateien zu schicken. Im Skript ist das der einfache Weg; der Absender ist dabei nicht geprüft.
+
 ## Skip Permissions
 
 Berechtigungsstufe, bei der der Agent ohne jede Rückfrage handelt. Nur auf einem wegwerfbaren Rechner ohne wertvolle Zugänge oder Daten und mit per Git gesicherter Arbeit.
 
 ## Sonderweg
 
-Weg neben dem Projektstart aus der Vorlage, für Projekte, die schon da sind: die Migration für ein Projekt ohne Regelwerk, das Upgrade für ein Projekt mit einem älteren Stand der Vorlage.
+Weg neben dem Projektstart aus der Vorlage, für Projekte, die schon da sind: die Migration für ein Projekt ohne Regelwerk, das Upgrade für ein Projekt mit einer älteren Version der Vorlage.
 
 ## Spezifikation
 
@@ -362,7 +414,7 @@ Siehe LLM.
 
 ## Stand
 
-Wort des Regelwerks für das Freigabedokument: ein Dokument, das zu einer Marke aus eingefrorenen Elementen gebildet wird und eine Freigabe trägt. Jede Änderung ergibt einen neuen Stand mit neuer Versionsnummer, der alte bleibt liegen. Nicht gemeint ist die Datumszeile einer lebenden Datei, im Regelwerk Bearbeitungsstand.
+Wort des Regelwerks und der Bilder für das, was das Skript Freigabedokument nennt: ein Dokument, das zu einer Marke aus eingefrorenen Elementen gebildet wird und eine Freigabe trägt. Jede Änderung ergibt ein neues Dokument mit neuer Versionsnummer, das alte bleibt liegen. Nicht gemeint sind Angaben wie „Stand Oktober 2026“ und „Stand der Quellen“ und die Datumszeile einer lebenden Datei, im Regelwerk Bearbeitungsstand.
 
 ## Standardaufgabe
 
@@ -374,7 +426,11 @@ Grundeinstellung des Agenten: Bei Unklarheit fragt er nach und führt nicht aus.
 
 ## Startprompt
 
-Der erste Prompt, mit dem ein Agent ein Vorhaben beginnt. Dazu zählt auch die Übergabe, die ein Koordinator für den Agenten einer neuen Komponente erzeugt.
+Der erste Prompt, mit dem ein Agent ein Vorhaben beginnt. Dazu zählt auch die Datei, die ein Koordinator für den Agenten einer neuen Komponente erzeugt.
+
+## Start-Tabelle
+
+Liste, die der Agent eines Koordinators vor dem Start der Komponenten zur Entscheidung vorlegt: je Komponente Name, Repo-Name, lokaler Pfad, Remote und Übernahme-Art.
 
 ## Subagent
 
@@ -390,11 +446,11 @@ Der Teil des Prompts, den der Harness vorgibt: Er legt fest, wie sich das Modell
 
 ## Tag
 
-Markierung in Git, die einen bestimmten Commit mit einem Namen versieht. Das Produkt einer Marke wird mit einem Tag markiert; ein Tag wird nie verschoben. Im Beispiel DONE heißt daneben ein Schlagwort an einer Aufgabe Tag.
+In Git eine Markierung an einem bestimmten Commit, die einen Namen trägt; das Skript schreibt dafür Git-Tag. Das Produkt einer Marke wird so markiert, und ein Git-Tag wird nie verschoben und nie gelöscht. Im Beispiel DONE heißt Tag etwas anderes, ein Schlagwort an einer Aufgabe; beide haben nur das Wort gemeinsam.
 
 ## Team
 
-Bei simple-a2a eine Gruppe von Agenten innerhalb eines Realms, die einander Nachrichten schicken können.
+Eine Gruppe von Agenten, die einander Nachrichten schicken. Das Team hat einen Namen, und jeder Agent darin hat einen Namen. Beim Dienst simple-a2a liegt es in einem Realm.
 
 ## Terminal
 
@@ -410,7 +466,7 @@ Windows-Programm, das die tmux-Sitzungen entfernter Rechner auflistet und als Ta
 
 ## Token
 
-Die Einheit, in der ein Sprachmodell Text zerlegt, etwa ein Wort oder ein Wortteil; lange zusammengesetzte Wörter werden in mehrere Tokens zerlegt. Kontextfenster und Kosten werden in Tokens gemessen.
+Die Einheit, in der ein Sprachmodell Text zerlegt, etwa ein Wort oder ein Wortteil; lange zusammengesetzte Wörter werden in mehrere Tokens zerlegt. Kontextfenster und Kosten werden in Tokens gemessen. Mit dem Zugangstoken hat es nur das Wort gemeinsam.
 
 ## Tool
 
@@ -420,13 +476,21 @@ Fähigkeit, die der Harness dem Modell anbietet, etwa eine Datei lesen, einen Be
 
 Markierung im Text des Modells, die ein Tool anfordert. Das Modell führt nichts aus, der Harness tut es und gibt das Ergebnis zurück.
 
+## Übergabe
+
+Was ein Koordinator einer Komponente mitgibt: ein freigegebenes Freigabedokument, auf das sich die Komponente stützt und das die Wurzel ihrer Kette ist. Das Regelwerk nennt es Übergabe-Stand, das Skript auch Übergabe-Dokument. Nicht gemeint ist das Weitergeben der Arbeit am Ende einer Sitzung.
+
+## Übernahme-Art
+
+Wo die Arbeit einer Komponente beginnt. Selbstständig, der Standard: Sie sammelt eigene Anforderungen und schreibt ihre eigene Funktionsbeschreibung. Auftrag: Der Koordinator beschreibt die Funktion und übergibt sie, die Komponente beginnt mit dem Zerlegen.
+
 ## Unteragent
 
 Siehe Subagent.
 
 ## Upgrade
 
-Sonderweg, der ein Projekt auf einen neuen Stand der Vorlage hebt.
+Sonderweg, der ein Projekt aus der Vorlage auf deren neue Version hebt.
 
 ## Vertrauensabfrage
 
@@ -440,13 +504,25 @@ Ein Element wird mit Begründung aufgegeben, ohne Nachfolger. Es bleibt sichtbar
 
 Bewusstes Auslassen einer Phase samt ihrem Freigabedokument für eine Marke, als Entscheidung gebucht. Für diese Marke entfallen damit das Dokument und seine Prüfpflichten.
 
+## Veto
+
+Widerspruch des Menschen gegen etwas, das der Agent angekündigt oder ohne Rückfrage erledigt hat. Damit lässt sich etwa eine Standardaufgabe zurücknehmen.
+
+## Vorfestlegung
+
+Was die Antwort auf eine Frage für andere Fragen schon mitentscheidet. Der Agent stellt zuerst die Frage mit der stärksten Vorfestlegung; Folgefragen entfallen dann oder werden ableitbar. Was die Vorlage vorfestlegt, fragt er gar nicht.
+
+## Vorlage
+
+Fertige Ausstattung für ein neues Projekt mit Regelwerk, vorbereitetem Wiki und Prozess. Sie liegt im Projekt im Ordner `_template/` und wird dort nie verändert. Im Skript ist das der Referenzprozess Softwareentwicklung, das Regelwerk nennt sie auch Starter.
+
 ## WebAPI
 
 Schnittstelle, über die Programme einen Dienst über das Netz ansprechen.
 
 ## Werkstatt
 
-Das Repo mit Wiki, Registern und voller Historie, in dem gearbeitet wird und aus dem das Produkt abgeleitet wird.
+Der Ort der Arbeit mit Wiki, Registern und voller Historie, aus dem das Produkt hervorgeht. Im Skript gibt es sie in jedem Projekt; bei einem Repo liegt sie mit dem Produkt im selben Repo. Das Regelwerk ist enger: Es benutzt das Wort nur für zwei Repos und sagt bei einem Repo einfach Wiki.
 
 ## Wiki
 
@@ -454,11 +530,15 @@ Sammlung verlinkter Dateien im Projekt, die Quelle der Wahrheit für Wissen und 
 
 ## WorkspaceManager
 
-Externes Programm, das Ausgangsdateien für den Agenten aufbereitet und Dokumente für den Versand erzeugt. Fehlt es, übernimmt der Agent beides.
+Externes Programm mit zwei Aufgaben: Es wandelt Originaldokumente in Text um und erzeugt Versanddateien wie PDFs. Was fehlt, übernimmt der Agent. In clawbook ist der Projektverwalter `wsm` ein WorkspaceManager; er übernimmt nur die Umwandlung und braucht dafür einen Docling-Server (Stand Oktober 2026).
 
 ## WSL
 
 Teil von Windows, mit dem Linux-Programme unter Windows laufen.
+
+## Zugangstoken
+
+Geheime Zeichenfolge, mit der sich ein Agent beim Dienst simple-a2a ausweist. Sie steht für genau einen Namen in genau einem Team. Mit den Tokens, in die ein Sprachmodell Text zerlegt, hat sie nur das Wort gemeinsam.
 
 ## Zweck-Freigabe
 
